@@ -1,0 +1,234 @@
+{
+  "schema": "rust-anything/analyze@1",
+  "language": "python",
+  "summary": {
+    "packages": 1,
+    "source_files": 2,
+    "test_files": 0,
+    "ui_files": 0,
+    "loc": 639,
+    "units": 2,
+    "ready": 1,
+    "caution": 1,
+    "blocked": 0,
+    "keep": 0,
+    "parse_errors": 0
+  },
+  "packages": [
+    {
+      "name": "claude-localization",
+      "dir": "",
+      "order": 1,
+      "runtime": "portable",
+      "workspace_deps": [],
+      "test_files": 0,
+      "units": [
+        "build-copy.py",
+        "sign-copy.py"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "build-copy.py",
+      "package": "claude-localization",
+      "files": [
+        "build-copy.py"
+      ],
+      "loc": 487,
+      "wave": 0,
+      "readiness": 40,
+      "status": "caution",
+      "bridge": "pyo3",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 19,
+          "samples": [
+            "build-copy.py:37",
+            "build-copy.py:57",
+            "build-copy.py:63"
+          ]
+        },
+        {
+          "risk": "dynamic-regex",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "build-copy.py:261",
+            "build-copy.py:261"
+          ]
+        },
+        {
+          "risk": "dynamic-typing",
+          "severity": "medium",
+          "count": 25,
+          "samples": [
+            "build-copy.py:21",
+            "build-copy.py:34",
+            "build-copy.py:41"
+          ]
+        },
+        {
+          "risk": "division-semantics",
+          "severity": "medium",
+          "count": 5,
+          "samples": [
+            "build-copy.py:189",
+            "build-copy.py:284",
+            "build-copy.py:290"
+          ]
+        },
+        {
+          "risk": "generators",
+          "severity": "medium",
+          "count": 4,
+          "samples": [
+            "build-copy.py:226",
+            "build-copy.py:226",
+            "build-copy.py:228"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 30,
+          "samples": [
+            "build-copy.py:25",
+            "build-copy.py:37",
+            "build-copy.py:68"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 9.9,
+      "priority": 50,
+      "exports": 16,
+      "bridgeable": 14,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "sign-copy.py",
+      "package": "claude-localization",
+      "files": [
+        "sign-copy.py"
+      ],
+      "loc": 152,
+      "wave": 0,
+      "readiness": 75,
+      "status": "ready",
+      "bridge": "pyo3",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 3,
+          "samples": [
+            "sign-copy.py:99",
+            "sign-copy.py:115",
+            "sign-copy.py:175"
+          ]
+        },
+        {
+          "risk": "unordered-iteration",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "sign-copy.py:28",
+            "sign-copy.py:33"
+          ]
+        },
+        {
+          "risk": "dynamic-typing",
+          "severity": "medium",
+          "count": 5,
+          "samples": [
+            "sign-copy.py:39",
+            "sign-copy.py:43",
+            "sign-copy.py:53"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "sign-copy.py:44",
+            "sign-copy.py:60",
+            "sign-copy.py:180"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 7.2,
+      "priority": 62,
+      "exports": 6,
+      "bridgeable": 4,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    }
+  ],
+  "start_here": [
+    "sign-copy.py",
+    "build-copy.py"
+  ],
+  "dependencies": [],
+  "whole_app": {
+    "shape": "cli",
+    "entry_points": [
+      {
+        "kind": "cli",
+        "path": "build-copy.py",
+        "evidence": "`if __name__ == \"__main__\"` at build-copy.py:552"
+      },
+      {
+        "kind": "cli",
+        "path": "sign-copy.py",
+        "evidence": "`if __name__ == \"__main__\"` at sign-copy.py:183"
+      }
+    ],
+    "dependencies": [],
+    "pieces": [
+      {
+        "wave": 0,
+        "units": [
+          "build-copy.py"
+        ],
+        "loc": 487,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "sign-copy.py"
+        ],
+        "loc": 152,
+        "tangled": false
+      }
+    ],
+    "decisions": [
+      {
+        "id": "D1",
+        "topic": "shape",
+        "question": "The app is a cli, entered through build-copy.py, sign-copy.py. Port every entry point, in that shape?",
+        "recommendation": "Yes: a clap front door (`app front-door`) takes every command over first"
+      }
+    ]
+  }
+}

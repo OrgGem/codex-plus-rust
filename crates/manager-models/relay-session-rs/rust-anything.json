@@ -1,0 +1,60 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/relay-session.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "relay-session-rs",
+  "exports": [
+    {
+      "name": "sessionProviderForProtocol",
+      "file": "src/relay-session.ts",
+      "line": 5,
+      "params": [
+        {
+          "name": "sessionProvider",
+          "ts_type": "(\"custom\" | \"openai\")",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "protocol",
+          "ts_type": "(\"responses\" | \"chatCompletions\" | \"anthropicMessages\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"custom\" | \"openai\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "openAiSessionBlocksModelSave",
+      "file": "src/relay-session.ts",
+      "line": 14,
+      "params": [
+        {
+          "name": "sessionProvider",
+          "ts_type": "(\"custom\" | \"openai\")",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "protocol",
+          "ts_type": "(\"responses\" | \"chatCompletions\" | \"anthropicMessages\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

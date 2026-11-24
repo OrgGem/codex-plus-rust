@@ -1,0 +1,48 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\assets\\native-browser",
+  "unit": "inspect-service.mjs",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "inspect-service-rs",
+  "exports": [
+    {
+      "name": "inspectEntry",
+      "file": "inspect-service.mjs",
+      "line": 143,
+      "params": [
+        {
+          "name": "source",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "inspectService",
+      "file": "inspect-service.mjs",
+      "line": 171,
+      "params": [
+        {
+          "name": "source",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

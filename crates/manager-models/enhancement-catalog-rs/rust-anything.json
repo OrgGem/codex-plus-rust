@@ -1,0 +1,216 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/enhancement-catalog.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "enhancement-catalog-rs",
+  "exports": [
+    {
+      "name": "enhancementPlatformFromUserAgent",
+      "file": "src/enhancement-catalog.ts",
+      "line": 92,
+      "params": [
+        {
+          "name": "userAgent",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"windows\" | \"macos\" | \"linux\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "enhancementItem",
+      "file": "src/enhancement-catalog.ts",
+      "line": 98,
+      "params": [
+        {
+          "name": "key",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "catalog",
+          "ts_type": "unknown",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "EnhancementSettingItem",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "enhancementGroup",
+      "file": "src/enhancement-catalog.ts",
+      "line": 104,
+      "params": [
+        {
+          "name": "id",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "catalog",
+          "ts_type": "unknown",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "EnhancementSettingGroup",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "isEnhancementItemVisible",
+      "file": "src/enhancement-catalog.ts",
+      "line": 110,
+      "params": [
+        {
+          "name": "item",
+          "ts_type": "EnhancementSettingItem",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "surface",
+          "ts_type": "(\"manager\" | \"codex\")",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "platform",
+          "ts_type": "(\"windows\" | \"macos\" | \"linux\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "managerBuiltinCards",
+      "file": "src/enhancement-catalog.ts",
+      "line": 130,
+      "params": [
+        {
+          "name": "groupId",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "platform",
+          "ts_type": "(\"windows\" | \"macos\" | \"linux\")",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "catalog",
+          "ts_type": "unknown",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "BuiltinExtensionCard[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "builtinSettingValue",
+      "file": "src/enhancement-catalog.ts",
+      "line": 147,
+      "params": [
+        {
+          "name": "settings",
+          "ts_type": "object",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "path",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "managerStandaloneGroup",
+      "file": "src/enhancement-catalog.ts",
+      "line": 151,
+      "params": [
+        {
+          "name": "catalog",
+          "ts_type": "unknown",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "EnhancementSettingGroup",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "isEnhancementItemMasterGated",
+      "file": "src/enhancement-catalog.ts",
+      "line": 157,
+      "params": [
+        {
+          "name": "item",
+          "ts_type": "EnhancementSettingItem",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "enhancementCatalogStrings",
+      "file": "src/enhancement-catalog.ts",
+      "line": 162,
+      "params": [
+        {
+          "name": "catalog",
+          "ts_type": "unknown",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "string[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

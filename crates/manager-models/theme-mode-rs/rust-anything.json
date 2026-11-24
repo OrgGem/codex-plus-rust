@@ -1,0 +1,103 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/theme-mode.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "theme-mode-rs",
+  "exports": [
+    {
+      "name": "parseThemePreference",
+      "file": "src/theme-mode.ts",
+      "line": 11,
+      "params": [
+        {
+          "name": "raw",
+          "ts_type": "string | null | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"system\" | \"dark\" | \"light\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "resolveTheme",
+      "file": "src/theme-mode.ts",
+      "line": 15,
+      "params": [
+        {
+          "name": "preference",
+          "ts_type": "(\"system\" | \"dark\" | \"light\")",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "systemPrefersDark",
+          "ts_type": "boolean",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"dark\" | \"light\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "toggledThemePreference",
+      "file": "src/theme-mode.ts",
+      "line": 21,
+      "params": [
+        {
+          "name": "current",
+          "ts_type": "(\"dark\" | \"light\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"system\" | \"dark\" | \"light\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "loadThemePreference",
+      "file": "src/theme-mode.ts",
+      "line": 25,
+      "reason": "dom"
+    },
+    {
+      "name": "storeThemePreference",
+      "file": "src/theme-mode.ts",
+      "line": 33,
+      "reason": "dom"
+    },
+    {
+      "name": "systemPrefersDark",
+      "file": "src/theme-mode.ts",
+      "line": 41,
+      "reason": "dom"
+    },
+    {
+      "name": "watchSystemTheme",
+      "file": "src/theme-mode.ts",
+      "line": 50,
+      "reason": "dom"
+    },
+    {
+      "name": "applyResolvedTheme",
+      "file": "src/theme-mode.ts",
+      "line": 63,
+      "reason": "dom"
+    }
+  ]
+}

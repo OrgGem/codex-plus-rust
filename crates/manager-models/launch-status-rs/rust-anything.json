@@ -1,0 +1,60 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/launch-status.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "launch-status-rs",
+  "exports": [
+    {
+      "name": "launchCompletionNotice",
+      "file": "src/launch-status.ts",
+      "line": 12,
+      "params": [
+        {
+          "name": "status",
+          "ts_type": "{\n  status: string;\n  message: string;\n  started_at_ms: number;\n} | null",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "requestStartedAtMs",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "resolveLaunchStatus",
+      "file": "src/launch-status.ts",
+      "line": 24,
+      "params": [
+        {
+          "name": "status",
+          "ts_type": "{\n  status: string;\n  message: string;\n  started_at_ms: number;\n} | null",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "requestStartedAtMs",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"pending\" | \"success\" | \"failed\" | \"stale\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

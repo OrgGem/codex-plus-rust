@@ -1,0 +1,543 @@
+{
+  "schema": "rust-anything/analyze@1",
+  "language": "ts",
+  "summary": {
+    "packages": 1,
+    "source_files": 5,
+    "test_files": 0,
+    "ui_files": 0,
+    "loc": 1607,
+    "units": 5,
+    "ready": 5,
+    "caution": 0,
+    "blocked": 0,
+    "keep": 0,
+    "parse_errors": 0
+  },
+  "packages": [
+    {
+      "name": "claude-localization",
+      "dir": "",
+      "order": 1,
+      "runtime": "node",
+      "workspace_deps": [],
+      "test_files": 0,
+      "units": [
+        "bash-timeout.js",
+        "hook.js",
+        "inject-cn.js",
+        "page-dictation.js",
+        "page-shim.js"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "bash-timeout.js",
+      "package": "claude-localization",
+      "files": [
+        "bash-timeout.js"
+      ],
+      "loc": 106,
+      "wave": 0,
+      "readiness": 78,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "bash-timeout.js:30",
+            "bash-timeout.js:35"
+          ]
+        },
+        {
+          "risk": "dynamic-regex",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "bash-timeout.js:29",
+            "bash-timeout.js:34"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "bash-timeout.js:61"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 8,
+          "samples": [
+            "bash-timeout.js:26",
+            "bash-timeout.js:31",
+            "bash-timeout.js:36"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "bash-timeout.js:96"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 1,
+      "density": 1.9,
+      "priority": 53,
+      "exports": 5,
+      "bridgeable": 5,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "hook.js",
+      "package": "claude-localization",
+      "files": [
+        "hook.js"
+      ],
+      "loc": 453,
+      "wave": 1,
+      "readiness": 68,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "hook.js:40"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 7,
+          "samples": [
+            "hook.js:88",
+            "hook.js:166",
+            "hook.js:219"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 24,
+          "samples": [
+            "hook.js:45",
+            "hook.js:54",
+            "hook.js:95"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 7,
+          "samples": [
+            "hook.js:55",
+            "hook.js:131",
+            "hook.js:160"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "hook.js:47",
+            "hook.js:105"
+          ]
+        }
+      ],
+      "internal_deps": [
+        "bash-timeout.js"
+      ],
+      "workspace_deps": [],
+      "external_deps": [
+        "electron"
+      ],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.4,
+      "priority": 45,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "1 npm dependencies not in the crate table: check them by hand.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "inject-cn.js",
+      "package": "claude-localization",
+      "files": [
+        "inject-cn.js"
+      ],
+      "loc": 298,
+      "wave": 0,
+      "readiness": 66,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 3,
+          "samples": [
+            "inject-cn.js:35",
+            "inject-cn.js:177",
+            "inject-cn.js:313"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 32,
+          "samples": [
+            "inject-cn.js:72",
+            "inject-cn.js:98",
+            "inject-cn.js:99"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "inject-cn.js:120"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 13,
+          "samples": [
+            "inject-cn.js:61",
+            "inject-cn.js:105",
+            "inject-cn.js:147"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 10,
+          "samples": [
+            "inject-cn.js:138",
+            "inject-cn.js:148",
+            "inject-cn.js:155"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "inject-cn.js:104",
+            "inject-cn.js:243"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.0,
+      "priority": 47,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "page-dictation.js",
+      "package": "claude-localization",
+      "files": [
+        "page-dictation.js"
+      ],
+      "loc": 592,
+      "wave": 0,
+      "readiness": 62,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 5,
+          "samples": [
+            "page-dictation.js:56",
+            "page-dictation.js:273",
+            "page-dictation.js:396"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 14,
+          "samples": [
+            "page-dictation.js:55",
+            "page-dictation.js:305",
+            "page-dictation.js:334"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 15,
+          "samples": [
+            "page-dictation.js:29",
+            "page-dictation.js:69",
+            "page-dictation.js:176"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "page-dictation.js:56",
+            "page-dictation.js:56"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "page-dictation.js:70"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.4,
+      "priority": 46,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "page-shim.js",
+      "package": "claude-localization",
+      "files": [
+        "page-shim.js"
+      ],
+      "loc": 158,
+      "wave": 0,
+      "readiness": 73,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 3,
+          "samples": [
+            "page-shim.js:71",
+            "page-shim.js:82",
+            "page-shim.js:117"
+          ]
+        },
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "page-shim.js:108",
+            "page-shim.js:109",
+            "page-shim.js:165"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "page-shim.js:86",
+            "page-shim.js:152"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "page-shim.js:152"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 8,
+          "samples": [
+            "page-shim.js:23",
+            "page-shim.js:34",
+            "page-shim.js:60"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "page-shim.js:102",
+            "page-shim.js:119",
+            "page-shim.js:146"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "page-shim.js:71",
+            "page-shim.js:72",
+            "page-shim.js:74"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 3.2,
+      "priority": 53,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    }
+  ],
+  "start_here": [
+    "bash-timeout.js"
+  ],
+  "dependencies": [
+    {
+      "name": "electron",
+      "used_by": 1,
+      "crates": null,
+      "fit": "unknown",
+      "note": ""
+    }
+  ],
+  "whole_app": {
+    "shape": "server",
+    "entry_points": [
+      {
+        "kind": "server",
+        "path": "inject-cn.js",
+        "evidence": "`createServer(` at inject-cn.js:73"
+      }
+    ],
+    "dependencies": [
+      {
+        "name": "electron",
+        "names": [
+          "electron"
+        ],
+        "declared": false,
+        "used_by": 1,
+        "crates": null,
+        "fit": "unknown",
+        "note": ""
+      }
+    ],
+    "pieces": [
+      {
+        "wave": 0,
+        "units": [
+          "bash-timeout.js"
+        ],
+        "loc": 106,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "inject-cn.js"
+        ],
+        "loc": 298,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "page-dictation.js"
+        ],
+        "loc": 592,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "page-shim.js"
+        ],
+        "loc": 158,
+        "tangled": false
+      },
+      {
+        "wave": 1,
+        "units": [
+          "hook.js"
+        ],
+        "loc": 453,
+        "tangled": false
+      }
+    ],
+    "decisions": [
+      {
+        "id": "D1",
+        "topic": "shape",
+        "question": "The app is a server, entered through inject-cn.js. Port every entry point, in that shape?",
+        "recommendation": "Yes: an axum front door (`app front-door`) takes the server over first"
+      },
+      {
+        "id": "D2",
+        "topic": "dependency electron",
+        "question": "Which crate replaces electron (used by 1 unit)?",
+        "recommendation": "Research it against primary sources into rust/research/electron.md before porting what uses it"
+      }
+    ]
+  }
+}

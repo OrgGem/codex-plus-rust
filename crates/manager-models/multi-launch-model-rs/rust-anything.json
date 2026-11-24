@@ -1,0 +1,186 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/multi-launch-model.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "multi-launch-model-rs",
+  "exports": [
+    {
+      "name": "multiLaunchInstanceLabel",
+      "file": "src/multi-launch-model.ts",
+      "line": 27,
+      "params": [
+        {
+          "name": "instance",
+          "ts_type": "({\n  instanceId: string;\n  profileId?: string;\n  profileName?: string;\n  label?: string;\n  isMain?: boolean;\n  pid?: number;\n  debugPort?: number;\n  helperPort?: number;\n  status: string;\n  running?: boolean;\n  startedAtMs?: number;\n  startedAt?: string;\n  appPath?: string;\n  /** worker 落盘的启动结果；status 为 failed 时 message 就是失败原因。 */\n  launchResult?: {\n  status?: string;\n  message?: string;\n  finishedAtMs?: number;\n  debugPort?: number;\n  pid?: number;\n} | null;\n})",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "labels",
+          "ts_type": "{ main: string; fallback: string }",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "multiLaunchInstanceStatus",
+      "file": "src/multi-launch-model.ts",
+      "line": 35,
+      "params": [
+        {
+          "name": "instance",
+          "ts_type": "({\n  instanceId: string;\n  profileId?: string;\n  profileName?: string;\n  label?: string;\n  isMain?: boolean;\n  pid?: number;\n  debugPort?: number;\n  helperPort?: number;\n  status: string;\n  running?: boolean;\n  startedAtMs?: number;\n  startedAt?: string;\n  appPath?: string;\n  /** worker 落盘的启动结果；status 为 failed 时 message 就是失败原因。 */\n  launchResult?: {\n  status?: string;\n  message?: string;\n  finishedAtMs?: number;\n  debugPort?: number;\n  pid?: number;\n} | null;\n})",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "multiLaunchInstanceRunning",
+      "file": "src/multi-launch-model.ts",
+      "line": 39,
+      "params": [
+        {
+          "name": "instance",
+          "ts_type": "({\n  instanceId: string;\n  profileId?: string;\n  profileName?: string;\n  label?: string;\n  isMain?: boolean;\n  pid?: number;\n  debugPort?: number;\n  helperPort?: number;\n  status: string;\n  running?: boolean;\n  startedAtMs?: number;\n  startedAt?: string;\n  appPath?: string;\n  /** worker 落盘的启动结果；status 为 failed 时 message 就是失败原因。 */\n  launchResult?: {\n  status?: string;\n  message?: string;\n  finishedAtMs?: number;\n  debugPort?: number;\n  pid?: number;\n} | null;\n})",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "multiLaunchInstanceVisible",
+      "file": "src/multi-launch-model.ts",
+      "line": 44,
+      "params": [
+        {
+          "name": "instance",
+          "ts_type": "({\n  instanceId: string;\n  profileId?: string;\n  profileName?: string;\n  label?: string;\n  isMain?: boolean;\n  pid?: number;\n  debugPort?: number;\n  helperPort?: number;\n  status: string;\n  running?: boolean;\n  startedAtMs?: number;\n  startedAt?: string;\n  appPath?: string;\n  /** worker 落盘的启动结果；status 为 failed 时 message 就是失败原因。 */\n  launchResult?: {\n  status?: string;\n  message?: string;\n  finishedAtMs?: number;\n  debugPort?: number;\n  pid?: number;\n} | null;\n})",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "multiLaunchInstanceIsMain",
+      "file": "src/multi-launch-model.ts",
+      "line": 55,
+      "params": [
+        {
+          "name": "instance",
+          "ts_type": "({\n  instanceId: string;\n  profileId?: string;\n  profileName?: string;\n  label?: string;\n  isMain?: boolean;\n  pid?: number;\n  debugPort?: number;\n  helperPort?: number;\n  status: string;\n  running?: boolean;\n  startedAtMs?: number;\n  startedAt?: string;\n  appPath?: string;\n  /** worker 落盘的启动结果；status 为 failed 时 message 就是失败原因。 */\n  launchResult?: {\n  status?: string;\n  message?: string;\n  finishedAtMs?: number;\n  debugPort?: number;\n  pid?: number;\n} | null;\n})",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "multiLaunchInstanceCanStop",
+      "file": "src/multi-launch-model.ts",
+      "line": 59,
+      "params": [
+        {
+          "name": "instance",
+          "ts_type": "({\n  instanceId: string;\n  profileId?: string;\n  profileName?: string;\n  label?: string;\n  isMain?: boolean;\n  pid?: number;\n  debugPort?: number;\n  helperPort?: number;\n  status: string;\n  running?: boolean;\n  startedAtMs?: number;\n  startedAt?: string;\n  appPath?: string;\n  /** worker 落盘的启动结果；status 为 failed 时 message 就是失败原因。 */\n  launchResult?: {\n  status?: string;\n  message?: string;\n  finishedAtMs?: number;\n  debugPort?: number;\n  pid?: number;\n} | null;\n})",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "multiLaunchInstanceCanRestart",
+      "file": "src/multi-launch-model.ts",
+      "line": 65,
+      "params": [
+        {
+          "name": "instance",
+          "ts_type": "({\n  instanceId: string;\n  profileId?: string;\n  profileName?: string;\n  label?: string;\n  isMain?: boolean;\n  pid?: number;\n  debugPort?: number;\n  helperPort?: number;\n  status: string;\n  running?: boolean;\n  startedAtMs?: number;\n  startedAt?: string;\n  appPath?: string;\n  /** worker 落盘的启动结果；status 为 failed 时 message 就是失败原因。 */\n  launchResult?: {\n  status?: string;\n  message?: string;\n  finishedAtMs?: number;\n  debugPort?: number;\n  pid?: number;\n} | null;\n})",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "multiLaunchInstanceFailure",
+      "file": "src/multi-launch-model.ts",
+      "line": 76,
+      "params": [
+        {
+          "name": "instance",
+          "ts_type": "({\n  instanceId: string;\n  profileId?: string;\n  profileName?: string;\n  label?: string;\n  isMain?: boolean;\n  pid?: number;\n  debugPort?: number;\n  helperPort?: number;\n  status: string;\n  running?: boolean;\n  startedAtMs?: number;\n  startedAt?: string;\n  appPath?: string;\n  /** worker 落盘的启动结果；status 为 failed 时 message 就是失败原因。 */\n  launchResult?: {\n  status?: string;\n  message?: string;\n  finishedAtMs?: number;\n  debugPort?: number;\n  pid?: number;\n} | null;\n})",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "runningInstancesForProfile",
+      "file": "src/multi-launch-model.ts",
+      "line": 89,
+      "params": [
+        {
+          "name": "instances",
+          "ts_type": "({\n  instanceId: string;\n  profileId?: string;\n  profileName?: string;\n  label?: string;\n  isMain?: boolean;\n  pid?: number;\n  debugPort?: number;\n  helperPort?: number;\n  status: string;\n  running?: boolean;\n  startedAtMs?: number;\n  startedAt?: string;\n  appPath?: string;\n  /** worker 落盘的启动结果；status 为 failed 时 message 就是失败原因。 */\n  launchResult?: {\n  status?: string;\n  message?: string;\n  finishedAtMs?: number;\n  debugPort?: number;\n  pid?: number;\n} | null;\n})[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "profileId",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  instanceId: string;\n  profileId?: string;\n  profileName?: string;\n  label?: string;\n  isMain?: boolean;\n  pid?: number;\n  debugPort?: number;\n  helperPort?: number;\n  status: string;\n  running?: boolean;\n  startedAtMs?: number;\n  startedAt?: string;\n  appPath?: string;\n  /** worker 落盘的启动结果；status 为 failed 时 message 就是失败原因。 */\n  launchResult?: {\n  status?: string;\n  message?: string;\n  finishedAtMs?: number;\n  debugPort?: number;\n  pid?: number;\n} | null;\n})[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

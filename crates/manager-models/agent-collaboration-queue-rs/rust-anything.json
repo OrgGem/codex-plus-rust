@@ -1,0 +1,72 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/agent-collaboration-queue.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "agent-collaboration-queue-rs",
+  "exports": [
+    {
+      "name": "normalizeConcurrency",
+      "file": "src/agent-collaboration-queue.ts",
+      "line": 35,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "max",
+          "ts_type": "unknown",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "number",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "agentQueueState",
+      "file": "src/agent-collaboration-queue.ts",
+      "line": 39,
+      "params": [
+        {
+          "name": "tasks",
+          "ts_type": "{ agentId: string; status: string }[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "agentId",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "maxQueued",
+          "ts_type": "number",
+          "optional": true,
+          "rest": false
+        },
+        {
+          "name": "maxConcurrent",
+          "ts_type": "number",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  /** 该 Agent 未结束的任务数（运行中 + 排队中）。 */\n  active: number;\n  /** 正在运行的任务数。 */\n  running: number;\n  /** 正在排队、尚未启动的任务数。 */\n  queued: number;\n  /** 每个 Agent 最多排队的任务数。 */\n  limit: number;\n  /** 该 Agent 的并发上限。 */\n  concurrency: number;\n  /** 新提交的任务会先排队：运行中的任务已达并发上限，或前面还有排队任务。 */\n  willQueue: boolean;\n  /** 排队已满，新任务会被拒绝。 */\n  full: boolean;\n}",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

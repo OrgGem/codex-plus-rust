@@ -1,0 +1,54 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\scripts",
+  "unit": "provider-editing-i18n-shim.mjs",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "provider-editing-i18n-shim-rs",
+  "exports": [
+    {
+      "name": "t",
+      "file": "provider-editing-i18n-shim.mjs",
+      "line": 2,
+      "params": [
+        {
+          "name": "zh",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "tf",
+      "file": "provider-editing-i18n-shim.mjs",
+      "line": 6,
+      "params": [
+        {
+          "name": "key",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "args",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

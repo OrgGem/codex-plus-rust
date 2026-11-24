@@ -1,0 +1,125 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/dream-skin.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "dream-skin-rs",
+  "exports": [
+    {
+      "name": "defaultDreamSkinColors",
+      "file": "src/dream-skin.ts",
+      "line": 195,
+      "params": [],
+      "returns": "{\n  background: string;\n  panel: string;\n  panelAlt: string;\n  accent: string;\n  accentAlt: string;\n  secondary: string;\n  highlight: string;\n  text: string;\n  muted: string;\n  line: string;\n  [key: string]: unknown;\n}",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "defaultDreamSkinTheme",
+      "file": "src/dream-skin.ts",
+      "line": 210,
+      "params": [],
+      "returns": "({\n  schemaVersion: number;\n  id: string;\n  name: string;\n  stylePreset?: string;\n  brandSubtitle: string;\n  tagline: string;\n  projectPrefix: string;\n  projectLabel: string;\n  statusText: string;\n  quote: string;\n  colors?: {\n  background: string;\n  panel: string;\n  panelAlt: string;\n  accent: string;\n  accentAlt: string;\n  secondary: string;\n  highlight: string;\n  text: string;\n  muted: string;\n  line: string;\n  [key: string]: unknown;\n};\n  appearance?: \"auto\" | \"light\" | \"dark\";\n  art?: {\n    focusX?: number;\n    focusY?: number;\n    safeArea?: \"auto\" | \"left\" | \"right\" | \"center\" | \"none\";\n    taskMode?: \"auto\" | \"ambient\" | \"banner\" | \"off\";\n    [key: string]: unknown;\n  };\n  palette?: {\n    accent?: string;\n    [key: string]: unknown;\n  };\n  promoTitle?: string;\n  promoSub?: string;\n  promoUrl?: string;\n  image?: string;\n  companion?: {\n    dataUrl: string;\n    enabled?: boolean;\n    width?: number;\n    side?: \"auto\" | \"left\" | \"right\";\n    offsetX?: number;\n    offsetY?: number;\n  };\n  [key: string]: unknown;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "resolveDreamSkinStylePreset",
+      "file": "src/dream-skin.ts",
+      "line": 261,
+      "params": [
+        {
+          "name": "id",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "stylePreset",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeDreamSkinTheme",
+      "file": "src/dream-skin.ts",
+      "line": 283,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "Partial<({\n  schemaVersion: number;\n  id: string;\n  name: string;\n  stylePreset?: string;\n  brandSubtitle: string;\n  tagline: string;\n  projectPrefix: string;\n  projectLabel: string;\n  statusText: string;\n  quote: string;\n  colors?: {\n  background: string;\n  panel: string;\n  panelAlt: string;\n  accent: string;\n  accentAlt: string;\n  secondary: string;\n  highlight: string;\n  text: string;\n  muted: string;\n  line: string;\n  [key: string]: unknown;\n};\n  appearance?: \"auto\" | \"light\" | \"dark\";\n  art?: {\n    focusX?: number;\n    focusY?: number;\n    safeArea?: \"auto\" | \"left\" | \"right\" | \"center\" | \"none\";\n    taskMode?: \"auto\" | \"ambient\" | \"banner\" | \"off\";\n    [key: string]: unknown;\n  };\n  palette?: {\n    accent?: string;\n    [key: string]: unknown;\n  };\n  promoTitle?: string;\n  promoSub?: string;\n  promoUrl?: string;\n  image?: string;\n  companion?: {\n    dataUrl: string;\n    enabled?: boolean;\n    width?: number;\n    side?: \"auto\" | \"left\" | \"right\";\n    offsetX?: number;\n    offsetY?: number;\n  };\n  [key: string]: unknown;\n})> | null | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  schemaVersion: number;\n  id: string;\n  name: string;\n  stylePreset?: string;\n  brandSubtitle: string;\n  tagline: string;\n  projectPrefix: string;\n  projectLabel: string;\n  statusText: string;\n  quote: string;\n  colors?: {\n  background: string;\n  panel: string;\n  panelAlt: string;\n  accent: string;\n  accentAlt: string;\n  secondary: string;\n  highlight: string;\n  text: string;\n  muted: string;\n  line: string;\n  [key: string]: unknown;\n};\n  appearance?: \"auto\" | \"light\" | \"dark\";\n  art?: {\n    focusX?: number;\n    focusY?: number;\n    safeArea?: \"auto\" | \"left\" | \"right\" | \"center\" | \"none\";\n    taskMode?: \"auto\" | \"ambient\" | \"banner\" | \"off\";\n    [key: string]: unknown;\n  };\n  palette?: {\n    accent?: string;\n    [key: string]: unknown;\n  };\n  promoTitle?: string;\n  promoSub?: string;\n  promoUrl?: string;\n  image?: string;\n  companion?: {\n    dataUrl: string;\n    enabled?: boolean;\n    width?: number;\n    side?: \"auto\" | \"left\" | \"right\";\n    offsetX?: number;\n    offsetY?: number;\n  };\n  [key: string]: unknown;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "dreamSkinDraftFingerprint",
+      "file": "src/dream-skin.ts",
+      "line": 333,
+      "params": [
+        {
+          "name": "draft",
+          "ts_type": "{\n  config: ({\n  schemaVersion: number;\n  id: string;\n  name: string;\n  stylePreset?: string;\n  brandSubtitle: string;\n  tagline: string;\n  projectPrefix: string;\n  projectLabel: string;\n  statusText: string;\n  quote: string;\n  colors?: {\n  background: string;\n  panel: string;\n  panelAlt: string;\n  accent: string;\n  accentAlt: string;\n  secondary: string;\n  highlight: string;\n  text: string;\n  muted: string;\n  line: string;\n  [key: string]: unknown;\n};\n  appearance?: \"auto\" | \"light\" | \"dark\";\n  art?: {\n    focusX?: number;\n    focusY?: number;\n    safeArea?: \"auto\" | \"left\" | \"right\" | \"center\" | \"none\";\n    taskMode?: \"auto\" | \"ambient\" | \"banner\" | \"off\";\n    [key: string]: unknown;\n  };\n  palette?: {\n    accent?: string;\n    [key: string]: unknown;\n  };\n  promoTitle?: string;\n  promoSub?: string;\n  promoUrl?: string;\n  image?: string;\n  companion?: {\n    dataUrl: string;\n    enabled?: boolean;\n    width?: number;\n    side?: \"auto\" | \"left\" | \"right\";\n    offsetX?: number;\n    offsetY?: number;\n  };\n  [key: string]: unknown;\n});\n  imagePath: string;\n  builtin: boolean;\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "isDreamSkinDraftDirty",
+      "file": "src/dream-skin.ts",
+      "line": 341,
+      "params": [
+        {
+          "name": "saved",
+          "ts_type": "{\n  config: ({\n  schemaVersion: number;\n  id: string;\n  name: string;\n  stylePreset?: string;\n  brandSubtitle: string;\n  tagline: string;\n  projectPrefix: string;\n  projectLabel: string;\n  statusText: string;\n  quote: string;\n  colors?: {\n  background: string;\n  panel: string;\n  panelAlt: string;\n  accent: string;\n  accentAlt: string;\n  secondary: string;\n  highlight: string;\n  text: string;\n  muted: string;\n  line: string;\n  [key: string]: unknown;\n};\n  appearance?: \"auto\" | \"light\" | \"dark\";\n  art?: {\n    focusX?: number;\n    focusY?: number;\n    safeArea?: \"auto\" | \"left\" | \"right\" | \"center\" | \"none\";\n    taskMode?: \"auto\" | \"ambient\" | \"banner\" | \"off\";\n    [key: string]: unknown;\n  };\n  palette?: {\n    accent?: string;\n    [key: string]: unknown;\n  };\n  promoTitle?: string;\n  promoSub?: string;\n  promoUrl?: string;\n  image?: string;\n  companion?: {\n    dataUrl: string;\n    enabled?: boolean;\n    width?: number;\n    side?: \"auto\" | \"left\" | \"right\";\n    offsetX?: number;\n    offsetY?: number;\n  };\n  [key: string]: unknown;\n});\n  imagePath: string;\n  builtin: boolean;\n}",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "draft",
+          "ts_type": "{\n  config: ({\n  schemaVersion: number;\n  id: string;\n  name: string;\n  stylePreset?: string;\n  brandSubtitle: string;\n  tagline: string;\n  projectPrefix: string;\n  projectLabel: string;\n  statusText: string;\n  quote: string;\n  colors?: {\n  background: string;\n  panel: string;\n  panelAlt: string;\n  accent: string;\n  accentAlt: string;\n  secondary: string;\n  highlight: string;\n  text: string;\n  muted: string;\n  line: string;\n  [key: string]: unknown;\n};\n  appearance?: \"auto\" | \"light\" | \"dark\";\n  art?: {\n    focusX?: number;\n    focusY?: number;\n    safeArea?: \"auto\" | \"left\" | \"right\" | \"center\" | \"none\";\n    taskMode?: \"auto\" | \"ambient\" | \"banner\" | \"off\";\n    [key: string]: unknown;\n  };\n  palette?: {\n    accent?: string;\n    [key: string]: unknown;\n  };\n  promoTitle?: string;\n  promoSub?: string;\n  promoUrl?: string;\n  image?: string;\n  companion?: {\n    dataUrl: string;\n    enabled?: boolean;\n    width?: number;\n    side?: \"auto\" | \"left\" | \"right\";\n    offsetX?: number;\n    offsetY?: number;\n  };\n  [key: string]: unknown;\n});\n  imagePath: string;\n  builtin: boolean;\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "runExclusiveDreamSkinInstall",
+      "file": "src/dream-skin.ts",
+      "line": 348,
+      "reason": "async-callback"
+    }
+  ]
+}

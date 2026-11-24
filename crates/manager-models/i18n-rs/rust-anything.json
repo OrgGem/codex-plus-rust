@@ -1,0 +1,101 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/i18n.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "i18n-rs",
+  "exports": [
+    {
+      "name": "getLanguage",
+      "file": "src/i18n.ts",
+      "line": 33,
+      "params": [],
+      "returns": "(\"zh\" | \"en\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "t",
+      "file": "src/i18n.ts",
+      "line": 38,
+      "params": [
+        {
+          "name": "zh",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "tf",
+      "file": "src/i18n.ts",
+      "line": 54,
+      "params": [
+        {
+          "name": "key",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "args",
+          "ts_type": "Array<string | number>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "setLanguage",
+      "file": "src/i18n.ts",
+      "line": 63,
+      "params": [
+        {
+          "name": "language",
+          "ts_type": "(\"zh\" | \"en\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "void",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "toggleLanguage",
+      "file": "src/i18n.ts",
+      "line": 75,
+      "params": [],
+      "returns": "void",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "subscribeLanguage",
+      "file": "src/i18n.ts",
+      "line": 28,
+      "reason": "js-callback"
+    }
+  ]
+}

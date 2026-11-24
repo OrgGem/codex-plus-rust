@@ -1,0 +1,5162 @@
+{
+  "schema": "rust-anything/analyze@1",
+  "language": "ts",
+  "summary": {
+    "packages": 1,
+    "source_files": 56,
+    "test_files": 0,
+    "ui_files": 0,
+    "loc": 38943,
+    "units": 56,
+    "ready": 37,
+    "caution": 16,
+    "blocked": 3,
+    "keep": 0,
+    "parse_errors": 4
+  },
+  "packages": [
+    {
+      "name": "renderer-inject",
+      "dir": "",
+      "order": 1,
+      "runtime": "portable",
+      "workspace_deps": [],
+      "test_files": 0,
+      "units": [
+        "00-prelude.js",
+        "01-registry.js",
+        "10-style.js",
+        "20-menu.js",
+        "30-service-tier.js",
+        "31-config-read-deadline.js",
+        "32-fork-readiness-fallback.js",
+        "32-thread-goal.js",
+        "33-offline-auto-review.js",
+        "34-statsig-overrides.js",
+        "40-backend-settings.js",
+        "41-extension-detail.js",
+        "41-extension-sources.js",
+        "42-provider-editing.generated.js",
+        "43-provider-page.js",
+        "44-provider-gateway.js",
+        "45-remote-control-page.js",
+        "45-weixin-connect-page.js",
+        "46-service-settings.js",
+        "47-task-board-page.js",
+        "50-navigation.js",
+        "60-plugin-marketplace.js",
+        "61-plugin-market-ui.js",
+        "62-plugin-market-adapter.js",
+        "70-model-catalog.js",
+        "71-model-picker-groups.js",
+        "80-session-share.js",
+        "81-capacity-auto-retry.js",
+        "82-boot-shell-recovery.js",
+        "85-history-turn-recovery.js",
+        "85-side-chat-save.js",
+        "85-turn-rewind-controller.js",
+        "85-weixin-desktop-sync.js",
+        "86-turn-rewind-menu.js",
+        "90-action-groups.js",
+        "91-extension-api.js",
+        "91-extension-rpc.js",
+        "91-extension-runtime.js",
+        "92-extension-extras.js",
+        "92-extension-host.js",
+        "92-extension-slots.js",
+        "92-extension-views.js",
+        "93-dictation.js",
+        "95-conversation-view.js",
+        "96-builtin-extensions.js",
+        "96-context-tuning.js",
+        "96-dsh-client.js",
+        "96-feature-lab.js",
+        "96-hooks-editor.js",
+        "96-paste-fix.js",
+        "96-prompt-args.js",
+        "96-shell-command.js",
+        "98-avatar-overlay-layout.js",
+        "98-scan-schedule.js",
+        "99-startup.js",
+        "99-tail.js"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "00-prelude.js",
+      "package": "renderer-inject",
+      "files": [
+        "00-prelude.js"
+      ],
+      "loc": 538,
+      "wave": 0,
+      "readiness": 87,
+      "status": "caution",
+      "bridge": "wasm-bindgen",
+      "platforms": [],
+      "risks": [],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 53,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "1 parse errors: results for this unit are partial.",
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "01-registry.js",
+      "package": "renderer-inject",
+      "files": [
+        "01-registry.js"
+      ],
+      "loc": 181,
+      "wave": 0,
+      "readiness": 84,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 17,
+          "samples": [
+            "01-registry.js:19",
+            "01-registry.js:20",
+            "01-registry.js:21"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 8,
+          "samples": [
+            "01-registry.js:64",
+            "01-registry.js:98",
+            "01-registry.js:101"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "01-registry.js:142",
+            "01-registry.js:189"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 52,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "10-style.js",
+      "package": "renderer-inject",
+      "files": [
+        "10-style.js"
+      ],
+      "loc": 3510,
+      "wave": 0,
+      "readiness": 0,
+      "status": "caution",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 11,
+          "samples": [
+            "10-style.js:2554",
+            "10-style.js:2771",
+            "10-style.js:2773"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 6,
+          "samples": [
+            "10-style.js:2629",
+            "10-style.js:2629",
+            "10-style.js:2633"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 10,
+          "samples": [
+            "10-style.js:2706",
+            "10-style.js:2847",
+            "10-style.js:2862"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 9,
+          "samples": [
+            "10-style.js:2557",
+            "10-style.js:3086",
+            "10-style.js:3087"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "10-style.js:2707",
+            "10-style.js:2761",
+            "10-style.js:3263"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.7,
+      "priority": 6,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "20-menu.js",
+      "package": "renderer-inject",
+      "files": [
+        "20-menu.js"
+      ],
+      "loc": 552,
+      "wave": 0,
+      "readiness": 41,
+      "status": "blocked",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "dynamic-regex",
+          "severity": "high",
+          "count": 3,
+          "samples": [
+            "20-menu.js:133",
+            "20-menu.js:134",
+            "20-menu.js:135"
+          ]
+        },
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "20-menu.js:235",
+            "20-menu.js:254"
+          ]
+        },
+        {
+          "risk": "dynamic-code",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "20-menu.js:187",
+            "20-menu.js:282"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 32,
+          "samples": [
+            "20-menu.js:115",
+            "20-menu.js:124",
+            "20-menu.js:129"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 14,
+          "samples": [
+            "20-menu.js:79",
+            "20-menu.js:83",
+            "20-menu.js:86"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 23,
+          "samples": [
+            "20-menu.js:138",
+            "20-menu.js:182",
+            "20-menu.js:186"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "20-menu.js:121",
+            "20-menu.js:125",
+            "20-menu.js:181"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 3.1,
+      "priority": 37,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Uses dynamic code (eval, new Function or computed imports).",
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "30-service-tier.js",
+      "package": "renderer-inject",
+      "files": [
+        "30-service-tier.js"
+      ],
+      "loc": 1623,
+      "wave": 0,
+      "readiness": 15,
+      "status": "caution",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "30-service-tier.js:48",
+            "30-service-tier.js:1414"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 111,
+          "samples": [
+            "30-service-tier.js:131",
+            "30-service-tier.js:142",
+            "30-service-tier.js:157"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 10,
+          "samples": [
+            "30-service-tier.js:289",
+            "30-service-tier.js:580",
+            "30-service-tier.js:667"
+          ]
+        },
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 4,
+          "samples": [
+            "30-service-tier.js:813",
+            "30-service-tier.js:814",
+            "30-service-tier.js:1667"
+          ]
+        },
+        {
+          "risk": "dynamic-typing",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "30-service-tier.js:1625",
+            "30-service-tier.js:1625"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 75,
+          "samples": [
+            "30-service-tier.js:140",
+            "30-service-tier.js:170",
+            "30-service-tier.js:181"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 6,
+          "samples": [
+            "30-service-tier.js:136",
+            "30-service-tier.js:171",
+            "30-service-tier.js:177"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "30-service-tier.js:510",
+            "30-service-tier.js:517",
+            "30-service-tier.js:774"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.7,
+      "priority": 14,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "31-config-read-deadline.js",
+      "package": "renderer-inject",
+      "files": [
+        "31-config-read-deadline.js"
+      ],
+      "loc": 66,
+      "wave": 0,
+      "readiness": 93,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "31-config-read-deadline.js:5"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "31-config-read-deadline.js:36"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "31-config-read-deadline.js:32"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 55,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "32-fork-readiness-fallback.js",
+      "package": "renderer-inject",
+      "files": [
+        "32-fork-readiness-fallback.js"
+      ],
+      "loc": 128,
+      "wave": 0,
+      "readiness": 84,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 4,
+          "samples": [
+            "32-fork-readiness-fallback.js:13",
+            "32-fork-readiness-fallback.js:27",
+            "32-fork-readiness-fallback.js:53"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "32-fork-readiness-fallback.js:8",
+            "32-fork-readiness-fallback.js:64"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "32-fork-readiness-fallback.js:61",
+            "32-fork-readiness-fallback.js:62"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "32-fork-readiness-fallback.js:21",
+            "32-fork-readiness-fallback.js:35",
+            "32-fork-readiness-fallback.js:106"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.6,
+      "priority": 55,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "32-thread-goal.js",
+      "package": "renderer-inject",
+      "files": [
+        "32-thread-goal.js"
+      ],
+      "loc": 17,
+      "wave": 0,
+      "readiness": 98,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "32-thread-goal.js:5",
+            "32-thread-goal.js:9"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 51,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "33-offline-auto-review.js",
+      "package": "renderer-inject",
+      "files": [
+        "33-offline-auto-review.js"
+      ],
+      "loc": 152,
+      "wave": 0,
+      "readiness": 81,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "33-offline-auto-review.js:28",
+            "33-offline-auto-review.js:51"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "33-offline-auto-review.js:27",
+            "33-offline-auto-review.js:39",
+            "33-offline-auto-review.js:108"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "33-offline-auto-review.js:70",
+            "33-offline-auto-review.js:90",
+            "33-offline-auto-review.js:148"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "33-offline-auto-review.js:51",
+            "33-offline-auto-review.js:54"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "33-offline-auto-review.js:48",
+            "33-offline-auto-review.js:135"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "33-offline-auto-review.js:126"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 3.9,
+      "priority": 58,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "34-statsig-overrides.js",
+      "package": "renderer-inject",
+      "files": [
+        "34-statsig-overrides.js"
+      ],
+      "loc": 322,
+      "wave": 0,
+      "readiness": 74,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "34-statsig-overrides.js:55"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 8,
+          "samples": [
+            "34-statsig-overrides.js:35",
+            "34-statsig-overrides.js:39",
+            "34-statsig-overrides.js:54"
+          ]
+        },
+        {
+          "risk": "dynamic-typing",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "34-statsig-overrides.js:171",
+            "34-statsig-overrides.js:183"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 7,
+          "samples": [
+            "34-statsig-overrides.js:125",
+            "34-statsig-overrides.js:164",
+            "34-statsig-overrides.js:170"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "34-statsig-overrides.js:294"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "34-statsig-overrides.js:110"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.9,
+      "priority": 51,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "40-backend-settings.js",
+      "package": "renderer-inject",
+      "files": [
+        "40-backend-settings.js"
+      ],
+      "loc": 2798,
+      "wave": 0,
+      "readiness": 0,
+      "status": "caution",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 6,
+          "samples": [
+            "40-backend-settings.js:438",
+            "40-backend-settings.js:937",
+            "40-backend-settings.js:1105"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 5,
+          "samples": [
+            "40-backend-settings.js:1118",
+            "40-backend-settings.js:1154",
+            "40-backend-settings.js:1968"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 50,
+          "samples": [
+            "40-backend-settings.js:1",
+            "40-backend-settings.js:2",
+            "40-backend-settings.js:108"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 12,
+          "samples": [
+            "40-backend-settings.js:29",
+            "40-backend-settings.js:29",
+            "40-backend-settings.js:29"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 14,
+          "samples": [
+            "40-backend-settings.js:34",
+            "40-backend-settings.js:111",
+            "40-backend-settings.js:145"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 6,
+          "samples": [
+            "40-backend-settings.js:226",
+            "40-backend-settings.js:248",
+            "40-backend-settings.js:1144"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "40-backend-settings.js:1409",
+            "40-backend-settings.js:1410",
+            "40-backend-settings.js:2840"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "40-backend-settings.js:35",
+            "40-backend-settings.js:36"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.5,
+      "priority": 6,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "41-extension-detail.js",
+      "package": "renderer-inject",
+      "files": [
+        "41-extension-detail.js"
+      ],
+      "loc": 533,
+      "wave": 0,
+      "readiness": 41,
+      "status": "caution",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 12,
+          "samples": [
+            "41-extension-detail.js:275",
+            "41-extension-detail.js:377",
+            "41-extension-detail.js:383"
+          ]
+        },
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 7,
+          "samples": [
+            "41-extension-detail.js:268",
+            "41-extension-detail.js:269",
+            "41-extension-detail.js:378"
+          ]
+        },
+        {
+          "risk": "dynamic-regex",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "41-extension-detail.js:441"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 4,
+          "samples": [
+            "41-extension-detail.js:23",
+            "41-extension-detail.js:29",
+            "41-extension-detail.js:167"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "41-extension-detail.js:8",
+            "41-extension-detail.js:71",
+            "41-extension-detail.js:367"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 7,
+          "samples": [
+            "41-extension-detail.js:28",
+            "41-extension-detail.js:149",
+            "41-extension-detail.js:154"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "41-extension-detail.js:111",
+            "41-extension-detail.js:112",
+            "41-extension-detail.js:123"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "41-extension-detail.js:476"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 3.6,
+      "priority": 38,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "41-extension-sources.js",
+      "package": "renderer-inject",
+      "files": [
+        "41-extension-sources.js"
+      ],
+      "loc": 862,
+      "wave": 0,
+      "readiness": 42,
+      "status": "caution",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 9,
+          "samples": [
+            "41-extension-sources.js:63",
+            "41-extension-sources.js:65",
+            "41-extension-sources.js:80"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "41-extension-sources.js:211"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 34,
+          "samples": [
+            "41-extension-sources.js:30",
+            "41-extension-sources.js:31",
+            "41-extension-sources.js:239"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "41-extension-sources.js:18"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 10,
+          "samples": [
+            "41-extension-sources.js:34",
+            "41-extension-sources.js:245",
+            "41-extension-sources.js:259"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "41-extension-sources.js:58",
+            "41-extension-sources.js:58"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "41-extension-sources.js:573",
+            "41-extension-sources.js:862"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "41-extension-sources.js:390"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.0,
+      "priority": 28,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "42-provider-editing.generated.js",
+      "package": "renderer-inject",
+      "files": [
+        "42-provider-editing.generated.js"
+      ],
+      "loc": 3209,
+      "wave": 0,
+      "readiness": 0,
+      "status": "caution",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 57,
+          "samples": [
+            "42-provider-editing.generated.js:219",
+            "42-provider-editing.generated.js:233",
+            "42-provider-editing.generated.js:358"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 5,
+          "samples": [
+            "42-provider-editing.generated.js:567",
+            "42-provider-editing.generated.js:842",
+            "42-provider-editing.generated.js:2911"
+          ]
+        },
+        {
+          "risk": "dynamic-regex",
+          "severity": "high",
+          "count": 3,
+          "samples": [
+            "42-provider-editing.generated.js:356",
+            "42-provider-editing.generated.js:617",
+            "42-provider-editing.generated.js:2550"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 28,
+          "samples": [
+            "42-provider-editing.generated.js:9",
+            "42-provider-editing.generated.js:161",
+            "42-provider-editing.generated.js:246"
+          ]
+        },
+        {
+          "risk": "dynamic-typing",
+          "severity": "medium",
+          "count": 23,
+          "samples": [
+            "42-provider-editing.generated.js:182",
+            "42-provider-editing.generated.js:194",
+            "42-provider-editing.generated.js:493"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 13,
+          "samples": [
+            "42-provider-editing.generated.js:176",
+            "42-provider-editing.generated.js:1392",
+            "42-provider-editing.generated.js:1518"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 11,
+          "samples": [
+            "42-provider-editing.generated.js:138",
+            "42-provider-editing.generated.js:295",
+            "42-provider-editing.generated.js:431"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 9,
+          "samples": [
+            "42-provider-editing.generated.js:1086",
+            "42-provider-editing.generated.js:1128",
+            "42-provider-editing.generated.js:1192"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 8,
+          "samples": [
+            "42-provider-editing.generated.js:137",
+            "42-provider-editing.generated.js:294",
+            "42-provider-editing.generated.js:437"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 3.2,
+      "priority": 11,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "43-provider-page.js",
+      "package": "renderer-inject",
+      "files": [
+        "43-provider-page.js"
+      ],
+      "loc": 965,
+      "wave": 0,
+      "readiness": 44,
+      "status": "caution",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 6,
+          "samples": [
+            "43-provider-page.js:324",
+            "43-provider-page.js:395",
+            "43-provider-page.js:548"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 28,
+          "samples": [
+            "43-provider-page.js:135",
+            "43-provider-page.js:141",
+            "43-provider-page.js:159"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 5,
+          "samples": [
+            "43-provider-page.js:109",
+            "43-provider-page.js:222",
+            "43-provider-page.js:223"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 8,
+          "samples": [
+            "43-provider-page.js:44",
+            "43-provider-page.js:44",
+            "43-provider-page.js:231"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "43-provider-page.js:364",
+            "43-provider-page.js:509"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "43-provider-page.js:628"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "43-provider-page.js:396"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.7,
+      "priority": 28,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "44-provider-gateway.js",
+      "package": "renderer-inject",
+      "files": [
+        "44-provider-gateway.js"
+      ],
+      "loc": 504,
+      "wave": 0,
+      "readiness": 66,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "44-provider-gateway.js:171",
+            "44-provider-gateway.js:383"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 49,
+          "samples": [
+            "44-provider-gateway.js:88",
+            "44-provider-gateway.js:94",
+            "44-provider-gateway.js:105"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "44-provider-gateway.js:147"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "44-provider-gateway.js:82"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.4,
+      "priority": 44,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "45-remote-control-page.js",
+      "package": "renderer-inject",
+      "files": [
+        "45-remote-control-page.js"
+      ],
+      "loc": 304,
+      "wave": 0,
+      "readiness": 74,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "45-remote-control-page.js:81"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 13,
+          "samples": [
+            "45-remote-control-page.js:30",
+            "45-remote-control-page.js:31",
+            "45-remote-control-page.js:52"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "45-remote-control-page.js:99"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "45-remote-control-page.js:32",
+            "45-remote-control-page.js:57",
+            "45-remote-control-page.js:61"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "45-remote-control-page.js:263",
+            "45-remote-control-page.js:265"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "45-remote-control-page.js:72",
+            "45-remote-control-page.js:80"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "45-remote-control-page.js:80"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.3,
+      "priority": 47,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "45-weixin-connect-page.js",
+      "package": "renderer-inject",
+      "files": [
+        "45-weixin-connect-page.js"
+      ],
+      "loc": 572,
+      "wave": 0,
+      "readiness": 66,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "45-weixin-connect-page.js:224"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 21,
+          "samples": [
+            "45-weixin-connect-page.js:38",
+            "45-weixin-connect-page.js:39",
+            "45-weixin-connect-page.js:55"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "45-weixin-connect-page.js:300"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 10,
+          "samples": [
+            "45-weixin-connect-page.js:40",
+            "45-weixin-connect-page.js:60",
+            "45-weixin-connect-page.js:68"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "45-weixin-connect-page.js:176",
+            "45-weixin-connect-page.js:183",
+            "45-weixin-connect-page.js:536"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.3,
+      "priority": 44,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "46-service-settings.js",
+      "package": "renderer-inject",
+      "files": [
+        "46-service-settings.js"
+      ],
+      "loc": 596,
+      "wave": 0,
+      "readiness": 66,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "46-service-settings.js:271"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 15,
+          "samples": [
+            "46-service-settings.js:278",
+            "46-service-settings.js:284",
+            "46-service-settings.js:338"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "46-service-settings.js:62",
+            "46-service-settings.js:220",
+            "46-service-settings.js:431"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 7,
+          "samples": [
+            "46-service-settings.js:69",
+            "46-service-settings.js:283",
+            "46-service-settings.js:361"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "46-service-settings.js:447"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.5,
+      "priority": 44,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "47-task-board-page.js",
+      "package": "renderer-inject",
+      "files": [
+        "47-task-board-page.js"
+      ],
+      "loc": 831,
+      "wave": 0,
+      "readiness": 53,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 4,
+          "samples": [
+            "47-task-board-page.js:102",
+            "47-task-board-page.js:146",
+            "47-task-board-page.js:256"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 15,
+          "samples": [
+            "47-task-board-page.js:169",
+            "47-task-board-page.js:170",
+            "47-task-board-page.js:176"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "47-task-board-page.js:122",
+            "47-task-board-page.js:124",
+            "47-task-board-page.js:348"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "47-task-board-page.js:171",
+            "47-task-board-page.js:178",
+            "47-task-board-page.js:185"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "47-task-board-page.js:768",
+            "47-task-board-page.js:768"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "47-task-board-page.js:82",
+            "47-task-board-page.js:459"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.7,
+      "priority": 33,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "50-navigation.js",
+      "package": "renderer-inject",
+      "files": [
+        "50-navigation.js"
+      ],
+      "loc": 180,
+      "wave": 0,
+      "readiness": 83,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "50-navigation.js:162",
+            "50-navigation.js:170"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 4,
+          "samples": [
+            "50-navigation.js:17",
+            "50-navigation.js:21",
+            "50-navigation.js:47"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "50-navigation.js:149"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 52,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "60-plugin-marketplace.js",
+      "package": "renderer-inject",
+      "files": [
+        "60-plugin-marketplace.js"
+      ],
+      "loc": 1919,
+      "wave": 0,
+      "readiness": 0,
+      "status": "caution",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 6,
+          "samples": [
+            "60-plugin-marketplace.js:70",
+            "60-plugin-marketplace.js:706",
+            "60-plugin-marketplace.js:900"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 3,
+          "samples": [
+            "60-plugin-marketplace.js:6",
+            "60-plugin-marketplace.js:686",
+            "60-plugin-marketplace.js:1060"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 38,
+          "samples": [
+            "60-plugin-marketplace.js:207",
+            "60-plugin-marketplace.js:210",
+            "60-plugin-marketplace.js:228"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 19,
+          "samples": [
+            "60-plugin-marketplace.js:64",
+            "60-plugin-marketplace.js:276",
+            "60-plugin-marketplace.js:279"
+          ]
+        },
+        {
+          "risk": "dynamic-typing",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "60-plugin-marketplace.js:866",
+            "60-plugin-marketplace.js:866"
+          ]
+        },
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "60-plugin-marketplace.js:23",
+            "60-plugin-marketplace.js:798"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 33,
+          "samples": [
+            "60-plugin-marketplace.js:81",
+            "60-plugin-marketplace.js:227",
+            "60-plugin-marketplace.js:248"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 12,
+          "samples": [
+            "60-plugin-marketplace.js:161",
+            "60-plugin-marketplace.js:177",
+            "60-plugin-marketplace.js:609"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 11,
+          "samples": [
+            "60-plugin-marketplace.js:265",
+            "60-plugin-marketplace.js:297",
+            "60-plugin-marketplace.js:344"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.2,
+      "priority": 7,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "1 parse errors: results for this unit are partial.",
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "61-plugin-market-ui.js",
+      "package": "renderer-inject",
+      "files": [
+        "61-plugin-market-ui.js"
+      ],
+      "loc": 287,
+      "wave": 0,
+      "readiness": 71,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 5,
+          "samples": [
+            "61-plugin-market-ui.js:58",
+            "61-plugin-market-ui.js:96",
+            "61-plugin-market-ui.js:297"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 6,
+          "samples": [
+            "61-plugin-market-ui.js:106",
+            "61-plugin-market-ui.js:118",
+            "61-plugin-market-ui.js:159"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "61-plugin-market-ui.js:11",
+            "61-plugin-market-ui.js:295"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "61-plugin-market-ui.js:117",
+            "61-plugin-market-ui.js:164",
+            "61-plugin-market-ui.js:197"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "61-plugin-market-ui.js:45"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.7,
+      "priority": 49,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "62-plugin-market-adapter.js",
+      "package": "renderer-inject",
+      "files": [
+        "62-plugin-market-adapter.js"
+      ],
+      "loc": 457,
+      "wave": 0,
+      "readiness": 48,
+      "status": "caution",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 3,
+          "samples": [
+            "62-plugin-market-adapter.js:32",
+            "62-plugin-market-adapter.js:35",
+            "62-plugin-market-adapter.js:187"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "62-plugin-market-adapter.js:468"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 30,
+          "samples": [
+            "62-plugin-market-adapter.js:70",
+            "62-plugin-market-adapter.js:73",
+            "62-plugin-market-adapter.js:89"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 8,
+          "samples": [
+            "62-plugin-market-adapter.js:8",
+            "62-plugin-market-adapter.js:9",
+            "62-plugin-market-adapter.js:9"
+          ]
+        },
+        {
+          "risk": "dynamic-typing",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "62-plugin-market-adapter.js:375"
+          ]
+        },
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "62-plugin-market-adapter.js:8"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 22,
+          "samples": [
+            "62-plugin-market-adapter.js:72",
+            "62-plugin-market-adapter.js:79",
+            "62-plugin-market-adapter.js:84"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 10,
+          "samples": [
+            "62-plugin-market-adapter.js:94",
+            "62-plugin-market-adapter.js:94",
+            "62-plugin-market-adapter.js:96"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "62-plugin-market-adapter.js:91",
+            "62-plugin-market-adapter.js:103",
+            "62-plugin-market-adapter.js:239"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.5,
+      "priority": 37,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "70-model-catalog.js",
+      "package": "renderer-inject",
+      "files": [
+        "70-model-catalog.js"
+      ],
+      "loc": 1643,
+      "wave": 0,
+      "readiness": 3,
+      "status": "caution",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 9,
+          "samples": [
+            "70-model-catalog.js:856",
+            "70-model-catalog.js:1289",
+            "70-model-catalog.js:1291"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "70-model-catalog.js:373"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 59,
+          "samples": [
+            "70-model-catalog.js:1",
+            "70-model-catalog.js:2",
+            "70-model-catalog.js:197"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 20,
+          "samples": [
+            "70-model-catalog.js:20",
+            "70-model-catalog.js:38",
+            "70-model-catalog.js:271"
+          ]
+        },
+        {
+          "risk": "dynamic-typing",
+          "severity": "medium",
+          "count": 13,
+          "samples": [
+            "70-model-catalog.js:700",
+            "70-model-catalog.js:700",
+            "70-model-catalog.js:773"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 26,
+          "samples": [
+            "70-model-catalog.js:196",
+            "70-model-catalog.js:245",
+            "70-model-catalog.js:248"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 13,
+          "samples": [
+            "70-model-catalog.js:138",
+            "70-model-catalog.js:153",
+            "70-model-catalog.js:158"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 10,
+          "samples": [
+            "70-model-catalog.js:81",
+            "70-model-catalog.js:167",
+            "70-model-catalog.js:212"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.6,
+      "priority": 10,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "1 parse errors: results for this unit are partial.",
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "71-model-picker-groups.js",
+      "package": "renderer-inject",
+      "files": [
+        "71-model-picker-groups.js"
+      ],
+      "loc": 2243,
+      "wave": 0,
+      "readiness": 0,
+      "status": "caution",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 17,
+          "samples": [
+            "71-model-picker-groups.js:592",
+            "71-model-picker-groups.js:593",
+            "71-model-picker-groups.js:714"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 7,
+          "samples": [
+            "71-model-picker-groups.js:1210",
+            "71-model-picker-groups.js:1211",
+            "71-model-picker-groups.js:1213"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 33,
+          "samples": [
+            "71-model-picker-groups.js:81",
+            "71-model-picker-groups.js:83",
+            "71-model-picker-groups.js:180"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "71-model-picker-groups.js:517",
+            "71-model-picker-groups.js:542",
+            "71-model-picker-groups.js:2197"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 11,
+          "samples": [
+            "71-model-picker-groups.js:172",
+            "71-model-picker-groups.js:198",
+            "71-model-picker-groups.js:220"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 9,
+          "samples": [
+            "71-model-picker-groups.js:174",
+            "71-model-picker-groups.js:207",
+            "71-model-picker-groups.js:241"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "71-model-picker-groups.js:1174",
+            "71-model-picker-groups.js:1176",
+            "71-model-picker-groups.js:1259"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "71-model-picker-groups.js:511",
+            "71-model-picker-groups.js:516",
+            "71-model-picker-groups.js:534"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.1,
+      "priority": 9,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "80-session-share.js",
+      "package": "renderer-inject",
+      "files": [
+        "80-session-share.js"
+      ],
+      "loc": 625,
+      "wave": 0,
+      "readiness": 68,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 17,
+          "samples": [
+            "80-session-share.js:25",
+            "80-session-share.js:27",
+            "80-session-share.js:38"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 5,
+          "samples": [
+            "80-session-share.js:28",
+            "80-session-share.js:226",
+            "80-session-share.js:252"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "80-session-share.js:26",
+            "80-session-share.js:30",
+            "80-session-share.js:196"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "80-session-share.js:631"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.4,
+      "priority": 44,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "81-capacity-auto-retry.js",
+      "package": "renderer-inject",
+      "files": [
+        "81-capacity-auto-retry.js"
+      ],
+      "loc": 334,
+      "wave": 0,
+      "readiness": 88,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "81-capacity-auto-retry.js:222",
+            "81-capacity-auto-retry.js:223",
+            "81-capacity-auto-retry.js:306"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "81-capacity-auto-retry.js:58",
+            "81-capacity-auto-retry.js:314"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "81-capacity-auto-retry.js:76",
+            "81-capacity-auto-retry.js:82"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.9,
+      "priority": 56,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "82-boot-shell-recovery.js",
+      "package": "renderer-inject",
+      "files": [
+        "82-boot-shell-recovery.js"
+      ],
+      "loc": 80,
+      "wave": 0,
+      "readiness": 95,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "82-boot-shell-recovery.js:49",
+            "82-boot-shell-recovery.js:62",
+            "82-boot-shell-recovery.js:68"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "82-boot-shell-recovery.js:47",
+            "82-boot-shell-recovery.js:71"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 58,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "85-history-turn-recovery.js",
+      "package": "renderer-inject",
+      "files": [
+        "85-history-turn-recovery.js"
+      ],
+      "loc": 289,
+      "wave": 0,
+      "readiness": 62,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 3,
+          "samples": [
+            "85-history-turn-recovery.js:34",
+            "85-history-turn-recovery.js:38",
+            "85-history-turn-recovery.js:250"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "85-history-turn-recovery.js:33"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 11,
+          "samples": [
+            "85-history-turn-recovery.js:50",
+            "85-history-turn-recovery.js:51",
+            "85-history-turn-recovery.js:53"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 8,
+          "samples": [
+            "85-history-turn-recovery.js:8",
+            "85-history-turn-recovery.js:100",
+            "85-history-turn-recovery.js:141"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "85-history-turn-recovery.js:58",
+            "85-history-turn-recovery.js:82",
+            "85-history-turn-recovery.js:152"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "85-history-turn-recovery.js:154",
+            "85-history-turn-recovery.js:218",
+            "85-history-turn-recovery.js:266"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "85-history-turn-recovery.js:268",
+            "85-history-turn-recovery.js:283"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 5.5,
+      "priority": 52,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "85-side-chat-save.js",
+      "package": "renderer-inject",
+      "files": [
+        "85-side-chat-save.js"
+      ],
+      "loc": 329,
+      "wave": 0,
+      "readiness": 57,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "85-side-chat-save.js:194",
+            "85-side-chat-save.js:303"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "85-side-chat-save.js:280"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 29,
+          "samples": [
+            "85-side-chat-save.js:12",
+            "85-side-chat-save.js:13",
+            "85-side-chat-save.js:33"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 6,
+          "samples": [
+            "85-side-chat-save.js:3",
+            "85-side-chat-save.js:68",
+            "85-side-chat-save.js:91"
+          ]
+        },
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "85-side-chat-save.js:108"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 21,
+          "samples": [
+            "85-side-chat-save.js:15",
+            "85-side-chat-save.js:42",
+            "85-side-chat-save.js:59"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "85-side-chat-save.js:130",
+            "85-side-chat-save.js:243",
+            "85-side-chat-save.js:243"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "85-side-chat-save.js:249",
+            "85-side-chat-save.js:250"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 3.6,
+      "priority": 46,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "85-turn-rewind-controller.js",
+      "package": "renderer-inject",
+      "files": [
+        "85-turn-rewind-controller.js"
+      ],
+      "loc": 258,
+      "wave": 0,
+      "readiness": 62,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 5,
+          "samples": [
+            "85-turn-rewind-controller.js:22",
+            "85-turn-rewind-controller.js:150",
+            "85-turn-rewind-controller.js:154"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 32,
+          "samples": [
+            "85-turn-rewind-controller.js:32",
+            "85-turn-rewind-controller.js:33",
+            "85-turn-rewind-controller.js:40"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "85-turn-rewind-controller.js:4",
+            "85-turn-rewind-controller.js:5"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 27,
+          "samples": [
+            "85-turn-rewind-controller.js:21",
+            "85-turn-rewind-controller.js:25",
+            "85-turn-rewind-controller.js:42"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 8,
+          "samples": [
+            "85-turn-rewind-controller.js:22",
+            "85-turn-rewind-controller.js:30",
+            "85-turn-rewind-controller.js:45"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "85-turn-rewind-controller.js:125",
+            "85-turn-rewind-controller.js:221"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.7,
+      "priority": 47,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "85-weixin-desktop-sync.js",
+      "package": "renderer-inject",
+      "files": [
+        "85-weixin-desktop-sync.js"
+      ],
+      "loc": 111,
+      "wave": 0,
+      "readiness": 73,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "85-weixin-desktop-sync.js:23"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 17,
+          "samples": [
+            "85-weixin-desktop-sync.js:8",
+            "85-weixin-desktop-sync.js:19",
+            "85-weixin-desktop-sync.js:20"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 8,
+          "samples": [
+            "85-weixin-desktop-sync.js:4",
+            "85-weixin-desktop-sync.js:6",
+            "85-weixin-desktop-sync.js:22"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 9,
+          "samples": [
+            "85-weixin-desktop-sync.js:14",
+            "85-weixin-desktop-sync.js:24",
+            "85-weixin-desktop-sync.js:31"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "85-weixin-desktop-sync.js:46",
+            "85-weixin-desktop-sync.js:102",
+            "85-weixin-desktop-sync.js:108"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "85-weixin-desktop-sync.js:88"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 3.6,
+      "priority": 54,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "86-turn-rewind-menu.js",
+      "package": "renderer-inject",
+      "files": [
+        "86-turn-rewind-menu.js"
+      ],
+      "loc": 305,
+      "wave": 0,
+      "readiness": 65,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "86-turn-rewind-menu.js:105"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "86-turn-rewind-menu.js:40"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 8,
+          "samples": [
+            "86-turn-rewind-menu.js:175",
+            "86-turn-rewind-menu.js:177",
+            "86-turn-rewind-menu.js:180"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 6,
+          "samples": [
+            "86-turn-rewind-menu.js:16",
+            "86-turn-rewind-menu.js:76",
+            "86-turn-rewind-menu.js:77"
+          ]
+        },
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "86-turn-rewind-menu.js:199"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 12,
+          "samples": [
+            "86-turn-rewind-menu.js:49",
+            "86-turn-rewind-menu.js:93",
+            "86-turn-rewind-menu.js:99"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "86-turn-rewind-menu.js:28",
+            "86-turn-rewind-menu.js:35"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "86-turn-rewind-menu.js:140"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 3.6,
+      "priority": 50,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "90-action-groups.js",
+      "package": "renderer-inject",
+      "files": [
+        "90-action-groups.js"
+      ],
+      "loc": 1030,
+      "wave": 0,
+      "readiness": 42,
+      "status": "caution",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "90-action-groups.js:348",
+            "90-action-groups.js:913"
+          ]
+        },
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "90-action-groups.js:502"
+          ]
+        },
+        {
+          "risk": "dynamic-typing",
+          "severity": "medium",
+          "count": 14,
+          "samples": [
+            "90-action-groups.js:865",
+            "90-action-groups.js:866",
+            "90-action-groups.js:867"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 6,
+          "samples": [
+            "90-action-groups.js:49",
+            "90-action-groups.js:65",
+            "90-action-groups.js:301"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "90-action-groups.js:362",
+            "90-action-groups.js:512",
+            "90-action-groups.js:515"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "90-action-groups.js:29",
+            "90-action-groups.js:466",
+            "90-action-groups.js:674"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "90-action-groups.js:275",
+            "90-action-groups.js:924",
+            "90-action-groups.js:1029"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "90-action-groups.js:290"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.3,
+      "priority": 28,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "91-extension-api.js",
+      "package": "renderer-inject",
+      "files": [
+        "91-extension-api.js"
+      ],
+      "loc": 473,
+      "wave": 0,
+      "readiness": 74,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 4,
+          "samples": [
+            "91-extension-api.js:125",
+            "91-extension-api.js:129",
+            "91-extension-api.js:152"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "91-extension-api.js:40",
+            "91-extension-api.js:92",
+            "91-extension-api.js:106"
+          ]
+        },
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "91-extension-api.js:358"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "91-extension-api.js:109",
+            "91-extension-api.js:235",
+            "91-extension-api.js:263"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "91-extension-api.js:110"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "91-extension-api.js:134"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.4,
+      "priority": 48,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "91-extension-rpc.js",
+      "package": "renderer-inject",
+      "files": [
+        "91-extension-rpc.js"
+      ],
+      "loc": 881,
+      "wave": 0,
+      "readiness": 27,
+      "status": "caution",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 30,
+          "samples": [
+            "91-extension-rpc.js:188",
+            "91-extension-rpc.js:189",
+            "91-extension-rpc.js:189"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 73,
+          "samples": [
+            "91-extension-rpc.js:42",
+            "91-extension-rpc.js:46",
+            "91-extension-rpc.js:48"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 12,
+          "samples": [
+            "91-extension-rpc.js:36",
+            "91-extension-rpc.js:40",
+            "91-extension-rpc.js:66"
+          ]
+        },
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 9,
+          "samples": [
+            "91-extension-rpc.js:29",
+            "91-extension-rpc.js:30",
+            "91-extension-rpc.js:31"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 18,
+          "samples": [
+            "91-extension-rpc.js:49",
+            "91-extension-rpc.js:108",
+            "91-extension-rpc.js:116"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 4.5,
+      "priority": 27,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "91-extension-runtime.js",
+      "package": "renderer-inject",
+      "files": [
+        "91-extension-runtime.js"
+      ],
+      "loc": 1442,
+      "wave": 0,
+      "readiness": 6,
+      "status": "blocked",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 4,
+          "samples": [
+            "91-extension-runtime.js:554",
+            "91-extension-runtime.js:1042",
+            "91-extension-runtime.js:1076"
+          ]
+        },
+        {
+          "risk": "dynamic-code",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "91-extension-runtime.js:250",
+            "91-extension-runtime.js:294"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "91-extension-runtime.js:409"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 48,
+          "samples": [
+            "91-extension-runtime.js:106",
+            "91-extension-runtime.js:107",
+            "91-extension-runtime.js:127"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 30,
+          "samples": [
+            "91-extension-runtime.js:30",
+            "91-extension-runtime.js:32",
+            "91-extension-runtime.js:35"
+          ]
+        },
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 15,
+          "samples": [
+            "91-extension-runtime.js:115",
+            "91-extension-runtime.js:357",
+            "91-extension-runtime.js:358"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 52,
+          "samples": [
+            "91-extension-runtime.js:82",
+            "91-extension-runtime.js:89",
+            "91-extension-runtime.js:91"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "91-extension-runtime.js:623",
+            "91-extension-runtime.js:623",
+            "91-extension-runtime.js:738"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "91-extension-runtime.js:333",
+            "91-extension-runtime.js:356",
+            "91-extension-runtime.js:362"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.6,
+      "priority": 13,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Uses dynamic code (eval, new Function or computed imports).",
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "92-extension-extras.js",
+      "package": "renderer-inject",
+      "files": [
+        "92-extension-extras.js"
+      ],
+      "loc": 380,
+      "wave": 0,
+      "readiness": 66,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 5,
+          "samples": [
+            "92-extension-extras.js:38",
+            "92-extension-extras.js:44",
+            "92-extension-extras.js:46"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 4,
+          "samples": [
+            "92-extension-extras.js:105",
+            "92-extension-extras.js:118",
+            "92-extension-extras.js:318"
+          ]
+        },
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "92-extension-extras.js:112",
+            "92-extension-extras.js:294"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "92-extension-extras.js:249"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 13,
+          "samples": [
+            "92-extension-extras.js:24",
+            "92-extension-extras.js:25",
+            "92-extension-extras.js:26"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "92-extension-extras.js:100",
+            "92-extension-extras.js:101",
+            "92-extension-extras.js:102"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.1,
+      "priority": 47,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "92-extension-host.js",
+      "package": "renderer-inject",
+      "files": [
+        "92-extension-host.js"
+      ],
+      "loc": 561,
+      "wave": 0,
+      "readiness": 65,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 4,
+          "samples": [
+            "92-extension-host.js:376",
+            "92-extension-host.js:439",
+            "92-extension-host.js:449"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "92-extension-host.js:30"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "92-extension-host.js:181",
+            "92-extension-host.js:245",
+            "92-extension-host.js:268"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "92-extension-host.js:144",
+            "92-extension-host.js:335",
+            "92-extension-host.js:336"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "92-extension-host.js:407",
+            "92-extension-host.js:408",
+            "92-extension-host.js:409"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.2,
+      "priority": 45,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "92-extension-slots.js",
+      "package": "renderer-inject",
+      "files": [
+        "92-extension-slots.js"
+      ],
+      "loc": 698,
+      "wave": 0,
+      "readiness": 63,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "92-extension-slots.js:125",
+            "92-extension-slots.js:545"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "92-extension-slots.js:562"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 6,
+          "samples": [
+            "92-extension-slots.js:433",
+            "92-extension-slots.js:435",
+            "92-extension-slots.js:580"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "92-extension-slots.js:281",
+            "92-extension-slots.js:289",
+            "92-extension-slots.js:290"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "92-extension-slots.js:713"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "92-extension-slots.js:668"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.3,
+      "priority": 41,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "92-extension-views.js",
+      "package": "renderer-inject",
+      "files": [
+        "92-extension-views.js"
+      ],
+      "loc": 157,
+      "wave": 0,
+      "readiness": 80,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "dynamic-regex",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "92-extension-views.js:89"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 4,
+          "samples": [
+            "92-extension-views.js:14",
+            "92-extension-views.js:48",
+            "92-extension-views.js:55"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "92-extension-views.js:53",
+            "92-extension-views.js:56"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 6,
+          "samples": [
+            "92-extension-views.js:29",
+            "92-extension-views.js:35",
+            "92-extension-views.js:61"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "92-extension-views.js:52",
+            "92-extension-views.js:69"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "92-extension-views.js:61"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.5,
+      "priority": 55,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "93-dictation.js",
+      "package": "renderer-inject",
+      "files": [
+        "93-dictation.js"
+      ],
+      "loc": 578,
+      "wave": 0,
+      "readiness": 53,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 4,
+          "samples": [
+            "93-dictation.js:107",
+            "93-dictation.js:107",
+            "93-dictation.js:331"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "93-dictation.js:124"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 23,
+          "samples": [
+            "93-dictation.js:55",
+            "93-dictation.js:156",
+            "93-dictation.js:167"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "93-dictation.js:59",
+            "93-dictation.js:553",
+            "93-dictation.js:558"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 15,
+          "samples": [
+            "93-dictation.js:147",
+            "93-dictation.js:186",
+            "93-dictation.js:189"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 8,
+          "samples": [
+            "93-dictation.js:158",
+            "93-dictation.js:161",
+            "93-dictation.js:179"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.9,
+      "priority": 40,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "95-conversation-view.js",
+      "package": "renderer-inject",
+      "files": [
+        "95-conversation-view.js"
+      ],
+      "loc": 634,
+      "wave": 0,
+      "readiness": 72,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 4,
+          "samples": [
+            "95-conversation-view.js:128",
+            "95-conversation-view.js:374",
+            "95-conversation-view.js:404"
+          ]
+        },
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "95-conversation-view.js:441",
+            "95-conversation-view.js:443"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "95-conversation-view.js:527"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "95-conversation-view.js:403",
+            "95-conversation-view.js:454",
+            "95-conversation-view.js:493"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.1,
+      "priority": 45,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "96-builtin-extensions.js",
+      "package": "renderer-inject",
+      "files": [
+        "96-builtin-extensions.js"
+      ],
+      "loc": 418,
+      "wave": 0,
+      "readiness": 71,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "96-builtin-extensions.js:440"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 11,
+          "samples": [
+            "96-builtin-extensions.js:255",
+            "96-builtin-extensions.js:256",
+            "96-builtin-extensions.js:261"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 5,
+          "samples": [
+            "96-builtin-extensions.js:16",
+            "96-builtin-extensions.js:83",
+            "96-builtin-extensions.js:94"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "96-builtin-extensions.js:90",
+            "96-builtin-extensions.js:107",
+            "96-builtin-extensions.js:114"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.5,
+      "priority": 46,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "96-context-tuning.js",
+      "package": "renderer-inject",
+      "files": [
+        "96-context-tuning.js"
+      ],
+      "loc": 451,
+      "wave": 0,
+      "readiness": 67,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "96-context-tuning.js:256"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 16,
+          "samples": [
+            "96-context-tuning.js:146",
+            "96-context-tuning.js:148",
+            "96-context-tuning.js:153"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 4,
+          "samples": [
+            "96-context-tuning.js:252",
+            "96-context-tuning.js:405",
+            "96-context-tuning.js:410"
+          ]
+        },
+        {
+          "risk": "dynamic-typing",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "96-context-tuning.js:257"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 10,
+          "samples": [
+            "96-context-tuning.js:147",
+            "96-context-tuning.js:149",
+            "96-context-tuning.js:171"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.0,
+      "priority": 47,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "96-dsh-client.js",
+      "package": "renderer-inject",
+      "files": [
+        "96-dsh-client.js"
+      ],
+      "loc": 1047,
+      "wave": 0,
+      "readiness": 13,
+      "status": "blocked",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 8,
+          "samples": [
+            "96-dsh-client.js:116",
+            "96-dsh-client.js:116",
+            "96-dsh-client.js:287"
+          ]
+        },
+        {
+          "risk": "dynamic-code",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "96-dsh-client.js:29"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 35,
+          "samples": [
+            "96-dsh-client.js:21",
+            "96-dsh-client.js:29",
+            "96-dsh-client.js:208"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 23,
+          "samples": [
+            "96-dsh-client.js:33",
+            "96-dsh-client.js:131",
+            "96-dsh-client.js:148"
+          ]
+        },
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 8,
+          "samples": [
+            "96-dsh-client.js:318",
+            "96-dsh-client.js:583",
+            "96-dsh-client.js:804"
+          ]
+        },
+        {
+          "risk": "dynamic-typing",
+          "severity": "medium",
+          "count": 6,
+          "samples": [
+            "96-dsh-client.js:929",
+            "96-dsh-client.js:976",
+            "96-dsh-client.js:993"
+          ]
+        },
+        {
+          "risk": "generators",
+          "severity": "medium",
+          "count": 4,
+          "samples": [
+            "96-dsh-client.js:304",
+            "96-dsh-client.js:330",
+            "96-dsh-client.js:881"
+          ]
+        },
+        {
+          "risk": "class-inheritance",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "96-dsh-client.js:591"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 30,
+          "samples": [
+            "96-dsh-client.js:28",
+            "96-dsh-client.js:36",
+            "96-dsh-client.js:41"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "96-dsh-client.js:764"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 3.3,
+      "priority": 18,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Uses dynamic code (eval, new Function or computed imports).",
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "96-feature-lab.js",
+      "package": "renderer-inject",
+      "files": [
+        "96-feature-lab.js"
+      ],
+      "loc": 944,
+      "wave": 0,
+      "readiness": 52,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "96-feature-lab.js:271",
+            "96-feature-lab.js:271"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 20,
+          "samples": [
+            "96-feature-lab.js:277",
+            "96-feature-lab.js:284",
+            "96-feature-lab.js:298"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 7,
+          "samples": [
+            "96-feature-lab.js:20",
+            "96-feature-lab.js:28",
+            "96-feature-lab.js:281"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 7,
+          "samples": [
+            "96-feature-lab.js:279",
+            "96-feature-lab.js:300",
+            "96-feature-lab.js:606"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.3,
+      "priority": 34,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "96-hooks-editor.js",
+      "package": "renderer-inject",
+      "files": [
+        "96-hooks-editor.js"
+      ],
+      "loc": 1163,
+      "wave": 0,
+      "readiness": 26,
+      "status": "caution",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 4,
+          "samples": [
+            "96-hooks-editor.js:174",
+            "96-hooks-editor.js:578",
+            "96-hooks-editor.js:989"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "96-hooks-editor.js:59"
+          ]
+        },
+        {
+          "risk": "dynamic-regex",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "96-hooks-editor.js:901"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 37,
+          "samples": [
+            "96-hooks-editor.js:384",
+            "96-hooks-editor.js:386",
+            "96-hooks-editor.js:391"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 17,
+          "samples": [
+            "96-hooks-editor.js:34",
+            "96-hooks-editor.js:78",
+            "96-hooks-editor.js:87"
+          ]
+        },
+        {
+          "risk": "dynamic-typing",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "96-hooks-editor.js:579"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 14,
+          "samples": [
+            "96-hooks-editor.js:69",
+            "96-hooks-editor.js:150",
+            "96-hooks-editor.js:150"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 12,
+          "samples": [
+            "96-hooks-editor.js:68",
+            "96-hooks-editor.js:158",
+            "96-hooks-editor.js:340"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.1,
+      "priority": 22,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "96-paste-fix.js",
+      "package": "renderer-inject",
+      "files": [
+        "96-paste-fix.js"
+      ],
+      "loc": 38,
+      "wave": 0,
+      "readiness": 98,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "96-paste-fix.js:31"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 54,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "96-prompt-args.js",
+      "package": "renderer-inject",
+      "files": [
+        "96-prompt-args.js"
+      ],
+      "loc": 209,
+      "wave": 0,
+      "readiness": 75,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 8,
+          "samples": [
+            "96-prompt-args.js:70",
+            "96-prompt-args.js:70",
+            "96-prompt-args.js:100"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "96-prompt-args.js:19",
+            "96-prompt-args.js:159"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "96-prompt-args.js:155"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "96-prompt-args.js:154",
+            "96-prompt-args.js:164"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 6.2,
+      "priority": 60,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "96-shell-command.js",
+      "package": "renderer-inject",
+      "files": [
+        "96-shell-command.js"
+      ],
+      "loc": 253,
+      "wave": 0,
+      "readiness": 69,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "96-shell-command.js:22",
+            "96-shell-command.js:30"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 9,
+          "samples": [
+            "96-shell-command.js:151",
+            "96-shell-command.js:153",
+            "96-shell-command.js:199"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "96-shell-command.js:18",
+            "96-shell-command.js:187"
+          ]
+        },
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "96-shell-command.js:192",
+            "96-shell-command.js:195"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "96-shell-command.js:65",
+            "96-shell-command.js:73",
+            "96-shell-command.js:191"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "96-shell-command.js:58",
+            "96-shell-command.js:241"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "96-shell-command.js:82"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "96-shell-command.js:41"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.8,
+      "priority": 46,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "98-avatar-overlay-layout.js",
+      "package": "renderer-inject",
+      "files": [
+        "98-avatar-overlay-layout.js"
+      ],
+      "loc": 45,
+      "wave": 0,
+      "readiness": 99,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 55,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "98-scan-schedule.js",
+      "package": "renderer-inject",
+      "files": [
+        "98-scan-schedule.js"
+      ],
+      "loc": 171,
+      "wave": 0,
+      "readiness": 95,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "98-scan-schedule.js:173"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 58,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "99-startup.js",
+      "package": "renderer-inject",
+      "files": [
+        "99-startup.js"
+      ],
+      "loc": 45,
+      "wave": 0,
+      "readiness": 99,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 55,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "99-tail.js",
+      "package": "renderer-inject",
+      "files": [
+        "99-tail.js"
+      ],
+      "loc": 2,
+      "wave": 0,
+      "readiness": 100,
+      "status": "caution",
+      "bridge": "wasm-bindgen",
+      "platforms": [],
+      "risks": [],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 50,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "1 parse errors: results for this unit are partial.",
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    }
+  ],
+  "start_here": [],
+  "dependencies": [],
+  "whole_app": {
+    "shape": "server",
+    "entry_points": [
+      {
+        "kind": "server",
+        "path": "96-builtin-extensions.js",
+        "evidence": "`.listen(` at 96-builtin-extensions.js:172"
+      },
+      {
+        "kind": "server",
+        "path": "96-paste-fix.js",
+        "evidence": "`.listen(` at 96-paste-fix.js:40"
+      },
+      {
+        "kind": "server",
+        "path": "96-prompt-args.js",
+        "evidence": "`.listen(` at 96-prompt-args.js:216"
+      },
+      {
+        "kind": "server",
+        "path": "96-shell-command.js",
+        "evidence": "`.listen(` at 96-shell-command.js:257"
+      }
+    ],
+    "dependencies": [],
+    "pieces": [
+      {
+        "wave": 0,
+        "units": [
+          "00-prelude.js"
+        ],
+        "loc": 538,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "01-registry.js"
+        ],
+        "loc": 181,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "10-style.js"
+        ],
+        "loc": 3510,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "20-menu.js"
+        ],
+        "loc": 552,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "30-service-tier.js"
+        ],
+        "loc": 1623,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "31-config-read-deadline.js"
+        ],
+        "loc": 66,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "32-fork-readiness-fallback.js"
+        ],
+        "loc": 128,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "32-thread-goal.js"
+        ],
+        "loc": 17,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "33-offline-auto-review.js"
+        ],
+        "loc": 152,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "34-statsig-overrides.js"
+        ],
+        "loc": 322,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "40-backend-settings.js"
+        ],
+        "loc": 2798,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "41-extension-detail.js"
+        ],
+        "loc": 533,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "41-extension-sources.js"
+        ],
+        "loc": 862,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "42-provider-editing.generated.js"
+        ],
+        "loc": 3209,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "43-provider-page.js"
+        ],
+        "loc": 965,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "44-provider-gateway.js"
+        ],
+        "loc": 504,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "45-remote-control-page.js"
+        ],
+        "loc": 304,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "45-weixin-connect-page.js"
+        ],
+        "loc": 572,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "46-service-settings.js"
+        ],
+        "loc": 596,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "47-task-board-page.js"
+        ],
+        "loc": 831,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "50-navigation.js"
+        ],
+        "loc": 180,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "60-plugin-marketplace.js"
+        ],
+        "loc": 1919,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "61-plugin-market-ui.js"
+        ],
+        "loc": 287,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "62-plugin-market-adapter.js"
+        ],
+        "loc": 457,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "70-model-catalog.js"
+        ],
+        "loc": 1643,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "71-model-picker-groups.js"
+        ],
+        "loc": 2243,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "80-session-share.js"
+        ],
+        "loc": 625,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "81-capacity-auto-retry.js"
+        ],
+        "loc": 334,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "82-boot-shell-recovery.js"
+        ],
+        "loc": 80,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "85-history-turn-recovery.js"
+        ],
+        "loc": 289,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "85-side-chat-save.js"
+        ],
+        "loc": 329,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "85-turn-rewind-controller.js"
+        ],
+        "loc": 258,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "85-weixin-desktop-sync.js"
+        ],
+        "loc": 111,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "86-turn-rewind-menu.js"
+        ],
+        "loc": 305,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "90-action-groups.js"
+        ],
+        "loc": 1030,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "91-extension-api.js"
+        ],
+        "loc": 473,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "91-extension-rpc.js"
+        ],
+        "loc": 881,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "91-extension-runtime.js"
+        ],
+        "loc": 1442,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "92-extension-extras.js"
+        ],
+        "loc": 380,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "92-extension-host.js"
+        ],
+        "loc": 561,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "92-extension-slots.js"
+        ],
+        "loc": 698,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "92-extension-views.js"
+        ],
+        "loc": 157,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "93-dictation.js"
+        ],
+        "loc": 578,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "95-conversation-view.js"
+        ],
+        "loc": 634,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "96-builtin-extensions.js"
+        ],
+        "loc": 418,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "96-context-tuning.js"
+        ],
+        "loc": 451,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "96-dsh-client.js"
+        ],
+        "loc": 1047,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "96-feature-lab.js"
+        ],
+        "loc": 944,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "96-hooks-editor.js"
+        ],
+        "loc": 1163,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "96-paste-fix.js"
+        ],
+        "loc": 38,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "96-prompt-args.js"
+        ],
+        "loc": 209,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "96-shell-command.js"
+        ],
+        "loc": 253,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "98-avatar-overlay-layout.js"
+        ],
+        "loc": 45,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "98-scan-schedule.js"
+        ],
+        "loc": 171,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "99-startup.js"
+        ],
+        "loc": 45,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "99-tail.js"
+        ],
+        "loc": 2,
+        "tangled": false
+      }
+    ],
+    "decisions": [
+      {
+        "id": "D1",
+        "topic": "shape",
+        "question": "The app is a server, entered through 96-builtin-extensions.js, 96-paste-fix.js, 96-prompt-args.js, 96-shell-command.js. Port every entry point, in that shape?",
+        "recommendation": "Yes: an axum front door (`app front-door`) takes the server over first"
+      },
+      {
+        "id": "D2",
+        "topic": "blocked 20-menu.js",
+        "question": "20-menu.js is blocked: Uses dynamic code (eval, new Function or computed imports). Rework that part in Rust, or keep the unit outside?",
+        "recommendation": "Research the blocker first; then port it with the piece that uses it"
+      },
+      {
+        "id": "D3",
+        "topic": "blocked 91-extension-runtime.js",
+        "question": "91-extension-runtime.js is blocked: Uses dynamic code (eval, new Function or computed imports). Rework that part in Rust, or keep the unit outside?",
+        "recommendation": "Research the blocker first; then port it with the piece that uses it"
+      },
+      {
+        "id": "D4",
+        "topic": "blocked 96-dsh-client.js",
+        "question": "96-dsh-client.js is blocked: Uses dynamic code (eval, new Function or computed imports). Rework that part in Rust, or keep the unit outside?",
+        "recommendation": "Research the blocker first; then port it with the piece that uses it"
+      }
+    ]
+  }
+}

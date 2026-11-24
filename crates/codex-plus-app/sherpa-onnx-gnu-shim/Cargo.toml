@@ -1,0 +1,6 @@
+[package]
+name = "sherpa-onnx"
+version = "1.13.8"
+edition = "2024"
+publish = false
+description = "Safe Rust MinGW GNU shim for sherpa-onnx (avoids MSVC /MT static C++ .lib link incompatibility on x86_64-pc-windows-gnu)"

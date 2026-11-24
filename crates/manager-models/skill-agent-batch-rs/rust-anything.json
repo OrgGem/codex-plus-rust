@@ -1,0 +1,175 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/skill-agent-batch.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "skill-agent-batch-rs",
+  "exports": [
+    {
+      "name": "skillAgents",
+      "file": "src/skill-agent-batch.ts",
+      "line": 112,
+      "params": [
+        {
+          "name": "skill",
+          "ts_type": "({ installed: boolean; bundled: boolean; enabled: boolean; agents?: string[]; conflict?: string | null;\n  locations?: Array<{ statusError?: string | null }> })",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "skillCodexStatusError",
+      "file": "src/skill-agent-batch.ts",
+      "line": 116,
+      "params": [
+        {
+          "name": "skill",
+          "ts_type": "({ installed: boolean; bundled: boolean; enabled: boolean; agents?: string[]; conflict?: string | null;\n  locations?: Array<{ statusError?: string | null }> })",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | undefined",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "skillBatchTargets",
+      "file": "src/skill-agent-batch.ts",
+      "line": 120,
+      "params": [
+        {
+          "name": "skills",
+          "ts_type": "(({ installed: boolean; bundled: boolean; enabled: boolean; agents?: string[]; conflict?: string | null;\n  locations?: Array<{ statusError?: string | null }> }))[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "agent",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "enabled",
+          "ts_type": "boolean",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(({ installed: boolean; bundled: boolean; enabled: boolean; agents?: string[]; conflict?: string | null;\n  locations?: Array<{ statusError?: string | null }> }))[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "skillBatchState",
+      "file": "src/skill-agent-batch.ts",
+      "line": 125,
+      "params": [
+        {
+          "name": "skills",
+          "ts_type": "({ installed: boolean; bundled: boolean; enabled: boolean; agents?: string[]; conflict?: string | null;\n  locations?: Array<{ statusError?: string | null }> })[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "agent",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "skillBatchHasPending",
+      "file": "src/skill-agent-batch.ts",
+      "line": 132,
+      "params": [
+        {
+          "name": "operations",
+          "ts_type": "{ groupKey: string; agent: string; enabled: boolean; skillIds: string[] }[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "skills",
+          "ts_type": "{ id: string }[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "agent",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "mergeSkillAgentResult",
+      "file": "src/skill-agent-batch.ts",
+      "line": 138,
+      "params": [
+        {
+          "name": "current",
+          "ts_type": "(({ installed: boolean; bundled: boolean; enabled: boolean; agents?: string[]; conflict?: string | null;\n  locations?: Array<{ statusError?: string | null }> }) & { id: string })[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "result",
+          "ts_type": "(({ installed: boolean; bundled: boolean; enabled: boolean; agents?: string[]; conflict?: string | null;\n  locations?: Array<{ statusError?: string | null }> }) & { id: string })[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "id",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "agent",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(({ installed: boolean; bundled: boolean; enabled: boolean; agents?: string[]; conflict?: string | null;\n  locations?: Array<{ statusError?: string | null }> }) & { id: string })[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "SkillBatchRegistry",
+      "file": "src/skill-agent-batch.ts",
+      "line": 9,
+      "reason": "class: async-promise-callbacks"
+    }
+  ]
+}

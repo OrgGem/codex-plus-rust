@@ -1,0 +1,90 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/provider-test.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "provider-test-rs",
+  "exports": [
+    {
+      "name": "formatProbeMs",
+      "file": "src/provider-test.ts",
+      "line": 32,
+      "params": [
+        {
+          "name": "ms",
+          "ts_type": "number | null | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "probeWireLabel",
+      "file": "src/provider-test.ts",
+      "line": 38,
+      "params": [
+        {
+          "name": "wire",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "probeKeyHint",
+      "file": "src/provider-test.ts",
+      "line": 45,
+      "params": [
+        {
+          "name": "result",
+          "ts_type": "Pick<({\n  ok: boolean;\n  /** 失败的大类：subscription_policy / auth / not_found / rate_limited / quota / timeout / connect / server / client / stream / other；成功时为空。 */\n  category: string;\n  /** 上游的 HTTP 状态码；没收到响应时为空。 */\n  httpStatus: number | null;\n  model: string;\n  /** 实际和上游说的协议：responses / chat / anthropic。 */\n  wireApi: string;\n  firstTokenMs: number | null;\n  totalMs: number;\n  reply: string;\n  replyTruncated: boolean;\n  error: string;\n  keyId: string;\n  keyName: string;\n  keyTail: string;\n}), \"keyName\" | \"keyTail\">",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ text: string; args: string[] } | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "probeHints",
+      "file": "src/provider-test.ts",
+      "line": 53,
+      "params": [
+        {
+          "name": "result",
+          "ts_type": "({\n  ok: boolean;\n  /** 失败的大类：subscription_policy / auth / not_found / rate_limited / quota / timeout / connect / server / client / stream / other；成功时为空。 */\n  category: string;\n  /** 上游的 HTTP 状态码；没收到响应时为空。 */\n  httpStatus: number | null;\n  model: string;\n  /** 实际和上游说的协议：responses / chat / anthropic。 */\n  wireApi: string;\n  firstTokenMs: number | null;\n  totalMs: number;\n  reply: string;\n  replyTruncated: boolean;\n  error: string;\n  keyId: string;\n  keyName: string;\n  keyTail: string;\n})",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "account",
+          "ts_type": "boolean",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "{ text: string; args: string[] }[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

@@ -1,0 +1,139 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/provider-sync-model.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "provider-sync-model-rs",
+  "exports": [
+    {
+      "name": "modelSlug",
+      "file": "src/provider-sync-model.ts",
+      "line": 18,
+      "params": [
+        {
+          "name": "model",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "sameModel",
+      "file": "src/provider-sync-model.ts",
+      "line": 22,
+      "params": [
+        {
+          "name": "left",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "right",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "syncOutcome",
+      "file": "src/provider-sync-model.ts",
+      "line": 28,
+      "params": [
+        {
+          "name": "preview",
+          "ts_type": "{\n  /** 上游现在的全部模型。 */\n  upstream: string[];\n  /** 现在的列表（默认模型在最前）。 */\n  current: string[];\n  defaultModel: string;\n  /** 上游有、列表里没有的。 */\n  added: string[];\n  /** 列表里有、上游已经没有的。 */\n  removed: string[];\n}",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "remove",
+          "ts_type": "ReadonlySet<string>",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "add",
+          "ts_type": "ReadonlySet<string>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ models: string[]; defaultModel: string; defaultReplaced: boolean }",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "pickerRows",
+      "file": "src/provider-sync-model.ts",
+      "line": 55,
+      "params": [
+        {
+          "name": "existing",
+          "ts_type": "string[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "fetched",
+          "ts_type": "string[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  model: string;\n  /** 已在当前列表里（默认勾上，取消勾选表示移除）。 */\n  inList: boolean;\n  /** 上游有这个模型。 */\n  upstream: boolean;\n}[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "pickerOutcome",
+      "file": "src/provider-sync-model.ts",
+      "line": 64,
+      "params": [
+        {
+          "name": "rows",
+          "ts_type": "{\n  model: string;\n  /** 已在当前列表里（默认勾上，取消勾选表示移除）。 */\n  inList: boolean;\n  /** 上游有这个模型。 */\n  upstream: boolean;\n}[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "selected",
+          "ts_type": "ReadonlySet<string>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ models: string[]; added: number; removed: number }",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "filterModels",
+      "file": "src/provider-sync-model.ts",
+      "line": 73,
+      "reason": "callback-fn"
+    }
+  ]
+}

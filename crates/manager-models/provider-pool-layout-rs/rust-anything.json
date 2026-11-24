@@ -1,0 +1,60 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/provider-pool-layout.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "provider-pool-layout-rs",
+  "exports": [
+    {
+      "name": "providerPoolSections",
+      "file": "src/provider-pool-layout.ts",
+      "line": 4,
+      "params": [
+        {
+          "name": "pool",
+          "ts_type": "({\n  id: string;\n  name: string;\n  baseUrl: string;\n  protocol: \"responses\" | \"chatCompletions\" | \"anthropicMessages\";\n  official: boolean;\n  models: string[];\n  keyCount: number;\n  /** 后端旧版没有这两个字段（直连模式里挑出来的供应商列表）。 */\n  enabled?: boolean;\n  source?: string;\n  /** 每百万 token 的价格。 */\n  price?: { currency: string; input: number; cachedInput: number; output: number } | null;\n  /** 按模型的价格（上游模型名 → 价格）；没填的模型用 `price`。 */\n  modelPrices?: Record<string, { currency: string; input: number; cachedInput: number; output: number }>;\n  /** 能画图的模型（不进聊天模型列表）；ChatGPT 账号是内置的一项。旧版后端没有。 */\n  imageModels?: string[];\n  /** 按模型的模型资料（思考等级等）JSON，格式同直连模式的「模型配置」。 */\n  modelMetadata?: string;\n  /** 按模型的上下文窗口（上游模型名 → token）；没写的模型用 `contextWindow`。 */\n  modelWindows?: Record<string, number>;\n  /** 没单独写窗口的模型用的窗口；都没有就用模型自带资料。 */\n  contextWindow?: number | null;\n  /** 自动压缩阈值（#3100）：窗口的百分比，按模型 + 默认值；没设时为空，用 Codex 默认。旧版后端没有。 */\n  autoCompact?: { models?: Record<string, number>; fallback?: number | null } | null;\n  /** 网关供应商单独走的 HTTP 代理，空串表示不单独走代理。 */\n  proxy?: string;\n  /** 主动限速：每个 Key 每分钟最多请求数；没有或 null 表示不限。旧版后端没有。 */\n  keyRpm?: number | null;\n  /** 主动限速：每个 Key 同时进行的最多请求数；没有或 null 表示不限。旧版后端没有。 */\n  keyConcurrency?: number | null;\n  /** 转发前移除托管生图工具（image_generation，#228）。旧版后端没有。 */\n  stripImageGenerationTool?: boolean;\n  /** 转发前移除 Responses 图片 `detail`（#2870）。旧版后端没有。 */\n  stripResponsesImageDetail?: boolean;\n  /** 不向该上游发送 `tool_search`（#2868）。旧版后端没有。 */\n  disableToolSearch?: boolean;\n  /** 登录得到的账号：chatgpt / copilot / grok；普通供应商为空。 */\n  account?: string;\n  subscriptionPolicy?: (Partial<Omit<({\n  defaultUsedPercentLimit?: number | null;\n  windowUsedPercentLimits: Record<string, number>;\n  onLimit: \"stop\" | \"nextPermitted\" | \"apiFallback\";\n  unknownUsage: \"block\" | \"allow\";\n  maxAgeSeconds: number;\n}), \"windowUsedPercentLimits\">> & {\n  windowUsedPercentLimits?: Record<string, number> | null;\n}) | null;\n  /** 后端合并同账号所有别名策略后的准入结果。 */\n  subscriptionBlockReason?: string | null;\n  /** 订阅账号的套餐，如「ChatGPT Pro」「Copilot Pro+」。 */\n  plan?: string;\n  /** 后台检查时上游有、列表里没有的模型。 */\n  upstreamNew?: string[];\n  /** 后台检查时列表里有、上游已经没有的模型。 */\n  upstreamGone?: string[];\n  /** 这个 ChatGPT 账号正借给 Codex 登录。 */\n  lentToCodex?: boolean;\n  /** 订阅账号（或 OpenCode Go、Command Code 等套餐）的剩余额度；查不到或普通供应商为空。 */\n  quota?: ({\n  windows: ({ windowMinutes: number | null; usedPercent: number; resetsAtMs: number | null; observedAtMs?: number | null })[];\n  updatedAtMs: number;\n  windowsComplete?: boolean;\n  officialAllowed?: boolean | null;\n  officialLimitReached?: boolean | null;\n  creditsAvailable?: boolean | null;\n}) | null;\n  /** 有额度可查（订阅账号，或按地址认出的 API Key 套餐，#3084）。旧版后端没有。 */\n  quotaApi?: boolean;\n  /** 已保存的 Key（打码，#2782）：订阅账号等不用 Key 的为空。旧版后端没有。 */\n  keys?: { id: string; masked: string }[];\n  /** 有余额接口的厂商（DeepSeek、Kimi 等，#2793）：卡片用「用量」页同一份余额。旧版后端没有。 */\n  balanceApi?: boolean;\n  /** new-api 访问令牌（打码，#2793）：只用来查账户余额；没配置为空。令牌原文不出后端。 */\n  newapiAccess?: { masked: string; userId: string } | null;\n  /** 自定义请求头（#3075）：敏感头只有打码后的 `masked`；订阅账号等不开放编辑的为空。旧版后端没有。 */\n  customHeaders?: ({ key: string; value: string; masked?: string | null })[];\n})[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "query",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "reorderProviderSlots",
+      "file": "src/provider-pool-layout.ts",
+      "line": 15,
+      "params": [
+        {
+          "name": "order",
+          "ts_type": "string[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "groupOrder",
+          "ts_type": "string[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\tools\\remote-control-p0",
+  "unit": "ipc-versions.mjs",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "remote-ipc-versions-rs",
+  "exports": [
+    {
+      "name": "extractIpcVersions",
+      "file": "ipc-versions.mjs",
+      "line": 33,
+      "params": [
+        {
+          "name": "source",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "readAsarFile",
+      "file": "ipc-versions.mjs",
+      "line": 10,
+      "reason": "local binary app.asar reader via node:fs"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+[package]
+name = "codex-plus-devkit"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.97"
+publish = false
+description = "Pure-Rust devkit CLI porting CodexPlusPlus scripts/ and AST inspector"
+
+[[bin]]
+name = "codex-plus-devkit"
+path = "src/main.rs"
+
+[[bin]]
+name = "native-browser-inspector"
+path = "src/bin/native-browser-inspector.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+sha2 = "0.10"
+regex = "1"
+oxc_allocator = "0.160"
+oxc_parser = { version = "0.160", default-features = false }
+oxc_span = "0.160"
+ureq = "2"
+chrono = "0.4"
+native-browser-inspector-rs = { package = "inspect-service-rs", path = "../native-browser-inspector-rs" }
+
+[dev-dependencies]
+tempfile = "3"
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
+
+[workspace]

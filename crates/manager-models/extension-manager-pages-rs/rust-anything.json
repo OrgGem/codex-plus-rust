@@ -1,0 +1,108 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/extension-manager-pages.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "extension-manager-pages-rs",
+  "exports": [
+    {
+      "name": "managerExtensionPages",
+      "file": "src/extension-manager-pages.ts",
+      "line": 38,
+      "params": [
+        {
+          "name": "inventory",
+          "ts_type": "{ enabled?: boolean; scripts?: ({\n  key: string;\n  name: string;\n  enabled: boolean;\n  error?: string;\n  package?: { managerPage?: ({\n  title: string;\n  nav?: (\"gateway\" | \"management\" | \"tools\") | null;\n  icon?: string | null;\n  replaces?: string[];\n  data?: string[];\n}) | null } | null;\n})[] } | null | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  key: string;\n  title: string;\n  nav: (\"gateway\" | \"management\" | \"tools\") | null;\n  icon: string | null;\n  replaces: string[];\n  data: string[];\n})[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "managerPageOverrides",
+      "file": "src/extension-manager-pages.ts",
+      "line": 56,
+      "params": [
+        {
+          "name": "pages",
+          "ts_type": "({\n  key: string;\n  title: string;\n  nav: (\"gateway\" | \"management\" | \"tools\") | null;\n  icon: string | null;\n  replaces: string[];\n  data: string[];\n})[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "Record<string, ({\n  key: string;\n  title: string;\n  nav: (\"gateway\" | \"management\" | \"tools\") | null;\n  icon: string | null;\n  replaces: string[];\n  data: string[];\n})>",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "managerNavPages",
+      "file": "src/extension-manager-pages.ts",
+      "line": 67,
+      "params": [
+        {
+          "name": "pages",
+          "ts_type": "({\n  key: string;\n  title: string;\n  nav: (\"gateway\" | \"management\" | \"tools\") | null;\n  icon: string | null;\n  replaces: string[];\n  data: string[];\n})[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "group",
+          "ts_type": "(\"gateway\" | \"management\" | \"tools\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  key: string;\n  title: string;\n  nav: (\"gateway\" | \"management\" | \"tools\") | null;\n  icon: string | null;\n  replaces: string[];\n  data: string[];\n})[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "managerDataRequest",
+      "file": "src/extension-manager-pages.ts",
+      "line": 114,
+      "params": [
+        {
+          "name": "name",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "params",
+          "ts_type": "Record<string, unknown>",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "declared",
+          "ts_type": "string[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "scriptKey",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

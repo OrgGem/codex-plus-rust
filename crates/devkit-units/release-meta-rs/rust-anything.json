@@ -1,0 +1,73 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\scripts",
+  "unit": "release-meta.mjs",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "release-meta-rs",
+  "exports": [
+    {
+      "name": "changelogSection",
+      "file": "release-meta.mjs",
+      "line": 89,
+      "params": [
+        {
+          "name": "version",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "text",
+          "ts_type": "unknown",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "compareVersions",
+      "file": "release-meta.mjs",
+      "line": 100,
+      "params": [
+        {
+          "name": "a",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "b",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "readText",
+      "file": "release-meta.mjs",
+      "line": 79,
+      "reason": "host fs"
+    },
+    {
+      "name": "readVersions",
+      "file": "release-meta.mjs",
+      "line": 84,
+      "reason": "host fs"
+    }
+  ]
+}

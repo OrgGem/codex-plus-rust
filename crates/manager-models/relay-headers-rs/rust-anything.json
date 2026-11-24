@@ -1,0 +1,174 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/relay-headers.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "relay-headers-rs",
+  "exports": [
+    {
+      "name": "isForbiddenRelayHeader",
+      "file": "src/relay-headers.ts",
+      "line": 24,
+      "params": [
+        {
+          "name": "name",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeRelayHeaders",
+      "file": "src/relay-headers.ts",
+      "line": 29,
+      "params": [
+        {
+          "name": "rows",
+          "ts_type": "{ key: string; value: string }[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ key: string; value: string }[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relayHeadersValidationMessage",
+      "file": "src/relay-headers.ts",
+      "line": 44,
+      "params": [
+        {
+          "name": "rows",
+          "ts_type": "{ key: string; value: string }[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "serializeRelayHeaders",
+      "file": "src/relay-headers.ts",
+      "line": 70,
+      "params": [
+        {
+          "name": "rows",
+          "ts_type": "{ key: string; value: string }[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ key: string; value: string }[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "hasCustomAuthorization",
+      "file": "src/relay-headers.ts",
+      "line": 75,
+      "params": [
+        {
+          "name": "rows",
+          "ts_type": "{ key: string; value: string }[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "providerHeaderRows",
+      "file": "src/relay-headers.ts",
+      "line": 92,
+      "params": [
+        {
+          "name": "headers",
+          "ts_type": "({ key: string; value: string; masked?: string | null })[] | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({ key: string; value: string } & { masked?: string | null; savedKey?: string })[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "providerHeaderInputs",
+      "file": "src/relay-headers.ts",
+      "line": 103,
+      "params": [
+        {
+          "name": "rows",
+          "ts_type": "({ key: string; value: string } & { masked?: string | null; savedKey?: string })[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ key: string; value: string; keep: boolean }[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "providerHeadersValidationMessage",
+      "file": "src/relay-headers.ts",
+      "line": 110,
+      "params": [
+        {
+          "name": "rows",
+          "ts_type": "({ key: string; value: string } & { masked?: string | null; savedKey?: string })[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "providerHeadersSummary",
+      "file": "src/relay-headers.ts",
+      "line": 117,
+      "params": [
+        {
+          "name": "headers",
+          "ts_type": "({ key: string; value: string; masked?: string | null })[] | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

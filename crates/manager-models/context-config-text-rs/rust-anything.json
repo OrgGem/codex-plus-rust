@@ -1,0 +1,336 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/context-config-text.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "context-config-text-rs",
+  "exports": [
+    {
+      "name": "unquoteTomlKey",
+      "file": "src/context-config-text.ts",
+      "line": 41,
+      "params": [
+        {
+          "name": "key",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "tomlTablePathFromLine",
+      "file": "src/context-config-text.ts",
+      "line": 48,
+      "params": [
+        {
+          "name": "line",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string[] | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "parseTomlDottedPath",
+      "file": "src/context-config-text.ts",
+      "line": 54,
+      "params": [
+        {
+          "name": "path",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string[] | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "contextEntrySummary",
+      "file": "src/context-config-text.ts",
+      "line": 93,
+      "params": [
+        {
+          "name": "tomlBody",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "contextEntryEnabled",
+      "file": "src/context-config-text.ts",
+      "line": 101,
+      "params": [
+        {
+          "name": "tomlBody",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "setContextEntryEnabled",
+      "file": "src/context-config-text.ts",
+      "line": 105,
+      "params": [
+        {
+          "name": "tomlBody",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "enabled",
+          "ts_type": "boolean",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "contextHeaderFromLine",
+      "file": "src/context-config-text.ts",
+      "line": 121,
+      "params": [
+        {
+          "name": "line",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ kind: (\"mcp\" | \"skill\" | \"plugin\"); id: string } | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "parseContextEntries",
+      "file": "src/context-config-text.ts",
+      "line": 132,
+      "params": [
+        {
+          "name": "commonConfig",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "kind",
+          "ts_type": "(\"mcp\" | \"skill\" | \"plugin\")",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "tableName",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "dedupeContextEntryList",
+      "file": "src/context-config-text.ts",
+      "line": 186,
+      "params": [
+        {
+          "name": "entries",
+          "ts_type": "{\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "contextEntriesByKind",
+      "file": "src/context-config-text.ts",
+      "line": 194,
+      "params": [
+        {
+          "name": "entries",
+          "ts_type": "{\n  mcpServers: {\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[];\n  skills: {\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[];\n  plugins: {\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[];\n}",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "kind",
+          "ts_type": "(\"mcp\" | \"skill\" | \"plugin\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "contextEntryToTomlSection",
+      "file": "src/context-config-text.ts",
+      "line": 200,
+      "params": [
+        {
+          "name": "tableName",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "entry",
+          "ts_type": "{\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "allContextConfigToml",
+      "file": "src/context-config-text.ts",
+      "line": 219,
+      "params": [
+        {
+          "name": "entries",
+          "ts_type": "{\n  mcpServers: {\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[];\n  skills: {\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[];\n  plugins: {\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[];\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "selectedContextConfigToml",
+      "file": "src/context-config-text.ts",
+      "line": 229,
+      "params": [
+        {
+          "name": "entries",
+          "ts_type": "{\n  mcpServers: {\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[];\n  skills: {\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[];\n  plugins: {\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[];\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "contextEntriesFromConfig",
+      "file": "src/context-config-text.ts",
+      "line": 240,
+      "params": [
+        {
+          "name": "configContents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  mcpServers: {\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[];\n  skills: {\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[];\n  plugins: {\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[];\n}",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "splitContextConfigText",
+      "file": "src/context-config-text.ts",
+      "line": 248,
+      "params": [
+        {
+          "name": "configContents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ common: string; context: string }",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "stripContextEntriesFromConfig",
+      "file": "src/context-config-text.ts",
+      "line": 258,
+      "params": [
+        {
+          "name": "configContents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "entries",
+          "ts_type": "{\n  mcpServers: {\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[];\n  skills: {\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[];\n  plugins: {\n  id: string;\n  kind: (\"mcp\" | \"skill\" | \"plugin\");\n  title: string;\n  summary: string;\n  tomlBody: string;\n  enabled: boolean;\n}[];\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

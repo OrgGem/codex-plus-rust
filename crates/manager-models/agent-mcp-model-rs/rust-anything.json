@@ -1,0 +1,144 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/agent-mcp-model.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "agent-mcp-model-rs",
+  "exports": [
+    {
+      "name": "mcpOn",
+      "file": "src/agent-mcp-model.ts",
+      "line": 19,
+      "params": [
+        {
+          "name": "row",
+          "ts_type": "{\n  id: string;\n  /** 用于展示与编辑的表体：优先取 Codex 的，其次 Claude、Grok。 */\n  body: string;\n  /** 每家的条目；没有的就是 undefined。 */\n  byAgent: Partial<Record<(\"codex\" | \"claude\" | \"grok\"), { id: string; tomlBody: string; enabled: boolean }>>;\n}",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "agent",
+          "ts_type": "(\"codex\" | \"claude\" | \"grok\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "mcpPresent",
+      "file": "src/agent-mcp-model.ts",
+      "line": 25,
+      "params": [
+        {
+          "name": "row",
+          "ts_type": "{\n  id: string;\n  /** 用于展示与编辑的表体：优先取 Codex 的，其次 Claude、Grok。 */\n  body: string;\n  /** 每家的条目；没有的就是 undefined。 */\n  byAgent: Partial<Record<(\"codex\" | \"claude\" | \"grok\"), { id: string; tomlBody: string; enabled: boolean }>>;\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"codex\" | \"claude\" | \"grok\")[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "mergeMcpRows",
+      "file": "src/agent-mcp-model.ts",
+      "line": 29,
+      "params": [
+        {
+          "name": "codex",
+          "ts_type": "{ id: string; tomlBody: string; enabled: boolean }[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "others",
+          "ts_type": "Partial<Record<\"claude\" | \"grok\", { id: string; tomlBody: string; enabled: boolean }[]>>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  id: string;\n  /** 用于展示与编辑的表体：优先取 Codex 的，其次 Claude、Grok。 */\n  body: string;\n  /** 每家的条目；没有的就是 undefined。 */\n  byAgent: Partial<Record<(\"codex\" | \"claude\" | \"grok\"), { id: string; tomlBody: string; enabled: boolean }>>;\n}[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "mcpCount",
+      "file": "src/agent-mcp-model.ts",
+      "line": 54,
+      "params": [
+        {
+          "name": "rows",
+          "ts_type": "{\n  id: string;\n  /** 用于展示与编辑的表体：优先取 Codex 的，其次 Claude、Grok。 */\n  body: string;\n  /** 每家的条目；没有的就是 undefined。 */\n  byAgent: Partial<Record<(\"codex\" | \"claude\" | \"grok\"), { id: string; tomlBody: string; enabled: boolean }>>;\n}[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "agent",
+          "ts_type": "(\"codex\" | \"claude\" | \"grok\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "number",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "bodyEnabledState",
+      "file": "src/agent-mcp-model.ts",
+      "line": 60,
+      "params": [
+        {
+          "name": "body",
+          "ts_type": "string | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean | undefined",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "editedEnabledState",
+      "file": "src/agent-mcp-model.ts",
+      "line": 71,
+      "params": [
+        {
+          "name": "original",
+          "ts_type": "string | undefined",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "edited",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean | undefined",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

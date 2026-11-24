@@ -1,0 +1,30 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/github-repository.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "github-repository-rs",
+  "exports": [
+    {
+      "name": "isGitHubRepositoryHomepage",
+      "file": "src/github-repository.ts",
+      "line": 55,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

@@ -1,0 +1,299 @@
+{
+  "schema": "rust-anything/analyze@1",
+  "language": "powershell",
+  "summary": {
+    "packages": 1,
+    "source_files": 2,
+    "test_files": 0,
+    "ui_files": 0,
+    "loc": 148,
+    "units": 2,
+    "ready": 2,
+    "caution": 0,
+    "blocked": 0,
+    "keep": 0,
+    "parse_errors": 0
+  },
+  "packages": [
+    {
+      "name": "claude-localization",
+      "dir": "",
+      "order": 1,
+      "runtime": "portable",
+      "workspace_deps": [],
+      "test_files": 0,
+      "units": [
+        "build-copy.ps1",
+        "inject-cn.ps1"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "build-copy.ps1",
+      "package": "claude-localization",
+      "files": [
+        "build-copy.ps1"
+      ],
+      "loc": 80,
+      "wave": 0,
+      "readiness": 69,
+      "status": "ready",
+      "bridge": "pwsh-ffi",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "callbacks",
+          "severity": "medium",
+          "count": 10,
+          "samples": [
+            "build-copy.ps1:52",
+            "build-copy.ps1:52",
+            "build-copy.ps1:60"
+          ]
+        },
+        {
+          "risk": "case-insensitive",
+          "severity": "medium",
+          "count": 7,
+          "samples": [
+            "build-copy.ps1:57",
+            "build-copy.ps1:60",
+            "build-copy.ps1:62"
+          ]
+        },
+        {
+          "risk": "null-references",
+          "severity": "medium",
+          "count": 4,
+          "samples": [
+            "build-copy.ps1:11",
+            "build-copy.ps1:12",
+            "build-copy.ps1:35"
+          ]
+        },
+        {
+          "risk": "pipeline-output",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "build-copy.ps1:75",
+            "build-copy.ps1:86",
+            "build-copy.ps1:87"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "build-copy.ps1:60"
+          ]
+        },
+        {
+          "risk": "loose-conversion",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "build-copy.ps1:62"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 11,
+          "samples": [
+            "build-copy.ps1:13",
+            "build-copy.ps1:18",
+            "build-copy.ps1:36"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 7.5,
+      "priority": 59,
+      "exports": 3,
+      "bridgeable": 3,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "inject-cn.ps1",
+      "package": "claude-localization",
+      "files": [
+        "inject-cn.ps1"
+      ],
+      "loc": 68,
+      "wave": 0,
+      "readiness": 63,
+      "status": "ready",
+      "bridge": "pwsh-ffi",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "unordered-iteration",
+          "severity": "high",
+          "count": 3,
+          "samples": [
+            "inject-cn.ps1:29",
+            "inject-cn.ps1:29",
+            "inject-cn.ps1:42"
+          ]
+        },
+        {
+          "risk": "pipeline-output",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "inject-cn.ps1:26",
+            "inject-cn.ps1:63",
+            "inject-cn.ps1:70"
+          ]
+        },
+        {
+          "risk": "dynamic-typing",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "inject-cn.ps1:27",
+            "inject-cn.ps1:28"
+          ]
+        },
+        {
+          "risk": "callbacks",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "inject-cn.ps1:13",
+            "inject-cn.ps1:13"
+          ]
+        },
+        {
+          "risk": "null-references",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "inject-cn.ps1:11",
+            "inject-cn.ps1:55"
+          ]
+        },
+        {
+          "risk": "case-insensitive",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "inject-cn.ps1:12",
+            "inject-cn.ps1:13"
+          ]
+        },
+        {
+          "risk": "concurrency",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "inject-cn.ps1:9"
+          ]
+        },
+        {
+          "risk": "loose-conversion",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "inject-cn.ps1:24"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 7,
+          "samples": [
+            "inject-cn.ps1:6",
+            "inject-cn.ps1:13",
+            "inject-cn.ps1:20"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 6,
+          "samples": [
+            "inject-cn.ps1:29",
+            "inject-cn.ps1:34",
+            "inject-cn.ps1:39"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "inject-cn.ps1:7",
+            "inject-cn.ps1:10",
+            "inject-cn.ps1:12"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 4.4,
+      "priority": 49,
+      "exports": 1,
+      "bridgeable": 1,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    }
+  ],
+  "start_here": [
+    "build-copy.ps1",
+    "inject-cn.ps1"
+  ],
+  "dependencies": [],
+  "whole_app": {
+    "shape": "cli",
+    "entry_points": [
+      {
+        "kind": "cli",
+        "path": "build-copy.ps1",
+        "evidence": "`$args` at build-copy.ps1:69"
+      }
+    ],
+    "dependencies": [],
+    "pieces": [
+      {
+        "wave": 0,
+        "units": [
+          "build-copy.ps1"
+        ],
+        "loc": 80,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "inject-cn.ps1"
+        ],
+        "loc": 68,
+        "tangled": false
+      }
+    ],
+    "decisions": [
+      {
+        "id": "D1",
+        "topic": "shape",
+        "question": "The app is a cli, entered through build-copy.ps1. Port every entry point, in that shape?",
+        "recommendation": "Yes: a clap front door (`app front-door`) takes every command over first"
+      }
+    ]
+  }
+}

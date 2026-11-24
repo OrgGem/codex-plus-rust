@@ -1,0 +1,435 @@
+{
+  "schema": "rust-anything/analyze@1",
+  "language": "ts",
+  "summary": {
+    "packages": 1,
+    "source_files": 3,
+    "test_files": 0,
+    "ui_files": 0,
+    "loc": 705,
+    "units": 3,
+    "ready": 2,
+    "caution": 1,
+    "blocked": 0,
+    "keep": 0,
+    "parse_errors": 0
+  },
+  "packages": [
+    {
+      "name": "native-browser",
+      "dir": "",
+      "order": 1,
+      "runtime": "node",
+      "workspace_deps": [],
+      "test_files": 0,
+      "units": [
+        "inspect-service.cjs",
+        "inspect-service.mjs",
+        "require-identification.mjs"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "inspect-service.cjs",
+      "package": "native-browser",
+      "files": [
+        "inspect-service.cjs"
+      ],
+      "loc": 394,
+      "wave": 0,
+      "readiness": 0,
+      "status": "caution",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node",
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 254,
+          "samples": [
+            "inspect-service.cjs:448",
+            "inspect-service.cjs:450",
+            "inspect-service.cjs:450"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 10,
+          "samples": [
+            "inspect-service.cjs:454",
+            "inspect-service.cjs:455",
+            "inspect-service.cjs:455"
+          ]
+        },
+        {
+          "risk": "dynamic-regex",
+          "severity": "high",
+          "count": 7,
+          "samples": [
+            "inspect-service.cjs:450",
+            "inspect-service.cjs:450",
+            "inspect-service.cjs:450"
+          ]
+        },
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 268,
+          "samples": [
+            "inspect-service.cjs:448",
+            "inspect-service.cjs:450",
+            "inspect-service.cjs:450"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 158,
+          "samples": [
+            "inspect-service.cjs:448",
+            "inspect-service.cjs:448",
+            "inspect-service.cjs:450"
+          ]
+        },
+        {
+          "risk": "dynamic-typing",
+          "severity": "medium",
+          "count": 38,
+          "samples": [
+            "inspect-service.cjs:454",
+            "inspect-service.cjs:455",
+            "inspect-service.cjs:455"
+          ]
+        },
+        {
+          "risk": "class-inheritance",
+          "severity": "medium",
+          "count": 19,
+          "samples": [
+            "inspect-service.cjs:450",
+            "inspect-service.cjs:450",
+            "inspect-service.cjs:450"
+          ]
+        },
+        {
+          "risk": "generators",
+          "severity": "medium",
+          "count": 8,
+          "samples": [
+            "inspect-service.cjs:470",
+            "inspect-service.cjs:470",
+            "inspect-service.cjs:470"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 268,
+          "samples": [
+            "inspect-service.cjs:450",
+            "inspect-service.cjs:450",
+            "inspect-service.cjs:450"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 248,
+          "samples": [
+            "inspect-service.cjs:450",
+            "inspect-service.cjs:450",
+            "inspect-service.cjs:450"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 29,
+          "samples": [
+            "inspect-service.cjs:450",
+            "inspect-service.cjs:450",
+            "inspect-service.cjs:454"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "inspect-service.cjs:455",
+            "inspect-service.cjs:457"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [
+        "supports-color"
+      ],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 173.4,
+      "priority": 35,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "1 npm dependencies not in the crate table: check them by hand.",
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "inspect-service.mjs",
+      "package": "native-browser",
+      "files": [
+        "inspect-service.mjs"
+      ],
+      "loc": 271,
+      "wave": 0,
+      "readiness": 74,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 3,
+          "samples": [
+            "inspect-service.mjs:48",
+            "inspect-service.mjs:252",
+            "inspect-service.mjs:253"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 4,
+          "samples": [
+            "inspect-service.mjs:6",
+            "inspect-service.mjs:21",
+            "inspect-service.mjs:175"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "inspect-service.mjs:33",
+            "inspect-service.mjs:272",
+            "inspect-service.mjs:274"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "inspect-service.mjs:12",
+            "inspect-service.mjs:271"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [
+        "@babel/parser",
+        "@babel/traverse"
+      ],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.1,
+      "priority": 49,
+      "exports": 2,
+      "bridgeable": 2,
+      "notes": [
+        "1 npm dependencies not in the crate table: check them by hand.",
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "require-identification.mjs",
+      "package": "native-browser",
+      "files": [
+        "require-identification.mjs"
+      ],
+      "loc": 40,
+      "wave": 0,
+      "readiness": 92,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 4,
+          "samples": [
+            "require-identification.mjs:3",
+            "require-identification.mjs:23",
+            "require-identification.mjs:24"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "require-identification.mjs:22",
+            "require-identification.mjs:25"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "require-identification.mjs:26"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 51,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    }
+  ],
+  "start_here": [
+    "inspect-service.mjs"
+  ],
+  "dependencies": [
+    {
+      "name": "@babel/traverse",
+      "used_by": 1,
+      "crates": null,
+      "fit": "unknown",
+      "note": ""
+    },
+    {
+      "name": "supports-color",
+      "used_by": 1,
+      "crates": null,
+      "fit": "unknown",
+      "note": ""
+    },
+    {
+      "name": "@babel/parser",
+      "used_by": 1,
+      "crates": "oxc",
+      "fit": "good",
+      "note": "oxc-parser is already a binding of the Rust crate."
+    }
+  ],
+  "whole_app": {
+    "shape": "library",
+    "entry_points": [
+      {
+        "kind": "library",
+        "path": ".",
+        "name": "native-browser",
+        "evidence": "no main and no server: the package's public API"
+      }
+    ],
+    "dependencies": [
+      {
+        "name": "@babel/traverse",
+        "names": [
+          "@babel/traverse"
+        ],
+        "declared": false,
+        "used_by": 1,
+        "crates": null,
+        "fit": "unknown",
+        "note": ""
+      },
+      {
+        "name": "supports-color",
+        "names": [
+          "supports-color"
+        ],
+        "declared": false,
+        "used_by": 1,
+        "crates": null,
+        "fit": "unknown",
+        "note": ""
+      },
+      {
+        "name": "@babel/parser",
+        "names": [
+          "@babel/parser"
+        ],
+        "declared": false,
+        "used_by": 1,
+        "crates": "oxc",
+        "fit": "good",
+        "note": "oxc-parser is already a binding of the Rust crate."
+      }
+    ],
+    "pieces": [
+      {
+        "wave": 0,
+        "units": [
+          "inspect-service.cjs"
+        ],
+        "loc": 394,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "inspect-service.mjs"
+        ],
+        "loc": 271,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "require-identification.mjs"
+        ],
+        "loc": 40,
+        "tangled": false
+      }
+    ],
+    "decisions": [
+      {
+        "id": "D1",
+        "topic": "shape",
+        "question": "The app is a library, entered through native-browser (.). Port every entry point, in that shape?",
+        "recommendation": "Yes: the Rust crate's public API becomes the library's front door"
+      },
+      {
+        "id": "D2",
+        "topic": "dependency @babel/traverse",
+        "question": "Which crate replaces @babel/traverse (used by 1 unit)?",
+        "recommendation": "Research it against primary sources into rust/research/@babel-traverse.md before porting what uses it"
+      },
+      {
+        "id": "D3",
+        "topic": "dependency supports-color",
+        "question": "Which crate replaces supports-color (used by 1 unit)?",
+        "recommendation": "Research it against primary sources into rust/research/supports-color.md before porting what uses it"
+      }
+    ]
+  }
+}

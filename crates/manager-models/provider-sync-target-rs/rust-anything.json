@@ -1,0 +1,60 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/provider-sync-target.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "provider-sync-target-rs",
+  "exports": [
+    {
+      "name": "isProviderSyncTargetSelectable",
+      "file": "src/provider-sync-target.ts",
+      "line": 7,
+      "params": [
+        {
+          "name": "target",
+          "ts_type": "{\n  id: string;\n  isCurrentProvider: boolean;\n  isResolvable: boolean;\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "preferredProviderSyncTarget",
+      "file": "src/provider-sync-target.ts",
+      "line": 11,
+      "params": [
+        {
+          "name": "targets",
+          "ts_type": "readonly {\n  id: string;\n  isCurrentProvider: boolean;\n  isResolvable: boolean;\n}[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "currentProvider",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "savedProvider",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

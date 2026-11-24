@@ -1,0 +1,61 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/update-notification.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "update-notification-rs",
+  "exports": [
+    {
+      "name": "updatePreferencesFrom",
+      "file": "src/update-notification.ts",
+      "line": 23,
+      "params": [
+        {
+          "name": "settings",
+          "ts_type": "{ updateAutoCheck?: boolean; updateSkippedVersion?: string; updateAutoDownload?: boolean } | null | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  /** 启动时及运行期间自动检查更新；关掉后只有手动检查会联网。 */\n  autoCheck: boolean;\n  /** 「跳过此版本」记下的版本；该版本及更低版本不再自动提示。空串表示没有跳过。 */\n  skippedVersion: string;\n  /** 有可用更新时自动下载安装包。 */\n  autoDownload: boolean;\n}",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "isVersionSkipped",
+      "file": "src/update-notification.ts",
+      "line": 44,
+      "params": [
+        {
+          "name": "candidate",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "skipped",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "UpdateNotifications",
+      "file": "src/update-notification.ts",
+      "line": 57,
+      "reason": "class: storage-callback"
+    }
+  ]
+}

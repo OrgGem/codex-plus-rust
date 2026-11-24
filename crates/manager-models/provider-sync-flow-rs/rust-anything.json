@@ -1,0 +1,54 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/provider-sync-flow.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "provider-sync-flow-rs",
+  "exports": [
+    {
+      "name": "providerSyncStreamPercent",
+      "file": "src/provider-sync-flow.ts",
+      "line": 28,
+      "params": [
+        {
+          "name": "progress",
+          "ts_type": "({\n  phase:\n    | \"scanning\"\n    | \"planning\"\n    | \"backing_up\"\n    | \"rewriting\"\n    | \"updating_indexes\"\n    | \"rolling_back\"\n    | \"complete\";\n  totalRolloutFiles: number;\n  scannedRolloutFiles: number;\n  plannedRewriteFiles: number;\n  appliedRewriteFiles: number;\n  skippedLockedRolloutFiles: number;\n})",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "number",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "resolveProviderSyncCompletion",
+      "file": "src/provider-sync-flow.ts",
+      "line": 47,
+      "params": [
+        {
+          "name": "syncResult",
+          "ts_type": "({\n  status: string;\n  message: string;\n})",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "cleanupFailure",
+          "ts_type": "{\n  status: string;\n  message: string;\n} | null",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

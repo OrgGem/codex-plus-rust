@@ -1,0 +1,179 @@
+{
+  "schema": "rust-anything/analyze@1",
+  "language": "python",
+  "summary": {
+    "packages": 1,
+    "source_files": 1,
+    "test_files": 0,
+    "ui_files": 0,
+    "loc": 716,
+    "units": 1,
+    "ready": 0,
+    "caution": 1,
+    "blocked": 0,
+    "keep": 0,
+    "parse_errors": 0
+  },
+  "packages": [
+    {
+      "name": "codex-wechat",
+      "dir": "",
+      "order": 1,
+      "runtime": "portable",
+      "workspace_deps": [],
+      "test_files": 0,
+      "units": [
+        "codex_wechat.py"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "codex_wechat.py",
+      "package": "codex-wechat",
+      "files": [
+        "codex_wechat.py"
+      ],
+      "loc": 716,
+      "wave": 0,
+      "readiness": 37,
+      "status": "caution",
+      "bridge": "pyo3",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 10,
+          "samples": [
+            "codex_wechat.py:272",
+            "codex_wechat.py:274",
+            "codex_wechat.py:397"
+          ]
+        },
+        {
+          "risk": "unordered-iteration",
+          "severity": "high",
+          "count": 4,
+          "samples": [
+            "codex_wechat.py:126",
+            "codex_wechat.py:616",
+            "codex_wechat.py:618"
+          ]
+        },
+        {
+          "risk": "dynamic-typing",
+          "severity": "medium",
+          "count": 4,
+          "samples": [
+            "codex_wechat.py:110",
+            "codex_wechat.py:118",
+            "codex_wechat.py:655"
+          ]
+        },
+        {
+          "risk": "integer-semantics",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "codex_wechat.py:36",
+            "codex_wechat.py:36"
+          ]
+        },
+        {
+          "risk": "concurrency",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "codex_wechat.py:422",
+            "codex_wechat.py:423"
+          ]
+        },
+        {
+          "risk": "division-semantics",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "codex_wechat.py:570"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 30,
+          "samples": [
+            "codex_wechat.py:99",
+            "codex_wechat.py:111",
+            "codex_wechat.py:119"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 9,
+          "samples": [
+            "codex_wechat.py:162",
+            "codex_wechat.py:444",
+            "codex_wechat.py:445"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 7,
+          "samples": [
+            "codex_wechat.py:36",
+            "codex_wechat.py:36",
+            "codex_wechat.py:55"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 3.8,
+      "priority": 31,
+      "exports": 31,
+      "bridgeable": 26,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    }
+  ],
+  "start_here": [
+    "codex_wechat.py"
+  ],
+  "dependencies": [],
+  "whole_app": {
+    "shape": "cli",
+    "entry_points": [
+      {
+        "kind": "cli",
+        "path": "codex_wechat.py",
+        "evidence": "`if __name__ == \"__main__\"` at codex_wechat.py:838"
+      }
+    ],
+    "dependencies": [],
+    "pieces": [
+      {
+        "wave": 0,
+        "units": [
+          "codex_wechat.py"
+        ],
+        "loc": 716,
+        "tangled": false
+      }
+    ],
+    "decisions": [
+      {
+        "id": "D1",
+        "topic": "shape",
+        "question": "The app is a cli, entered through codex_wechat.py. Port every entry point, in that shape?",
+        "recommendation": "Yes: a clap front door (`app front-door`) takes every command over first"
+      }
+    ]
+  }
+}

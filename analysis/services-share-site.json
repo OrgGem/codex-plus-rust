@@ -1,0 +1,243 @@
+{
+  "schema": "rust-anything/analyze@1",
+  "language": "ts",
+  "summary": {
+    "packages": 1,
+    "source_files": 2,
+    "test_files": 0,
+    "ui_files": 0,
+    "loc": 346,
+    "units": 2,
+    "ready": 2,
+    "caution": 0,
+    "blocked": 0,
+    "keep": 0,
+    "parse_errors": 0
+  },
+  "packages": [
+    {
+      "name": "share-site",
+      "dir": "",
+      "order": 1,
+      "runtime": "portable",
+      "workspace_deps": [],
+      "test_files": 0,
+      "units": [
+        "_worker.js",
+        "app.js"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "_worker.js",
+      "package": "share-site",
+      "files": [
+        "_worker.js"
+      ],
+      "loc": 158,
+      "wave": 0,
+      "readiness": 75,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "_worker.js:161",
+            "_worker.js:161"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 14,
+          "samples": [
+            "_worker.js:6",
+            "_worker.js:33",
+            "_worker.js:44"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "_worker.js:3"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "_worker.js:80",
+            "_worker.js:97",
+            "_worker.js:139"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "_worker.js:88",
+            "_worker.js:167"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "_worker.js:55"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "_worker.js:161"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.5,
+      "priority": 53,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "app.js",
+      "package": "share-site",
+      "files": [
+        "app.js"
+      ],
+      "loc": 188,
+      "wave": 0,
+      "readiness": 74,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 3,
+          "samples": [
+            "app.js:99",
+            "app.js:203",
+            "app.js:205"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 20,
+          "samples": [
+            "app.js:34",
+            "app.js:41",
+            "app.js:42"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 8,
+          "samples": [
+            "app.js:40",
+            "app.js:51",
+            "app.js:98"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "app.js:45",
+            "app.js:108",
+            "app.js:142"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "app.js:165"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.7,
+      "priority": 52,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    }
+  ],
+  "start_here": [],
+  "dependencies": [],
+  "whole_app": {
+    "shape": "library",
+    "entry_points": [
+      {
+        "kind": "library",
+        "path": ".",
+        "name": "share-site",
+        "evidence": "no main and no server: the package's public API"
+      }
+    ],
+    "dependencies": [],
+    "pieces": [
+      {
+        "wave": 0,
+        "units": [
+          "_worker.js"
+        ],
+        "loc": 158,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "app.js"
+        ],
+        "loc": 188,
+        "tangled": false
+      }
+    ],
+    "decisions": [
+      {
+        "id": "D1",
+        "topic": "shape",
+        "question": "The app is a library, entered through share-site (.). Port every entry point, in that shape?",
+        "recommendation": "Yes: the Rust crate's public API becomes the library's front door"
+      }
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/script-market-model.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "script-market-model-rs",
+  "exports": [
+    {
+      "name": "parseMarketTime",
+      "file": "src/script-market-model.ts",
+      "line": 28,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string | number | undefined | null",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "number | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "defaultMarketSort",
+      "file": "src/script-market-model.ts",
+      "line": 50,
+      "params": [
+        {
+          "name": "scripts",
+          "ts_type": "{ name: string; updatedAt?: string }[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"default\" | \"updated\" | \"name\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "sortMarketScripts",
+      "file": "src/script-market-model.ts",
+      "line": 56,
+      "params": [
+        {
+          "name": "scripts",
+          "ts_type": "({ name: string; updatedAt?: string })[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "sort",
+          "ts_type": "(\"default\" | \"updated\" | \"name\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({ name: string; updatedAt?: string })[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relativeAge",
+      "file": "src/script-market-model.ts",
+      "line": 80,
+      "params": [
+        {
+          "name": "time",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "now",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(| { unit: \"justNow\" }\n  | { unit: \"hours\" | \"days\" | \"months\" | \"years\"; value: number })",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "localScriptState",
+      "file": "src/script-market-model.ts",
+      "line": 100,
+      "params": [
+        {
+          "name": "script",
+          "ts_type": "{ enabled: boolean; status: string }",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "globalEnabled",
+          "ts_type": "boolean",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"off\" | \"globalOff\" | \"loaded\" | \"loading\" | \"failed\" | \"notLoaded\" | \"unknown\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

@@ -1,0 +1,89 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/subscription-policy.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "subscription-policy-rs",
+  "exports": [
+    {
+      "name": "defaultSubscriptionPolicy",
+      "file": "src/subscription-policy.ts",
+      "line": 14,
+      "params": [],
+      "returns": "({\n  defaultUsedPercentLimit?: number | null;\n  windowUsedPercentLimits: Record<string, number>;\n  onLimit: \"stop\" | \"nextPermitted\" | \"apiFallback\";\n  unknownUsage: \"block\" | \"allow\";\n  maxAgeSeconds: number;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeSubscriptionPolicy",
+      "file": "src/subscription-policy.ts",
+      "line": 24,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "(Partial<Omit<({\n  defaultUsedPercentLimit?: number | null;\n  windowUsedPercentLimits: Record<string, number>;\n  onLimit: \"stop\" | \"nextPermitted\" | \"apiFallback\";\n  unknownUsage: \"block\" | \"allow\";\n  maxAgeSeconds: number;\n}), \"windowUsedPercentLimits\">> & {\n  windowUsedPercentLimits?: Record<string, number> | null;\n}) | null",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  defaultUsedPercentLimit?: number | null;\n  windowUsedPercentLimits: Record<string, number>;\n  onLimit: \"stop\" | \"nextPermitted\" | \"apiFallback\";\n  unknownUsage: \"block\" | \"allow\";\n  maxAgeSeconds: number;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "subscriptionPercentLimit",
+      "file": "src/subscription-policy.ts",
+      "line": 36,
+      "params": [
+        {
+          "name": "text",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "number | null | undefined",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "withSubscriptionWindowLimit",
+      "file": "src/subscription-policy.ts",
+      "line": 43,
+      "params": [
+        {
+          "name": "policy",
+          "ts_type": "({\n  defaultUsedPercentLimit?: number | null;\n  windowUsedPercentLimits: Record<string, number>;\n  onLimit: \"stop\" | \"nextPermitted\" | \"apiFallback\";\n  unknownUsage: \"block\" | \"allow\";\n  maxAgeSeconds: number;\n})",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "minutes",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "text",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  defaultUsedPercentLimit?: number | null;\n  windowUsedPercentLimits: Record<string, number>;\n  onLimit: \"stop\" | \"nextPermitted\" | \"apiFallback\";\n  unknownUsage: \"block\" | \"allow\";\n  maxAgeSeconds: number;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

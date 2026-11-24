@@ -1,0 +1,1275 @@
+{
+  "schema": "rust-anything/analyze@1",
+  "language": "ts",
+  "summary": {
+    "packages": 1,
+    "source_files": 14,
+    "test_files": 0,
+    "ui_files": 0,
+    "loc": 1644,
+    "units": 14,
+    "ready": 14,
+    "caution": 0,
+    "blocked": 0,
+    "keep": 0,
+    "parse_errors": 0
+  },
+  "packages": [
+    {
+      "name": "remote-control-p0",
+      "dir": "",
+      "order": 1,
+      "runtime": "node",
+      "workspace_deps": [],
+      "test_files": 0,
+      "units": [
+        "follower.mjs",
+        "ipc-client.mjs",
+        "ipc-versions.mjs",
+        "mock-responses.mjs",
+        "poc-headless-dump.mjs",
+        "poc-headless-resume.mjs",
+        "poc-headless-turn.mjs",
+        "run-p0.mjs",
+        "run-p1.mjs",
+        "run-p2.mjs",
+        "run-p3.mjs",
+        "run-p4.mjs",
+        "run-p5.mjs",
+        "sidecar.mjs"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "follower.mjs",
+      "package": "remote-control-p0",
+      "files": [
+        "follower.mjs"
+      ],
+      "loc": 121,
+      "wave": 0,
+      "readiness": 87,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "follower.mjs:63",
+            "follower.mjs:64",
+            "follower.mjs:68"
+          ]
+        },
+        {
+          "risk": "class-inheritance",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "follower.mjs:33"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "follower.mjs:93",
+            "follower.mjs:103"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "follower.mjs:65"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "follower.mjs:65"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 1,
+      "density": 1.7,
+      "priority": 57,
+      "exports": 2,
+      "bridgeable": 1,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "ipc-client.mjs",
+      "package": "remote-control-p0",
+      "files": [
+        "ipc-client.mjs"
+      ],
+      "loc": 137,
+      "wave": 0,
+      "readiness": 85,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 4,
+          "samples": [
+            "ipc-client.mjs:74",
+            "ipc-client.mjs:79",
+            "ipc-client.mjs:80"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "ipc-client.mjs:58"
+          ]
+        },
+        {
+          "risk": "class-inheritance",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "ipc-client.mjs:51"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "ipc-client.mjs:63",
+            "ipc-client.mjs:81",
+            "ipc-client.mjs:93"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 1,
+      "density": 1.5,
+      "priority": 55,
+      "exports": 2,
+      "bridgeable": 1,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "ipc-versions.mjs",
+      "package": "remote-control-p0",
+      "files": [
+        "ipc-versions.mjs"
+      ],
+      "loc": 43,
+      "wave": 0,
+      "readiness": 96,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "ipc-versions.mjs:12",
+            "ipc-versions.mjs:22",
+            "ipc-versions.mjs:24"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "ipc-versions.mjs:19",
+            "ipc-versions.mjs:36",
+            "ipc-versions.mjs:45"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.3,
+      "priority": 58,
+      "exports": 2,
+      "bridgeable": 2,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "mock-responses.mjs",
+      "package": "remote-control-p0",
+      "files": [
+        "mock-responses.mjs"
+      ],
+      "loc": 100,
+      "wave": 0,
+      "readiness": 72,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 3,
+          "samples": [
+            "mock-responses.mjs:82",
+            "mock-responses.mjs:87",
+            "mock-responses.mjs:106"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "mock-responses.mjs:71",
+            "mock-responses.mjs:71"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 5,
+          "samples": [
+            "mock-responses.mjs:11",
+            "mock-responses.mjs:17",
+            "mock-responses.mjs:21"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "mock-responses.mjs:81"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 6,
+          "samples": [
+            "mock-responses.mjs:20",
+            "mock-responses.mjs:38",
+            "mock-responses.mjs:52"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "mock-responses.mjs:60"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 5.0,
+      "priority": 56,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "poc-headless-dump.mjs",
+      "package": "remote-control-p0",
+      "files": [
+        "poc-headless-dump.mjs"
+      ],
+      "loc": 53,
+      "wave": 0,
+      "readiness": 77,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 3,
+          "samples": [
+            "poc-headless-dump.mjs:28",
+            "poc-headless-dump.mjs:29",
+            "poc-headless-dump.mjs:30"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 7,
+          "samples": [
+            "poc-headless-dump.mjs:20",
+            "poc-headless-dump.mjs:46",
+            "poc-headless-dump.mjs:48"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "poc-headless-dump.mjs:18",
+            "poc-headless-dump.mjs:50",
+            "poc-headless-dump.mjs:51"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "poc-headless-dump.mjs:19",
+            "poc-headless-dump.mjs:33",
+            "poc-headless-dump.mjs:36"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "poc-headless-dump.mjs:33"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 7.5,
+      "priority": 60,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "poc-headless-resume.mjs",
+      "package": "remote-control-p0",
+      "files": [
+        "poc-headless-resume.mjs"
+      ],
+      "loc": 84,
+      "wave": 0,
+      "readiness": 72,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 5,
+          "samples": [
+            "poc-headless-resume.mjs:34",
+            "poc-headless-resume.mjs:35",
+            "poc-headless-resume.mjs:36"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 19,
+          "samples": [
+            "poc-headless-resume.mjs:24",
+            "poc-headless-resume.mjs:55",
+            "poc-headless-resume.mjs:60"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "poc-headless-resume.mjs:20",
+            "poc-headless-resume.mjs:85"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 8,
+          "samples": [
+            "poc-headless-resume.mjs:23",
+            "poc-headless-resume.mjs:39",
+            "poc-headless-resume.mjs:64"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "poc-headless-resume.mjs:39"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 8.3,
+      "priority": 63,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "poc-headless-turn.mjs",
+      "package": "remote-control-p0",
+      "files": [
+        "poc-headless-turn.mjs"
+      ],
+      "loc": 82,
+      "wave": 0,
+      "readiness": 75,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 4,
+          "samples": [
+            "poc-headless-turn.mjs:33",
+            "poc-headless-turn.mjs:34",
+            "poc-headless-turn.mjs:35"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 7,
+          "samples": [
+            "poc-headless-turn.mjs:24",
+            "poc-headless-turn.mjs:66",
+            "poc-headless-turn.mjs:69"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "poc-headless-turn.mjs:20",
+            "poc-headless-turn.mjs:88"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "poc-headless-turn.mjs:23",
+            "poc-headless-turn.mjs:38",
+            "poc-headless-turn.mjs:75"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "poc-headless-turn.mjs:77",
+            "poc-headless-turn.mjs:79"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "poc-headless-turn.mjs:38"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 7.3,
+      "priority": 62,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "run-p0.mjs",
+      "package": "remote-control-p0",
+      "files": [
+        "run-p0.mjs"
+      ],
+      "loc": 155,
+      "wave": 1,
+      "readiness": 74,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "run-p0.mjs:97",
+            "run-p0.mjs:100"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 46,
+          "samples": [
+            "run-p0.mjs:31",
+            "run-p0.mjs:38",
+            "run-p0.mjs:39"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "run-p0.mjs:60",
+            "run-p0.mjs:61",
+            "run-p0.mjs:100"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "run-p0.mjs:41",
+            "run-p0.mjs:95",
+            "run-p0.mjs:109"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "run-p0.mjs:46",
+            "run-p0.mjs:49"
+          ]
+        }
+      ],
+      "internal_deps": [
+        "follower.mjs",
+        "ipc-client.mjs",
+        "sidecar.mjs"
+      ],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.9,
+      "priority": 51,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "run-p1.mjs",
+      "package": "remote-control-p0",
+      "files": [
+        "run-p1.mjs"
+      ],
+      "loc": 185,
+      "wave": 0,
+      "readiness": 72,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "run-p1.mjs:103"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 56,
+          "samples": [
+            "run-p1.mjs:20",
+            "run-p1.mjs:27",
+            "run-p1.mjs:28"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "run-p1.mjs:41"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 7,
+          "samples": [
+            "run-p1.mjs:31",
+            "run-p1.mjs:43",
+            "run-p1.mjs:169"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "run-p1.mjs:102",
+            "run-p1.mjs:103",
+            "run-p1.mjs:104"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "run-p1.mjs:71",
+            "run-p1.mjs:105"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.1,
+      "priority": 48,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "run-p2.mjs",
+      "package": "remote-control-p0",
+      "files": [
+        "run-p2.mjs"
+      ],
+      "loc": 182,
+      "wave": 0,
+      "readiness": 70,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "run-p2.mjs:103",
+            "run-p2.mjs:145"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 47,
+          "samples": [
+            "run-p2.mjs:30",
+            "run-p2.mjs:37",
+            "run-p2.mjs:38"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "run-p2.mjs:28",
+            "run-p2.mjs:51"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "run-p2.mjs:85",
+            "run-p2.mjs:91",
+            "run-p2.mjs:147"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "run-p2.mjs:41",
+            "run-p2.mjs:53",
+            "run-p2.mjs:93"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "run-p2.mjs:145",
+            "run-p2.mjs:182",
+            "run-p2.mjs:184"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.2,
+      "priority": 49,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "run-p3.mjs",
+      "package": "remote-control-p0",
+      "files": [
+        "run-p3.mjs"
+      ],
+      "loc": 153,
+      "wave": 0,
+      "readiness": 74,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "run-p3.mjs:93"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 46,
+          "samples": [
+            "run-p3.mjs:20",
+            "run-p3.mjs:27",
+            "run-p3.mjs:28"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "run-p3.mjs:61"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 9,
+          "samples": [
+            "run-p3.mjs:31",
+            "run-p3.mjs:45",
+            "run-p3.mjs:49"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "run-p3.mjs:89",
+            "run-p3.mjs:95"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "run-p3.mjs:93"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.3,
+      "priority": 50,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "run-p4.mjs",
+      "package": "remote-control-p0",
+      "files": [
+        "run-p4.mjs"
+      ],
+      "loc": 98,
+      "wave": 0,
+      "readiness": 80,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "run-p4.mjs:79"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 25,
+          "samples": [
+            "run-p4.mjs:18",
+            "run-p4.mjs:24",
+            "run-p4.mjs:25"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "run-p4.mjs:28",
+            "run-p4.mjs:34",
+            "run-p4.mjs:85"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "run-p4.mjs:36",
+            "run-p4.mjs:37",
+            "run-p4.mjs:79"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "run-p4.mjs:48"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.0,
+      "priority": 54,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "run-p5.mjs",
+      "package": "remote-control-p0",
+      "files": [
+        "run-p5.mjs"
+      ],
+      "loc": 171,
+      "wave": 0,
+      "readiness": 74,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "run-p5.mjs:138"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 40,
+          "samples": [
+            "run-p5.mjs:21",
+            "run-p5.mjs:29",
+            "run-p5.mjs:30"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "run-p5.mjs:51",
+            "run-p5.mjs:154"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 10,
+          "samples": [
+            "run-p5.mjs:36",
+            "run-p5.mjs:39",
+            "run-p5.mjs:53"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "run-p5.mjs:79"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.8,
+      "priority": 51,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    },
+    {
+      "id": "sidecar.mjs",
+      "package": "remote-control-p0",
+      "files": [
+        "sidecar.mjs"
+      ],
+      "loc": 80,
+      "wave": 0,
+      "readiness": 74,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 3,
+          "samples": [
+            "sidecar.mjs:22",
+            "sidecar.mjs:23",
+            "sidecar.mjs:24"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 14,
+          "samples": [
+            "sidecar.mjs:9",
+            "sidecar.mjs:11",
+            "sidecar.mjs:42"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "sidecar.mjs:18"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "sidecar.mjs:27",
+            "sidecar.mjs:63",
+            "sidecar.mjs:77"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "sidecar.mjs:28",
+            "sidecar.mjs:37",
+            "sidecar.mjs:45"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "sidecar.mjs:58",
+            "sidecar.mjs:59"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 1,
+      "density": 6.3,
+      "priority": 59,
+      "exports": 1,
+      "bridgeable": 1,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "No tests found: write characterization tests against the original code first."
+      ]
+    }
+  ],
+  "start_here": [
+    "sidecar.mjs",
+    "ipc-versions.mjs",
+    "follower.mjs",
+    "ipc-client.mjs"
+  ],
+  "dependencies": [],
+  "whole_app": {
+    "shape": "server",
+    "entry_points": [
+      {
+        "kind": "server",
+        "path": "mock-responses.mjs",
+        "evidence": "`createServer(` at mock-responses.mjs:47"
+      }
+    ],
+    "dependencies": [],
+    "pieces": [
+      {
+        "wave": 0,
+        "units": [
+          "follower.mjs"
+        ],
+        "loc": 121,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "ipc-client.mjs"
+        ],
+        "loc": 137,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "ipc-versions.mjs"
+        ],
+        "loc": 43,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "mock-responses.mjs"
+        ],
+        "loc": 100,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "poc-headless-dump.mjs"
+        ],
+        "loc": 53,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "poc-headless-resume.mjs"
+        ],
+        "loc": 84,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "poc-headless-turn.mjs"
+        ],
+        "loc": 82,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "run-p1.mjs"
+        ],
+        "loc": 185,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "run-p2.mjs"
+        ],
+        "loc": 182,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "run-p3.mjs"
+        ],
+        "loc": 153,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "run-p4.mjs"
+        ],
+        "loc": 98,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "run-p5.mjs"
+        ],
+        "loc": 171,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "sidecar.mjs"
+        ],
+        "loc": 80,
+        "tangled": false
+      },
+      {
+        "wave": 1,
+        "units": [
+          "run-p0.mjs"
+        ],
+        "loc": 155,
+        "tangled": false
+      }
+    ],
+    "decisions": [
+      {
+        "id": "D1",
+        "topic": "shape",
+        "question": "The app is a server, entered through mock-responses.mjs. Port every entry point, in that shape?",
+        "recommendation": "Yes: an axum front door (`app front-door`) takes the server over first"
+      }
+    ]
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/model-routes.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "model-routes-rs",
+  "exports": [
+    {
+      "name": "setIndependentProxyConfigured",
+      "file": "src/model-routes.ts",
+      "line": 39,
+      "params": [
+        {
+          "name": "profileId",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "configured",
+          "ts_type": "boolean",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "void",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "independentProxyEnabled",
+      "file": "src/model-routes.ts",
+      "line": 44,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "Pick<({\n  id: string;\n  name: string;\n  baseUrl: string;\n  apiKey: string;\n  protocol: \"responses\" | \"chatCompletions\" | \"anthropicMessages\";\n  relayMode: \"official\" | \"mixedApi\" | \"pureApi\" | \"aggregate\";\n  officialMixApiKey: boolean;\n  noAuth?: boolean;\n  webSearchHistoryCompat?: boolean;\n  localCompactionPromptAtEnd?: boolean;\n  strictResponsesReasoning?: boolean;\n  stripImageGenerationTool?: boolean;\n  stripResponsesImageDetail?: boolean;\n  pureApiImageGeneration?: boolean;\n  modelMetadata?: string;\n  modelRoutes?: {\n  model: string;\n  targetRelayId: string;\n  targetModel: string;\n}[];\n}), \"relayMode\" | \"officialMixApiKey\"> & { id?: string }",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeRelayModelRoutes",
+      "file": "src/model-routes.ts",
+      "line": 57,
+      "params": [
+        {
+          "name": "routes",
+          "ts_type": "{\n  model: string;\n  targetRelayId: string;\n  targetModel: string;\n}[] | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  model: string;\n  targetRelayId: string;\n  targetModel: string;\n}[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "findRelayModelRouteIssue",
+      "file": "src/model-routes.ts",
+      "line": 66,
+      "params": [
+        {
+          "name": "sources",
+          "ts_type": "({\n  id: string;\n  name: string;\n  baseUrl: string;\n  apiKey: string;\n  protocol: \"responses\" | \"chatCompletions\" | \"anthropicMessages\";\n  relayMode: \"official\" | \"mixedApi\" | \"pureApi\" | \"aggregate\";\n  officialMixApiKey: boolean;\n  noAuth?: boolean;\n  webSearchHistoryCompat?: boolean;\n  localCompactionPromptAtEnd?: boolean;\n  strictResponsesReasoning?: boolean;\n  stripImageGenerationTool?: boolean;\n  stripResponsesImageDetail?: boolean;\n  pureApiImageGeneration?: boolean;\n  modelMetadata?: string;\n  modelRoutes?: {\n  model: string;\n  targetRelayId: string;\n  targetModel: string;\n}[];\n})[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "allProfiles",
+          "ts_type": "({\n  id: string;\n  name: string;\n  baseUrl: string;\n  apiKey: string;\n  protocol: \"responses\" | \"chatCompletions\" | \"anthropicMessages\";\n  relayMode: \"official\" | \"mixedApi\" | \"pureApi\" | \"aggregate\";\n  officialMixApiKey: boolean;\n  noAuth?: boolean;\n  webSearchHistoryCompat?: boolean;\n  localCompactionPromptAtEnd?: boolean;\n  strictResponsesReasoning?: boolean;\n  stripImageGenerationTool?: boolean;\n  stripResponsesImageDetail?: boolean;\n  pureApiImageGeneration?: boolean;\n  modelMetadata?: string;\n  modelRoutes?: {\n  model: string;\n  targetRelayId: string;\n  targetModel: string;\n}[];\n})[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  kind: \"incomplete\" | \"duplicate\" | \"self\" | \"missingTarget\" | \"aggregateTarget\" | \"targetProtocol\" | \"targetCredentials\";\n  model: string;\n  sourceRelayId: string;\n}) | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "webSearchHistoryCompatEnabled",
+      "file": "src/model-routes.ts",
+      "line": 96,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "Pick<({\n  id: string;\n  name: string;\n  baseUrl: string;\n  apiKey: string;\n  protocol: \"responses\" | \"chatCompletions\" | \"anthropicMessages\";\n  relayMode: \"official\" | \"mixedApi\" | \"pureApi\" | \"aggregate\";\n  officialMixApiKey: boolean;\n  noAuth?: boolean;\n  webSearchHistoryCompat?: boolean;\n  localCompactionPromptAtEnd?: boolean;\n  strictResponsesReasoning?: boolean;\n  stripImageGenerationTool?: boolean;\n  stripResponsesImageDetail?: boolean;\n  pureApiImageGeneration?: boolean;\n  modelMetadata?: string;\n  modelRoutes?: {\n  model: string;\n  targetRelayId: string;\n  targetModel: string;\n}[];\n}), \"protocol\" | \"relayMode\" | \"officialMixApiKey\" | \"webSearchHistoryCompat\">",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "localCompactionPromptAtEndEnabled",
+      "file": "src/model-routes.ts",
+      "line": 105,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "Pick<({\n  id: string;\n  name: string;\n  baseUrl: string;\n  apiKey: string;\n  protocol: \"responses\" | \"chatCompletions\" | \"anthropicMessages\";\n  relayMode: \"official\" | \"mixedApi\" | \"pureApi\" | \"aggregate\";\n  officialMixApiKey: boolean;\n  noAuth?: boolean;\n  webSearchHistoryCompat?: boolean;\n  localCompactionPromptAtEnd?: boolean;\n  strictResponsesReasoning?: boolean;\n  stripImageGenerationTool?: boolean;\n  stripResponsesImageDetail?: boolean;\n  pureApiImageGeneration?: boolean;\n  modelMetadata?: string;\n  modelRoutes?: {\n  model: string;\n  targetRelayId: string;\n  targetModel: string;\n}[];\n}), \"protocol\" | \"relayMode\" | \"officialMixApiKey\" | \"localCompactionPromptAtEnd\">",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "stripImageGenerationToolEnabled",
+      "file": "src/model-routes.ts",
+      "line": 115,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "Pick<({\n  id: string;\n  name: string;\n  baseUrl: string;\n  apiKey: string;\n  protocol: \"responses\" | \"chatCompletions\" | \"anthropicMessages\";\n  relayMode: \"official\" | \"mixedApi\" | \"pureApi\" | \"aggregate\";\n  officialMixApiKey: boolean;\n  noAuth?: boolean;\n  webSearchHistoryCompat?: boolean;\n  localCompactionPromptAtEnd?: boolean;\n  strictResponsesReasoning?: boolean;\n  stripImageGenerationTool?: boolean;\n  stripResponsesImageDetail?: boolean;\n  pureApiImageGeneration?: boolean;\n  modelMetadata?: string;\n  modelRoutes?: {\n  model: string;\n  targetRelayId: string;\n  targetModel: string;\n}[];\n}), \"protocol\" | \"relayMode\" | \"officialMixApiKey\" | \"stripImageGenerationTool\">",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "stripResponsesImageDetailEnabled",
+      "file": "src/model-routes.ts",
+      "line": 125,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "Pick<({\n  id: string;\n  name: string;\n  baseUrl: string;\n  apiKey: string;\n  protocol: \"responses\" | \"chatCompletions\" | \"anthropicMessages\";\n  relayMode: \"official\" | \"mixedApi\" | \"pureApi\" | \"aggregate\";\n  officialMixApiKey: boolean;\n  noAuth?: boolean;\n  webSearchHistoryCompat?: boolean;\n  localCompactionPromptAtEnd?: boolean;\n  strictResponsesReasoning?: boolean;\n  stripImageGenerationTool?: boolean;\n  stripResponsesImageDetail?: boolean;\n  pureApiImageGeneration?: boolean;\n  modelMetadata?: string;\n  modelRoutes?: {\n  model: string;\n  targetRelayId: string;\n  targetModel: string;\n}[];\n}), \"protocol\" | \"relayMode\" | \"officialMixApiKey\" | \"stripResponsesImageDetail\">",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "pureApiImageGenerationEnabled",
+      "file": "src/model-routes.ts",
+      "line": 135,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "Pick<({\n  id: string;\n  name: string;\n  baseUrl: string;\n  apiKey: string;\n  protocol: \"responses\" | \"chatCompletions\" | \"anthropicMessages\";\n  relayMode: \"official\" | \"mixedApi\" | \"pureApi\" | \"aggregate\";\n  officialMixApiKey: boolean;\n  noAuth?: boolean;\n  webSearchHistoryCompat?: boolean;\n  localCompactionPromptAtEnd?: boolean;\n  strictResponsesReasoning?: boolean;\n  stripImageGenerationTool?: boolean;\n  stripResponsesImageDetail?: boolean;\n  pureApiImageGeneration?: boolean;\n  modelMetadata?: string;\n  modelRoutes?: {\n  model: string;\n  targetRelayId: string;\n  targetModel: string;\n}[];\n}), \"relayMode\" | \"pureApiImageGeneration\">",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "settingsRequireLocalHelper",
+      "file": "src/model-routes.ts",
+      "line": 141,
+      "params": [
+        {
+          "name": "settings",
+          "ts_type": "{\n  relayProfilesEnabled: boolean;\n  enhancementsEnabled: boolean;\n  activeRelayId: string;\n  relayProfiles: ({\n  id: string;\n  name: string;\n  baseUrl: string;\n  apiKey: string;\n  protocol: \"responses\" | \"chatCompletions\" | \"anthropicMessages\";\n  relayMode: \"official\" | \"mixedApi\" | \"pureApi\" | \"aggregate\";\n  officialMixApiKey: boolean;\n  noAuth?: boolean;\n  webSearchHistoryCompat?: boolean;\n  localCompactionPromptAtEnd?: boolean;\n  strictResponsesReasoning?: boolean;\n  stripImageGenerationTool?: boolean;\n  stripResponsesImageDetail?: boolean;\n  pureApiImageGeneration?: boolean;\n  modelMetadata?: string;\n  modelRoutes?: {\n  model: string;\n  targetRelayId: string;\n  targetModel: string;\n}[];\n})[];\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "requestCompatibilityEnabled",
+      "file": "src/model-routes.ts",
+      "line": 161,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "Pick<({\n  id: string;\n  name: string;\n  baseUrl: string;\n  apiKey: string;\n  protocol: \"responses\" | \"chatCompletions\" | \"anthropicMessages\";\n  relayMode: \"official\" | \"mixedApi\" | \"pureApi\" | \"aggregate\";\n  officialMixApiKey: boolean;\n  noAuth?: boolean;\n  webSearchHistoryCompat?: boolean;\n  localCompactionPromptAtEnd?: boolean;\n  strictResponsesReasoning?: boolean;\n  stripImageGenerationTool?: boolean;\n  stripResponsesImageDetail?: boolean;\n  pureApiImageGeneration?: boolean;\n  modelMetadata?: string;\n  modelRoutes?: {\n  model: string;\n  targetRelayId: string;\n  targetModel: string;\n}[];\n}), \"protocol\" | \"relayMode\" | \"officialMixApiKey\" | \"strictResponsesReasoning\" | \"modelMetadata\">",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "modelRouteSaveRequiresRestart",
+      "file": "src/model-routes.ts",
+      "line": 172,
+      "params": [
+        {
+          "name": "current",
+          "ts_type": "{\n  relayProfilesEnabled: boolean;\n  enhancementsEnabled: boolean;\n  activeRelayId: string;\n  relayProfiles: ({\n  id: string;\n  name: string;\n  baseUrl: string;\n  apiKey: string;\n  protocol: \"responses\" | \"chatCompletions\" | \"anthropicMessages\";\n  relayMode: \"official\" | \"mixedApi\" | \"pureApi\" | \"aggregate\";\n  officialMixApiKey: boolean;\n  noAuth?: boolean;\n  webSearchHistoryCompat?: boolean;\n  localCompactionPromptAtEnd?: boolean;\n  strictResponsesReasoning?: boolean;\n  stripImageGenerationTool?: boolean;\n  stripResponsesImageDetail?: boolean;\n  pureApiImageGeneration?: boolean;\n  modelMetadata?: string;\n  modelRoutes?: {\n  model: string;\n  targetRelayId: string;\n  targetModel: string;\n}[];\n})[];\n}",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "proposed",
+          "ts_type": "{\n  relayProfilesEnabled: boolean;\n  enhancementsEnabled: boolean;\n  activeRelayId: string;\n  relayProfiles: ({\n  id: string;\n  name: string;\n  baseUrl: string;\n  apiKey: string;\n  protocol: \"responses\" | \"chatCompletions\" | \"anthropicMessages\";\n  relayMode: \"official\" | \"mixedApi\" | \"pureApi\" | \"aggregate\";\n  officialMixApiKey: boolean;\n  noAuth?: boolean;\n  webSearchHistoryCompat?: boolean;\n  localCompactionPromptAtEnd?: boolean;\n  strictResponsesReasoning?: boolean;\n  stripImageGenerationTool?: boolean;\n  stripResponsesImageDetail?: boolean;\n  pureApiImageGeneration?: boolean;\n  modelMetadata?: string;\n  modelRoutes?: {\n  model: string;\n  targetRelayId: string;\n  targetModel: string;\n}[];\n})[];\n}",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "activeLiveBaseUrl",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

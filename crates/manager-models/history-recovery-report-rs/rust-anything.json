@@ -1,0 +1,30 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/history-recovery-report.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "history-recovery-report-rs",
+  "exports": [
+    {
+      "name": "historyRecoveryStatusLabel",
+      "file": "src/history-recovery-report.ts",
+      "line": 8,
+      "params": [
+        {
+          "name": "report",
+          "ts_type": "({\n  status: \"pending\" | \"completed\" | \"partial\" | \"unavailable\" | \"skipped\";\n  reason?: string | null;\n  loadedPages: number;\n  metadataPages: number;\n})",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

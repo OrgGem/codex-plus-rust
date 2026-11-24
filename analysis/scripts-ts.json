@@ -1,0 +1,2322 @@
+{
+  "schema": "rust-anything/analyze@1",
+  "language": "ts",
+  "summary": {
+    "packages": 1,
+    "source_files": 28,
+    "test_files": 3,
+    "ui_files": 0,
+    "loc": 5357,
+    "units": 28,
+    "ready": 26,
+    "caution": 0,
+    "blocked": 2,
+    "keep": 0,
+    "parse_errors": 0
+  },
+  "packages": [
+    {
+      "name": "scripts",
+      "dir": "",
+      "order": 1,
+      "runtime": "node",
+      "workspace_deps": [],
+      "test_files": 3,
+      "units": [
+        "assemble-native-browser-inspector.mjs",
+        "assemble-provider-editing.mjs",
+        "assemble-renderer-inject.mjs",
+        "assemble-whale-runtime.mjs",
+        "build-plugin-market-index.mjs",
+        "check-native-fast.cjs",
+        "image-overlay-fixture.cjs",
+        "prepare-sherpa-cache.mjs",
+        "probe-extension-api-cdp.mjs",
+        "probe-extension-menu-cdp.mjs",
+        "probe-extensions-cdp.mjs",
+        "provider-editing-i18n-shim.mjs",
+        "prune-local-builds.mjs",
+        "relaunch-local.mjs",
+        "release-meta.mjs",
+        "release.mjs",
+        "split-renderer-inject.mjs",
+        "test-background-resume.cjs",
+        "test-image-composite.cjs",
+        "test-image-interaction-surfaces.cjs",
+        "test-image-native-media.cjs",
+        "test-image-native-surfaces.cjs",
+        "test-image-overlay.cjs",
+        "test-image-viewer-surfaces.cjs",
+        "test-issue-renderer-regressions.cjs",
+        "test-session-action-layout.cjs",
+        "test-skills-repository-browser.mjs",
+        "test-theme-shell-performance.cjs"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "assemble-native-browser-inspector.mjs",
+      "package": "scripts",
+      "files": [
+        "assemble-native-browser-inspector.mjs"
+      ],
+      "loc": 47,
+      "wave": 0,
+      "readiness": 83,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "assemble-native-browser-inspector.mjs:25"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 7,
+          "samples": [
+            "assemble-native-browser-inspector.mjs:10",
+            "assemble-native-browser-inspector.mjs:22",
+            "assemble-native-browser-inspector.mjs:31"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "assemble-native-browser-inspector.mjs:23",
+            "assemble-native-browser-inspector.mjs:24"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "assemble-native-browser-inspector.mjs:37",
+            "assemble-native-browser-inspector.mjs:45"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "assemble-native-browser-inspector.mjs:31"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [
+        "esbuild"
+      ],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 8.5,
+      "priority": 72,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "1 npm dependencies not in the crate table: check them by hand.",
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "assemble-provider-editing.mjs",
+      "package": "scripts",
+      "files": [
+        "assemble-provider-editing.mjs"
+      ],
+      "loc": 77,
+      "wave": 0,
+      "readiness": 89,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "assemble-provider-editing.mjs:50"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "assemble-provider-editing.mjs:33",
+            "assemble-provider-editing.mjs:71",
+            "assemble-provider-editing.mjs:80"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "assemble-provider-editing.mjs:59",
+            "assemble-provider-editing.mjs:76"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [
+        "esbuild"
+      ],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.3,
+      "priority": 64,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "1 npm dependencies not in the crate table: check them by hand.",
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "assemble-renderer-inject.mjs",
+      "package": "scripts",
+      "files": [
+        "assemble-renderer-inject.mjs"
+      ],
+      "loc": 117,
+      "wave": 0,
+      "readiness": 83,
+      "status": "blocked",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "dynamic-code",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "assemble-renderer-inject.mjs:87"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 8,
+          "samples": [
+            "assemble-renderer-inject.mjs:26",
+            "assemble-renderer-inject.mjs:40",
+            "assemble-renderer-inject.mjs:57"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "assemble-renderer-inject.mjs:37",
+            "assemble-renderer-inject.mjs:55"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 12,
+          "samples": [
+            "assemble-renderer-inject.mjs:29",
+            "assemble-renderer-inject.mjs:35",
+            "assemble-renderer-inject.mjs:38"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "assemble-renderer-inject.mjs:25",
+            "assemble-renderer-inject.mjs:75"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.7,
+      "priority": 63,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Uses dynamic code (eval, new Function or computed imports).",
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "assemble-whale-runtime.mjs",
+      "package": "scripts",
+      "files": [
+        "assemble-whale-runtime.mjs"
+      ],
+      "loc": 81,
+      "wave": 0,
+      "readiness": 93,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "assemble-whale-runtime.mjs:10",
+            "assemble-whale-runtime.mjs:66"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "assemble-whale-runtime.mjs:7",
+            "assemble-whale-runtime.mjs:10",
+            "assemble-whale-runtime.mjs:66"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "assemble-whale-runtime.mjs:24"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.5,
+      "priority": 69,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "build-plugin-market-index.mjs",
+      "package": "scripts",
+      "files": [
+        "build-plugin-market-index.mjs"
+      ],
+      "loc": 76,
+      "wave": 0,
+      "readiness": 79,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 6,
+          "samples": [
+            "build-plugin-market-index.mjs:9",
+            "build-plugin-market-index.mjs:33",
+            "build-plugin-market-index.mjs:33"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 5,
+          "samples": [
+            "build-plugin-market-index.mjs:21",
+            "build-plugin-market-index.mjs:25",
+            "build-plugin-market-index.mjs:26"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "build-plugin-market-index.mjs:40",
+            "build-plugin-market-index.mjs:76"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "build-plugin-market-index.mjs:11",
+            "build-plugin-market-index.mjs:49",
+            "build-plugin-market-index.mjs:53"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "build-plugin-market-index.mjs:40",
+            "build-plugin-market-index.mjs:53",
+            "build-plugin-market-index.mjs:75"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 11.8,
+      "priority": 80,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "check-native-fast.cjs",
+      "package": "scripts",
+      "files": [
+        "check-native-fast.cjs"
+      ],
+      "loc": 92,
+      "wave": 0,
+      "readiness": 85,
+      "status": "blocked",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "dynamic-code",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "check-native-fast.cjs:58",
+            "check-native-fast.cjs:67"
+          ]
+        },
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "check-native-fast.cjs:52"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "check-native-fast.cjs:44",
+            "check-native-fast.cjs:70",
+            "check-native-fast.cjs:75"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "check-native-fast.cjs:22",
+            "check-native-fast.cjs:83",
+            "check-native-fast.cjs:84"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.2,
+      "priority": 64,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Uses dynamic code (eval, new Function or computed imports).",
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "image-overlay-fixture.cjs",
+      "package": "scripts",
+      "files": [
+        "image-overlay-fixture.cjs"
+      ],
+      "loc": 139,
+      "wave": 0,
+      "readiness": 65,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node",
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 32,
+          "samples": [
+            "image-overlay-fixture.cjs:31",
+            "image-overlay-fixture.cjs:31",
+            "image-overlay-fixture.cjs:34"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 4,
+          "samples": [
+            "image-overlay-fixture.cjs:74",
+            "image-overlay-fixture.cjs:74",
+            "image-overlay-fixture.cjs:95"
+          ]
+        },
+        {
+          "risk": "class-inheritance",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "image-overlay-fixture.cjs:108",
+            "image-overlay-fixture.cjs:114"
+          ]
+        },
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "image-overlay-fixture.cjs:86"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "image-overlay-fixture.cjs:22",
+            "image-overlay-fixture.cjs:127"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "image-overlay-fixture.cjs:62",
+            "image-overlay-fixture.cjs:64"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [
+        "playwright",
+        "pngjs",
+        "sharp"
+      ],
+      "direct_tests": 0,
+      "fan_in": 6,
+      "density": 0.7,
+      "priority": 51,
+      "exports": 11,
+      "bridgeable": 10,
+      "notes": [
+        "1 npm dependencies not in the crate table: check them by hand.",
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "prepare-sherpa-cache.mjs",
+      "package": "scripts",
+      "files": [
+        "prepare-sherpa-cache.mjs"
+      ],
+      "loc": 59,
+      "wave": 0,
+      "readiness": 100,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "prepare-sherpa-cache.mjs:22",
+            "prepare-sherpa-cache.mjs:31",
+            "prepare-sherpa-cache.mjs:48"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 1,
+      "fan_in": 0,
+      "density": 1.7,
+      "priority": 76,
+      "exports": 1,
+      "bridgeable": 1,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "1 test file imports it directly."
+      ]
+    },
+    {
+      "id": "probe-extension-api-cdp.mjs",
+      "package": "scripts",
+      "files": [
+        "probe-extension-api-cdp.mjs"
+      ],
+      "loc": 273,
+      "wave": 0,
+      "readiness": 81,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 23,
+          "samples": [
+            "probe-extension-api-cdp.mjs:17",
+            "probe-extension-api-cdp.mjs:17",
+            "probe-extension-api-cdp.mjs:36"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "probe-extension-api-cdp.mjs:26",
+            "probe-extension-api-cdp.mjs:239"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "probe-extension-api-cdp.mjs:28",
+            "probe-extension-api-cdp.mjs:32",
+            "probe-extension-api-cdp.mjs:39"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "probe-extension-api-cdp.mjs:22",
+            "probe-extension-api-cdp.mjs:51"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 58,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "probe-extension-menu-cdp.mjs",
+      "package": "scripts",
+      "files": [
+        "probe-extension-menu-cdp.mjs"
+      ],
+      "loc": 226,
+      "wave": 0,
+      "readiness": 84,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 22,
+          "samples": [
+            "probe-extension-menu-cdp.mjs:15",
+            "probe-extension-menu-cdp.mjs:15",
+            "probe-extension-menu-cdp.mjs:34"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "probe-extension-menu-cdp.mjs:24"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 6,
+          "samples": [
+            "probe-extension-menu-cdp.mjs:26",
+            "probe-extension-menu-cdp.mjs:30",
+            "probe-extension-menu-cdp.mjs:37"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "probe-extension-menu-cdp.mjs:20",
+            "probe-extension-menu-cdp.mjs:49"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 59,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "probe-extensions-cdp.mjs",
+      "package": "scripts",
+      "files": [
+        "probe-extensions-cdp.mjs"
+      ],
+      "loc": 212,
+      "wave": 0,
+      "readiness": 85,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 19,
+          "samples": [
+            "probe-extensions-cdp.mjs:15",
+            "probe-extensions-cdp.mjs:15",
+            "probe-extensions-cdp.mjs:33"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "probe-extensions-cdp.mjs:21"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 6,
+          "samples": [
+            "probe-extensions-cdp.mjs:24",
+            "probe-extensions-cdp.mjs:28",
+            "probe-extensions-cdp.mjs:36"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "probe-extensions-cdp.mjs:17",
+            "probe-extensions-cdp.mjs:49"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 60,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "provider-editing-i18n-shim.mjs",
+      "package": "scripts",
+      "files": [
+        "provider-editing-i18n-shim.mjs"
+      ],
+      "loc": 10,
+      "wave": 0,
+      "readiness": 100,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [],
+      "risks": [],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 59,
+      "exports": 2,
+      "bridgeable": 2,
+      "notes": [
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "prune-local-builds.mjs",
+      "package": "scripts",
+      "files": [
+        "prune-local-builds.mjs"
+      ],
+      "loc": 199,
+      "wave": 0,
+      "readiness": 81,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 5,
+          "samples": [
+            "prune-local-builds.mjs:37",
+            "prune-local-builds.mjs:45",
+            "prune-local-builds.mjs:142"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "prune-local-builds.mjs:100",
+            "prune-local-builds.mjs:102"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 7,
+          "samples": [
+            "prune-local-builds.mjs:62",
+            "prune-local-builds.mjs:70",
+            "prune-local-builds.mjs:81"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "prune-local-builds.mjs:118",
+            "prune-local-builds.mjs:119"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "prune-local-builds.mjs:142",
+            "prune-local-builds.mjs:155"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 6.0,
+      "priority": 70,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "relaunch-local.mjs",
+      "package": "scripts",
+      "files": [
+        "relaunch-local.mjs"
+      ],
+      "loc": 221,
+      "wave": 0,
+      "readiness": 82,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "relaunch-local.mjs:71"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "relaunch-local.mjs:227"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "relaunch-local.mjs:71",
+            "relaunch-local.mjs:226",
+            "relaunch-local.mjs:227"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 8,
+          "samples": [
+            "relaunch-local.mjs:40",
+            "relaunch-local.mjs:127",
+            "relaunch-local.mjs:161"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "relaunch-local.mjs:238"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "relaunch-local.mjs:211"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.8,
+      "priority": 62,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "release-meta.mjs",
+      "package": "scripts",
+      "files": [
+        "release-meta.mjs"
+      ],
+      "loc": 132,
+      "wave": 0,
+      "readiness": 81,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "dynamic-regex",
+          "severity": "high",
+          "count": 3,
+          "samples": [
+            "release-meta.mjs:55",
+            "release-meta.mjs:56",
+            "release-meta.mjs:91"
+          ]
+        },
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "release-meta.mjs:96",
+            "release-meta.mjs:143"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "release-meta.mjs:30"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "release-meta.mjs:43",
+            "release-meta.mjs:49",
+            "release-meta.mjs:60"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 1,
+      "density": 3.0,
+      "priority": 64,
+      "exports": 4,
+      "bridgeable": 4,
+      "notes": [
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "release.mjs",
+      "package": "scripts",
+      "files": [
+        "release.mjs"
+      ],
+      "loc": 128,
+      "wave": 1,
+      "readiness": 91,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "release.mjs:24",
+            "release.mjs:61"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "release.mjs:101"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "release.mjs:39"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "release.mjs:81"
+          ]
+        }
+      ],
+      "internal_deps": [
+        "release-meta.mjs"
+      ],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.3,
+      "priority": 67,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": []
+    },
+    {
+      "id": "split-renderer-inject.mjs",
+      "package": "scripts",
+      "files": [
+        "split-renderer-inject.mjs"
+      ],
+      "loc": 81,
+      "wave": 0,
+      "readiness": 84,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 4,
+          "samples": [
+            "split-renderer-inject.mjs:47",
+            "split-renderer-inject.mjs:60",
+            "split-renderer-inject.mjs:89"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 5,
+          "samples": [
+            "split-renderer-inject.mjs:18",
+            "split-renderer-inject.mjs:29",
+            "split-renderer-inject.mjs:71"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 6,
+          "samples": [
+            "split-renderer-inject.mjs:20",
+            "split-renderer-inject.mjs:24",
+            "split-renderer-inject.mjs:36"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "split-renderer-inject.mjs:18",
+            "split-renderer-inject.mjs:24",
+            "split-renderer-inject.mjs:83"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 9.9,
+      "priority": 79,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "test-background-resume.cjs",
+      "package": "scripts",
+      "files": [
+        "test-background-resume.cjs"
+      ],
+      "loc": 167,
+      "wave": 0,
+      "readiness": 83,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node",
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 6,
+          "samples": [
+            "test-background-resume.cjs:12",
+            "test-background-resume.cjs:12",
+            "test-background-resume.cjs:13"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "test-background-resume.cjs:19",
+            "test-background-resume.cjs:19",
+            "test-background-resume.cjs:19"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "test-background-resume.cjs:48"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "test-background-resume.cjs:167"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 7.2,
+      "priority": 73,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "test-image-composite.cjs",
+      "package": "scripts",
+      "files": [
+        "test-image-composite.cjs"
+      ],
+      "loc": 251,
+      "wave": 1,
+      "readiness": 74,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node",
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "test-image-composite.cjs:114"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 102,
+          "samples": [
+            "test-image-composite.cjs:7",
+            "test-image-composite.cjs:8",
+            "test-image-composite.cjs:10"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "test-image-composite.cjs:119"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 6,
+          "samples": [
+            "test-image-composite.cjs:81",
+            "test-image-composite.cjs:116",
+            "test-image-composite.cjs:121"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "test-image-composite.cjs:82"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "test-image-composite.cjs:154"
+          ]
+        }
+      ],
+      "internal_deps": [
+        "image-overlay-fixture.cjs"
+      ],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 5.2,
+      "priority": 65,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": []
+    },
+    {
+      "id": "test-image-interaction-surfaces.cjs",
+      "package": "scripts",
+      "files": [
+        "test-image-interaction-surfaces.cjs"
+      ],
+      "loc": 298,
+      "wave": 1,
+      "readiness": 80,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 223,
+          "samples": [
+            "test-image-interaction-surfaces.cjs:16",
+            "test-image-interaction-surfaces.cjs:16",
+            "test-image-interaction-surfaces.cjs:29"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "test-image-interaction-surfaces.cjs:17"
+          ]
+        }
+      ],
+      "internal_deps": [
+        "image-overlay-fixture.cjs"
+      ],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 3.0,
+      "priority": 63,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": []
+    },
+    {
+      "id": "test-image-native-media.cjs",
+      "package": "scripts",
+      "files": [
+        "test-image-native-media.cjs"
+      ],
+      "loc": 444,
+      "wave": 1,
+      "readiness": 68,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node",
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "test-image-native-media.cjs:132",
+            "test-image-native-media.cjs:132"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 152,
+          "samples": [
+            "test-image-native-media.cjs:10",
+            "test-image-native-media.cjs:11",
+            "test-image-native-media.cjs:12"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "test-image-native-media.cjs:120"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "test-image-native-media.cjs:135"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "test-image-native-media.cjs:350"
+          ]
+        }
+      ],
+      "internal_deps": [
+        "image-overlay-fixture.cjs"
+      ],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 4.5,
+      "priority": 60,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": []
+    },
+    {
+      "id": "test-image-native-surfaces.cjs",
+      "package": "scripts",
+      "files": [
+        "test-image-native-surfaces.cjs"
+      ],
+      "loc": 276,
+      "wave": 1,
+      "readiness": 81,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 152,
+          "samples": [
+            "test-image-native-surfaces.cjs:27",
+            "test-image-native-surfaces.cjs:28",
+            "test-image-native-surfaces.cjs:33"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "test-image-native-surfaces.cjs:209"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "test-image-native-surfaces.cjs:119"
+          ]
+        }
+      ],
+      "internal_deps": [
+        "image-overlay-fixture.cjs"
+      ],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 4.3,
+      "priority": 66,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": []
+    },
+    {
+      "id": "test-image-overlay.cjs",
+      "package": "scripts",
+      "files": [
+        "test-image-overlay.cjs"
+      ],
+      "loc": 833,
+      "wave": 1,
+      "readiness": 60,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 480,
+          "samples": [
+            "test-image-overlay.cjs:7",
+            "test-image-overlay.cjs:8",
+            "test-image-overlay.cjs:9"
+          ]
+        },
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "test-image-overlay.cjs:815"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "test-image-overlay.cjs:739",
+            "test-image-overlay.cjs:739",
+            "test-image-overlay.cjs:764"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "test-image-overlay.cjs:151"
+          ]
+        }
+      ],
+      "internal_deps": [
+        "image-overlay-fixture.cjs"
+      ],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 5.9,
+      "priority": 55,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": []
+    },
+    {
+      "id": "test-image-viewer-surfaces.cjs",
+      "package": "scripts",
+      "files": [
+        "test-image-viewer-surfaces.cjs"
+      ],
+      "loc": 96,
+      "wave": 1,
+      "readiness": 88,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 68,
+          "samples": [
+            "test-image-viewer-surfaces.cjs:13",
+            "test-image-viewer-surfaces.cjs:14",
+            "test-image-viewer-surfaces.cjs:14"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "test-image-viewer-surfaces.cjs:15"
+          ]
+        }
+      ],
+      "internal_deps": [
+        "image-overlay-fixture.cjs"
+      ],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 3.1,
+      "priority": 68,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": []
+    },
+    {
+      "id": "test-issue-renderer-regressions.cjs",
+      "package": "scripts",
+      "files": [
+        "test-issue-renderer-regressions.cjs"
+      ],
+      "loc": 76,
+      "wave": 0,
+      "readiness": 86,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node",
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "dynamic-regex",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "test-issue-renderer-regressions.cjs:10"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 25,
+          "samples": [
+            "test-issue-renderer-regressions.cjs:15",
+            "test-issue-renderer-regressions.cjs:23",
+            "test-issue-renderer-regressions.cjs:28"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "test-issue-renderer-regressions.cjs:27",
+            "test-issue-renderer-regressions.cjs:44"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "test-issue-renderer-regressions.cjs:71"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [
+        "playwright"
+      ],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 6.6,
+      "priority": 73,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "test-session-action-layout.cjs",
+      "package": "scripts",
+      "files": [
+        "test-session-action-layout.cjs"
+      ],
+      "loc": 168,
+      "wave": 0,
+      "readiness": 82,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node",
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "dynamic-regex",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "test-session-action-layout.cjs:10"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 21,
+          "samples": [
+            "test-session-action-layout.cjs:90",
+            "test-session-action-layout.cjs:91",
+            "test-session-action-layout.cjs:92"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "test-session-action-layout.cjs:151",
+            "test-session-action-layout.cjs:154",
+            "test-session-action-layout.cjs:155"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "test-session-action-layout.cjs:113",
+            "test-session-action-layout.cjs:113"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "test-session-action-layout.cjs:143"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "test-session-action-layout.cjs:27"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [
+        "playwright"
+      ],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 1.8,
+      "priority": 62,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "test-skills-repository-browser.mjs",
+      "package": "scripts",
+      "files": [
+        "test-skills-repository-browser.mjs"
+      ],
+      "loc": 401,
+      "wave": 0,
+      "readiness": 57,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "test-skills-repository-browser.mjs:146"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "test-skills-repository-browser.mjs:32"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 218,
+          "samples": [
+            "test-skills-repository-browser.mjs:8",
+            "test-skills-repository-browser.mjs:14",
+            "test-skills-repository-browser.mjs:15"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 5,
+          "samples": [
+            "test-skills-repository-browser.mjs:32",
+            "test-skills-repository-browser.mjs:68",
+            "test-skills-repository-browser.mjs:171"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 20,
+          "samples": [
+            "test-skills-repository-browser.mjs:21",
+            "test-skills-repository-browser.mjs:37",
+            "test-skills-repository-browser.mjs:70"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 10,
+          "samples": [
+            "test-skills-repository-browser.mjs:59",
+            "test-skills-repository-browser.mjs:60",
+            "test-skills-repository-browser.mjs:81"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 5,
+          "samples": [
+            "test-skills-repository-browser.mjs:9",
+            "test-skills-repository-browser.mjs:95",
+            "test-skills-repository-browser.mjs:96"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.7,
+      "priority": 51,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "test-theme-shell-performance.cjs",
+      "package": "scripts",
+      "files": [
+        "test-theme-shell-performance.cjs"
+      ],
+      "loc": 177,
+      "wave": 0,
+      "readiness": 79,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node",
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "dynamic-regex",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "test-theme-shell-performance.cjs:11"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 68,
+          "samples": [
+            "test-theme-shell-performance.cjs:20",
+            "test-theme-shell-performance.cjs:21",
+            "test-theme-shell-performance.cjs:23"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "test-theme-shell-performance.cjs:40"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "test-theme-shell-performance.cjs:18",
+            "test-theme-shell-performance.cjs:40"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "test-theme-shell-performance.cjs:22"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [
+        "playwright"
+      ],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 2.8,
+      "priority": 63,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit."
+      ]
+    }
+  ],
+  "start_here": [
+    "prepare-sherpa-cache.mjs",
+    "release-meta.mjs",
+    "image-overlay-fixture.cjs"
+  ],
+  "dependencies": [
+    {
+      "name": "esbuild",
+      "used_by": 2,
+      "crates": null,
+      "fit": "unknown",
+      "note": ""
+    },
+    {
+      "name": "pngjs",
+      "used_by": 1,
+      "crates": null,
+      "fit": "unknown",
+      "note": ""
+    },
+    {
+      "name": "playwright",
+      "used_by": 4,
+      "crates": "chromiumoxide",
+      "fit": "partial",
+      "note": "drives Chrome over CDP; the page API differs"
+    },
+    {
+      "name": "sharp",
+      "used_by": 1,
+      "crates": "image",
+      "fit": "good",
+      "note": ""
+    }
+  ],
+  "whole_app": {
+    "shape": "server",
+    "entry_points": [
+      {
+        "kind": "server",
+        "path": "assemble-whale-runtime.mjs",
+        "evidence": "`express()` at assemble-whale-runtime.mjs:74"
+      },
+      {
+        "kind": "cli",
+        "path": "check-native-fast.cjs",
+        "evidence": "`#!/usr/bin/env node` at check-native-fast.cjs:1"
+      },
+      {
+        "kind": "cli",
+        "path": "prune-local-builds.mjs",
+        "evidence": "`#!/usr/bin/env node` at prune-local-builds.mjs:1"
+      },
+      {
+        "kind": "cli",
+        "path": "relaunch-local.mjs",
+        "evidence": "`#!/usr/bin/env node` at relaunch-local.mjs:1"
+      },
+      {
+        "kind": "cli",
+        "path": "release-meta.mjs",
+        "evidence": "`#!/usr/bin/env node` at release-meta.mjs:1"
+      },
+      {
+        "kind": "cli",
+        "path": "release.mjs",
+        "evidence": "`#!/usr/bin/env node` at release.mjs:1"
+      },
+      {
+        "kind": "server",
+        "path": "test-skills-repository-browser.mjs",
+        "evidence": "`createServer(` at test-skills-repository-browser.mjs:23"
+      }
+    ],
+    "dependencies": [
+      {
+        "name": "esbuild",
+        "names": [
+          "esbuild"
+        ],
+        "declared": false,
+        "used_by": 2,
+        "crates": null,
+        "fit": "unknown",
+        "note": ""
+      },
+      {
+        "name": "pngjs",
+        "names": [
+          "pngjs"
+        ],
+        "declared": false,
+        "used_by": 1,
+        "crates": null,
+        "fit": "unknown",
+        "note": ""
+      },
+      {
+        "name": "playwright",
+        "names": [
+          "playwright"
+        ],
+        "declared": false,
+        "used_by": 4,
+        "crates": "chromiumoxide",
+        "fit": "partial",
+        "note": "drives Chrome over CDP; the page API differs"
+      },
+      {
+        "name": "sharp",
+        "names": [
+          "sharp"
+        ],
+        "declared": false,
+        "used_by": 1,
+        "crates": "image",
+        "fit": "good",
+        "note": ""
+      }
+    ],
+    "pieces": [
+      {
+        "wave": 0,
+        "units": [
+          "assemble-native-browser-inspector.mjs"
+        ],
+        "loc": 47,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "assemble-provider-editing.mjs"
+        ],
+        "loc": 77,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "assemble-renderer-inject.mjs"
+        ],
+        "loc": 117,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "assemble-whale-runtime.mjs"
+        ],
+        "loc": 81,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "build-plugin-market-index.mjs"
+        ],
+        "loc": 76,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "check-native-fast.cjs"
+        ],
+        "loc": 92,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "image-overlay-fixture.cjs"
+        ],
+        "loc": 139,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "prepare-sherpa-cache.mjs"
+        ],
+        "loc": 59,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "probe-extension-api-cdp.mjs"
+        ],
+        "loc": 273,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "probe-extension-menu-cdp.mjs"
+        ],
+        "loc": 226,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "probe-extensions-cdp.mjs"
+        ],
+        "loc": 212,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "provider-editing-i18n-shim.mjs"
+        ],
+        "loc": 10,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "prune-local-builds.mjs"
+        ],
+        "loc": 199,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "relaunch-local.mjs"
+        ],
+        "loc": 221,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "release-meta.mjs"
+        ],
+        "loc": 132,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "split-renderer-inject.mjs"
+        ],
+        "loc": 81,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "test-background-resume.cjs"
+        ],
+        "loc": 167,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "test-issue-renderer-regressions.cjs"
+        ],
+        "loc": 76,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "test-session-action-layout.cjs"
+        ],
+        "loc": 168,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "test-skills-repository-browser.mjs"
+        ],
+        "loc": 401,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "test-theme-shell-performance.cjs"
+        ],
+        "loc": 177,
+        "tangled": false
+      },
+      {
+        "wave": 1,
+        "units": [
+          "release.mjs"
+        ],
+        "loc": 128,
+        "tangled": false
+      },
+      {
+        "wave": 1,
+        "units": [
+          "test-image-composite.cjs"
+        ],
+        "loc": 251,
+        "tangled": false
+      },
+      {
+        "wave": 1,
+        "units": [
+          "test-image-interaction-surfaces.cjs"
+        ],
+        "loc": 298,
+        "tangled": false
+      },
+      {
+        "wave": 1,
+        "units": [
+          "test-image-native-media.cjs"
+        ],
+        "loc": 444,
+        "tangled": false
+      },
+      {
+        "wave": 1,
+        "units": [
+          "test-image-native-surfaces.cjs"
+        ],
+        "loc": 276,
+        "tangled": false
+      },
+      {
+        "wave": 1,
+        "units": [
+          "test-image-overlay.cjs"
+        ],
+        "loc": 833,
+        "tangled": false
+      },
+      {
+        "wave": 1,
+        "units": [
+          "test-image-viewer-surfaces.cjs"
+        ],
+        "loc": 96,
+        "tangled": false
+      }
+    ],
+    "decisions": [
+      {
+        "id": "D1",
+        "topic": "shape",
+        "question": "The app is a server, entered through assemble-whale-runtime.mjs, check-native-fast.cjs, prune-local-builds.mjs, relaunch-local.mjs, release-meta.mjs, release.mjs, test-skills-repository-browser.mjs. Port every entry point, in that shape?",
+        "recommendation": "Yes: an axum front door (`app front-door`) takes the server over first"
+      },
+      {
+        "id": "D2",
+        "topic": "blocked assemble-renderer-inject.mjs",
+        "question": "assemble-renderer-inject.mjs is blocked: Uses dynamic code (eval, new Function or computed imports). Rework that part in Rust, or keep the unit outside?",
+        "recommendation": "Research the blocker first; then port it with the piece that uses it"
+      },
+      {
+        "id": "D3",
+        "topic": "blocked check-native-fast.cjs",
+        "question": "check-native-fast.cjs is blocked: Uses dynamic code (eval, new Function or computed imports). Rework that part in Rust, or keep the unit outside?",
+        "recommendation": "Research the blocker first; then port it with the piece that uses it"
+      },
+      {
+        "id": "D4",
+        "topic": "dependency esbuild",
+        "question": "Which crate replaces esbuild (used by 2 units)?",
+        "recommendation": "Research it against primary sources into rust/research/esbuild.md before porting what uses it"
+      },
+      {
+        "id": "D5",
+        "topic": "dependency pngjs",
+        "question": "Which crate replaces pngjs (used by 1 unit)?",
+        "recommendation": "Research it against primary sources into rust/research/pngjs.md before porting what uses it"
+      },
+      {
+        "id": "D6",
+        "topic": "dependency playwright",
+        "question": "playwright maps to chromiumoxide only in part (used by 4 units; drives Chrome over CDP; the page API differs). Use it?",
+        "recommendation": "Use chromiumoxide, and record cases for the behavior it does not cover"
+      }
+    ]
+  }
+}

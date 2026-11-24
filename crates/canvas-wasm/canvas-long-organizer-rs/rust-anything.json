@@ -1,0 +1,133 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\tools\\conversation-canvas",
+  "unit": "long-organizer.mjs",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "canvas-long-organizer-rs",
+  "exports": [
+    {
+      "name": "nextBatch",
+      "file": "long-organizer.mjs",
+      "line": 29,
+      "params": [
+        {
+          "name": "parts",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "done",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "maxChars",
+          "ts_type": "number",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "selectTreeContext",
+      "file": "long-organizer.mjs",
+      "line": 42,
+      "params": [
+        {
+          "name": "nodes",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "batch",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "currentNodeId",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "batchPrompt",
+      "file": "long-organizer.mjs",
+      "line": 56,
+      "params": [
+        {
+          "name": "batch",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "state",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "requestId",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "compact",
+          "ts_type": "boolean",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "messageDigest",
+      "file": "long-organizer.mjs",
+      "line": 4,
+      "reason": "async SubtleCrypto SHA-256 with WeakMap cache"
+    },
+    {
+      "name": "prepareHistory",
+      "file": "long-organizer.mjs",
+      "line": 12,
+      "reason": "async chunking calling messageDigest"
+    },
+    {
+      "name": "mergeBatch",
+      "file": "long-organizer.mjs",
+      "line": 76,
+      "reason": "throws Error with custom .missingPartIds property"
+    },
+    {
+      "name": "organizeLong",
+      "file": "long-organizer.mjs",
+      "line": 109,
+      "reason": "async orchestration loop with save/run callbacks"
+    }
+  ]
+}

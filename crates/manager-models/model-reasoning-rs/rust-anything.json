@@ -1,0 +1,192 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/model-reasoning.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "model-reasoning-rs",
+  "exports": [
+    {
+      "name": "reasoningParameterMode",
+      "file": "src/model-reasoning.ts",
+      "line": 25,
+      "params": [
+        {
+          "name": "metadata",
+          "ts_type": "Record<string, unknown> | null | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"auto\" | \"omit\" | \"passthrough\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "setModelReasoningParameterMode",
+      "file": "src/model-reasoning.ts",
+      "line": 30,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "slug",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "mode",
+          "ts_type": "(\"auto\" | \"omit\" | \"passthrough\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeReasoningLevels",
+      "file": "src/model-reasoning.ts",
+      "line": 58,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "reasoningLevelsFromMetadata",
+      "file": "src/model-reasoning.ts",
+      "line": 73,
+      "params": [
+        {
+          "name": "metadata",
+          "ts_type": "Record<string, unknown> | null | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string[] | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "defaultReasoningLevelFromMetadata",
+      "file": "src/model-reasoning.ts",
+      "line": 78,
+      "params": [
+        {
+          "name": "metadata",
+          "ts_type": "Record<string, unknown> | null | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "formatReasoningLevelsLabel",
+      "file": "src/model-reasoning.ts",
+      "line": 87,
+      "params": [
+        {
+          "name": "levels",
+          "ts_type": "string[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "resolveModelReasoningLevels",
+      "file": "src/model-reasoning.ts",
+      "line": 114,
+      "params": [
+        {
+          "name": "override",
+          "ts_type": "Record<string, unknown> | null | undefined",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "builtinLevels",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  /// 当前生效的档位（自定义优先，其次内置声明）。\n  levels: string[];\n  /// true 表示来自该模型的自定义配置，false 表示内置/未声明。\n  overridden: boolean;\n  /// 自定义默认档；内置默认不回填，避免开启面板就伪造出覆盖。\n  defaultLevel: string | null;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "setModelReasoningLevelsForSlug",
+      "file": "src/model-reasoning.ts",
+      "line": 138,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "slug",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "levels",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "defaultLevel",
+          "ts_type": "string | null",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

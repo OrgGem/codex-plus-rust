@@ -1,0 +1,379 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/skill-groups.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "skill-groups-rs",
+  "exports": [
+    {
+      "name": "customSkillGroupKey",
+      "file": "src/skill-groups.ts",
+      "line": 24,
+      "params": [
+        {
+          "name": "name",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "repositorySkillGroupKey",
+      "file": "src/skill-groups.ts",
+      "line": 25,
+      "params": [
+        {
+          "name": "name",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "skillIdentityKey",
+      "file": "src/skill-groups.ts",
+      "line": 26,
+      "params": [
+        {
+          "name": "skill",
+          "ts_type": "Pick<({ id: string; repoKey: string; bundled: boolean; instanceKey?: string; conflict?: string | null; conflictKind?: string | null; displayGroupRepoKey?: string | null }), \"repoKey\" | \"id\" | \"instanceKey\" | \"conflict\">",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "skillGroupIdentityKey",
+      "file": "src/skill-groups.ts",
+      "line": 29,
+      "params": [
+        {
+          "name": "skill",
+          "ts_type": "({ id: string; repoKey: string; bundled: boolean; instanceKey?: string; conflict?: string | null; conflictKind?: string | null; displayGroupRepoKey?: string | null })",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "aggregateSkillGroupItems",
+      "file": "src/skill-groups.ts",
+      "line": 33,
+      "params": [
+        {
+          "name": "skills",
+          "ts_type": "(({ id: string; repoKey: string; bundled: boolean; instanceKey?: string; conflict?: string | null; conflictKind?: string | null; displayGroupRepoKey?: string | null }) & {\n  installed: boolean;\n  enabled: boolean;\n  agents?: string[];\n  repoPath?: string;\n  locations?: Array<{ rootKind: string }>;\n  safeDisableAgents?: string[];\n})[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "Array<(({ id: string; repoKey: string; bundled: boolean; instanceKey?: string; conflict?: string | null; conflictKind?: string | null; displayGroupRepoKey?: string | null }) & {\n  installed: boolean;\n  enabled: boolean;\n  agents?: string[];\n  repoPath?: string;\n  locations?: Array<{ rootKind: string }>;\n  safeDisableAgents?: string[];\n}) & { displayInstances?: (({ id: string; repoKey: string; bundled: boolean; instanceKey?: string; conflict?: string | null; conflictKind?: string | null; displayGroupRepoKey?: string | null }) & {\n  installed: boolean;\n  enabled: boolean;\n  agents?: string[];\n  repoPath?: string;\n  locations?: Array<{ rootKind: string }>;\n  safeDisableAgents?: string[];\n})[] }>",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "migrateSkillInstanceAssignments",
+      "file": "src/skill-groups.ts",
+      "line": 89,
+      "params": [
+        {
+          "name": "assignmentsByIdentity",
+          "ts_type": "Record<string, string>",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "assignments",
+          "ts_type": "Record<string, string>",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "skills",
+          "ts_type": "({ id: string; repoKey: string; bundled: boolean; instanceKey?: string; conflict?: string | null; conflictKind?: string | null; displayGroupRepoKey?: string | null })[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "customNames",
+          "ts_type": "string[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "Record<string, string>",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "migrateSkillGroupAssignments",
+      "file": "src/skill-groups.ts",
+      "line": 132,
+      "params": [
+        {
+          "name": "assignments",
+          "ts_type": "Record<string, string>",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "changes",
+          "ts_type": "Array<{ id: string; fromRepoKey: string; toRepoKey: string }>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "Record<string, string>",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "skillRepositoryName",
+      "file": "src/skill-groups.ts",
+      "line": 149,
+      "params": [
+        {
+          "name": "repoKey",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "defaultSkillGroupKey",
+      "file": "src/skill-groups.ts",
+      "line": 154,
+      "params": [
+        {
+          "name": "skill",
+          "ts_type": "({ id: string; repoKey: string; bundled: boolean; instanceKey?: string; conflict?: string | null; conflictKind?: string | null; displayGroupRepoKey?: string | null })",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "legacySkillCustomGroupName",
+      "file": "src/skill-groups.ts",
+      "line": 160,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "customNames",
+          "ts_type": "string[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "skillGroupAssignment",
+      "file": "src/skill-groups.ts",
+      "line": 166,
+      "params": [
+        {
+          "name": "skill",
+          "ts_type": "({ id: string; repoKey: string; bundled: boolean; instanceKey?: string; conflict?: string | null; conflictKind?: string | null; displayGroupRepoKey?: string | null })",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "customNames",
+          "ts_type": "string[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "assignments",
+          "ts_type": "Record<string, string>",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "assignmentsByIdentity",
+          "ts_type": "Record<string, string>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "readSkillGroupStorage",
+      "file": "src/skill-groups.ts",
+      "line": 188,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string | null",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(Record<string, unknown> & {\n  names: string[];\n  assignments: Record<string, string>;\n  assignmentsByIdentity: Record<string, string>;\n  order: string[];\n  sortDirection: (\"asc\" | \"desc\") | null;\n  aliases: Record<string, string>;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "sortSkillGroupsByName",
+      "file": "src/skill-groups.ts",
+      "line": 269,
+      "params": [
+        {
+          "name": "groups",
+          "ts_type": "SkillGroup<unknown>[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "direction",
+          "ts_type": "(\"asc\" | \"desc\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "SkillGroup<unknown>[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "sortSkillGroupKeys",
+      "file": "src/skill-groups.ts",
+      "line": 276,
+      "params": [
+        {
+          "name": "groups",
+          "ts_type": "SkillGroup<unknown>[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "direction",
+          "ts_type": "(\"asc\" | \"desc\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "nextSkillGroupSortDirection",
+      "file": "src/skill-groups.ts",
+      "line": 281,
+      "params": [
+        {
+          "name": "direction",
+          "ts_type": "(\"asc\" | \"desc\") | null",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"asc\" | \"desc\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "moveSkillGroup",
+      "file": "src/skill-groups.ts",
+      "line": 285,
+      "params": [
+        {
+          "name": "groups",
+          "ts_type": "SkillGroup<unknown>[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "from",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "to",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "groupSkills",
+      "file": "src/skill-groups.ts",
+      "line": 208,
+      "reason": "takes or returns a function"
+    }
+  ]
+}

@@ -1,0 +1,1812 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/relay-profile-editing.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "relay-profile-editing-rs",
+  "exports": [
+    {
+      "name": "withGeneratedRelayFiles",
+      "file": "src/relay-profile-editing.ts",
+      "line": 58,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "RelayProfile",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "RelayProfile",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "buildRelayConfigToml",
+      "file": "src/relay-profile-editing.ts",
+      "line": 78,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "Pick<RelayProfile, \"id\" | \"model\" | \"baseUrl\" | \"upstreamBaseUrl\" | \"apiKey\" | \"protocol\" | \"sessionProvider\" | \"relayMode\" | \"officialMixApiKey\" | \"webSearchHistoryCompat\" | \"localCompactionPromptAtEnd\" | \"strictResponsesReasoning\" | \"stripImageGenerationTool\" | \"stripResponsesImageDetail\" | \"pureApiImageGeneration\" | \"modelMetadata\">",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "options",
+          "ts_type": "{ includeBearerToken: boolean; requiresOpenAiAuth?: boolean }",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "buildRelayAuthJson",
+      "file": "src/relay-profile-editing.ts",
+      "line": 116,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "Pick<RelayProfile, \"apiKey\">",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "buildOfficialRelayAuthJson",
+      "file": "src/relay-profile-editing.ts",
+      "line": 120,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "deriveRelayProfileFromFiles",
+      "file": "src/relay-profile-editing.ts",
+      "line": 135,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "RelayProfile",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "editedFile",
+          "ts_type": "\"config\" | \"auth\"",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "RelayProfile",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "applyRelayProfilePatchToFiles",
+      "file": "src/relay-profile-editing.ts",
+      "line": 189,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "RelayProfile",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "patch",
+          "ts_type": "Partial<RelayProfile>",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "options",
+          "ts_type": "{ allowGenerateFiles?: boolean }",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "RelayProfile",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "codexModelFromConfig",
+      "file": "src/relay-profile-editing.ts",
+      "line": 279,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "parseModelSuffix",
+      "file": "src/relay-profile-editing.ts",
+      "line": 297,
+      "params": [
+        {
+          "name": "raw",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ slug: string; window?: number }",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "codexBaseUrlFromConfig",
+      "file": "src/relay-profile-editing.ts",
+      "line": 303,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "codexExperimentalBearerTokenFromConfig",
+      "file": "src/relay-profile-editing.ts",
+      "line": 307,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "codexProviderStringFromConfig",
+      "file": "src/relay-profile-editing.ts",
+      "line": 311,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "key",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "codexApiKeyFromAuth",
+      "file": "src/relay-profile-editing.ts",
+      "line": 340,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "codexTopLevelIntFromConfig",
+      "file": "src/relay-profile-editing.ts",
+      "line": 349,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "key",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "rootTomlStringValue",
+      "file": "src/relay-profile-editing.ts",
+      "line": 362,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "key",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "tomlStructureMask",
+      "file": "src/relay-profile-editing.ts",
+      "line": 374,
+      "params": [
+        {
+          "name": "lines",
+          "ts_type": "string[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "tomlSectionName",
+      "file": "src/relay-profile-editing.ts",
+      "line": 406,
+      "params": [
+        {
+          "name": "line",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "tomlQuotedValue",
+      "file": "src/relay-profile-editing.ts",
+      "line": 429,
+      "params": [
+        {
+          "name": "text",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "start",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ value: string; end: number } | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "tomlDottedKeyPath",
+      "file": "src/relay-profile-editing.ts",
+      "line": 455,
+      "params": [
+        {
+          "name": "text",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string[] | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "tomlKeyPathName",
+      "file": "src/relay-profile-editing.ts",
+      "line": 479,
+      "params": [
+        {
+          "name": "path",
+          "ts_type": "string[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "codexProviderSectionName",
+      "file": "src/relay-profile-editing.ts",
+      "line": 483,
+      "params": [
+        {
+          "name": "provider",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "tomlKeyAssignment",
+      "file": "src/relay-profile-editing.ts",
+      "line": 487,
+      "params": [
+        {
+          "name": "line",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ path: string[]; valueStart: number } | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "tomlInlineComment",
+      "file": "src/relay-profile-editing.ts",
+      "line": 502,
+      "params": [
+        {
+          "name": "line",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "start",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "tomlStringAssignmentValue",
+      "file": "src/relay-profile-editing.ts",
+      "line": 516,
+      "params": [
+        {
+          "name": "line",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "key",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "setAuthOpenAiApiKey",
+      "file": "src/relay-profile-editing.ts",
+      "line": 526,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "apiKey",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "setRootTomlStringKey",
+      "file": "src/relay-profile-editing.ts",
+      "line": 538,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "key",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "setManagedOpenAiBaseUrl",
+      "file": "src/relay-profile-editing.ts",
+      "line": 544,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "enabled",
+          "ts_type": "boolean",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "setRootTomlIntKey",
+      "file": "src/relay-profile-editing.ts",
+      "line": 554,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "key",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "setRootTomlLine",
+      "file": "src/relay-profile-editing.ts",
+      "line": 560,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "key",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "lineText",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "codexRequiresOpenAiAuthFromConfig",
+      "file": "src/relay-profile-editing.ts",
+      "line": 581,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "setCodexProviderStringKey",
+      "file": "src/relay-profile-editing.ts",
+      "line": 611,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "key",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "options",
+          "ts_type": "{ requiresOpenAiAuth?: boolean }",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "setCodexExperimentalBearerToken",
+      "file": "src/relay-profile-editing.ts",
+      "line": 627,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "apiKey",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "options",
+          "ts_type": "{ requiresOpenAiAuth?: boolean }",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "removeCodexExperimentalBearerToken",
+      "file": "src/relay-profile-editing.ts",
+      "line": 643,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "ensureCodexProviderDefaults",
+      "file": "src/relay-profile-editing.ts",
+      "line": 649,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "provider",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "options",
+          "ts_type": "{ requiresOpenAiAuth?: boolean }",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "setTomlSectionBoolKey",
+      "file": "src/relay-profile-editing.ts",
+      "line": 663,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "sectionName",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "key",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "value",
+          "ts_type": "boolean",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "setTomlSectionStringKey",
+      "file": "src/relay-profile-editing.ts",
+      "line": 667,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "sectionName",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "key",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "setTomlSectionRawKey",
+      "file": "src/relay-profile-editing.ts",
+      "line": 671,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "sectionName",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "key",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "removeTomlSectionKey",
+      "file": "src/relay-profile-editing.ts",
+      "line": 705,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "sectionName",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "key",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relayProfileSwitchValidation",
+      "file": "src/relay-profile-editing.ts",
+      "line": 729,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "RelayProfile",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "settings",
+          "ts_type": "BackendSettings | null",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relayModelRoutesValidation",
+      "file": "src/relay-profile-editing.ts",
+      "line": 745,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "RelayProfile",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "settings",
+          "ts_type": "BackendSettings | null",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relayModelRoutesSettingsValidation",
+      "file": "src/relay-profile-editing.ts",
+      "line": 750,
+      "params": [
+        {
+          "name": "settings",
+          "ts_type": "BackendSettings",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relaySettingsValidation",
+      "file": "src/relay-profile-editing.ts",
+      "line": 756,
+      "params": [
+        {
+          "name": "settings",
+          "ts_type": "BackendSettings",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relaySessionProviderValidation",
+      "file": "src/relay-profile-editing.ts",
+      "line": 764,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "RelayProfile",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relayModelRouteIssueMessage",
+      "file": "src/relay-profile-editing.ts",
+      "line": 771,
+      "params": [
+        {
+          "name": "issue",
+          "ts_type": "ReturnType<typeof findRelayModelRouteIssue>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relaySettingsWithDraft",
+      "file": "src/relay-profile-editing.ts",
+      "line": 791,
+      "params": [
+        {
+          "name": "settings",
+          "ts_type": "BackendSettings",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "profileId",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "draft",
+          "ts_type": "RelayProfile",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "isNew",
+          "ts_type": "boolean",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "BackendSettings",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relayProfileUsesLiveFiles",
+      "file": "src/relay-profile-editing.ts",
+      "line": 805,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "RelayProfile",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "authJsonHasOpenAiApiKey",
+      "file": "src/relay-profile-editing.ts",
+      "line": 809,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "tomlString",
+      "file": "src/relay-profile-editing.ts",
+      "line": 820,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "syncLegacyRelayFields",
+      "file": "src/relay-profile-editing.ts",
+      "line": 824,
+      "params": [
+        {
+          "name": "settings",
+          "ts_type": "BackendSettings",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "BackendSettings",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeAggregateProfilesFromRelayProfiles",
+      "file": "src/relay-profile-editing.ts",
+      "line": 849,
+      "params": [
+        {
+          "name": "profiles",
+          "ts_type": "RelayProfile[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "AggregateRelayProfile[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "updateRelayProfile",
+      "file": "src/relay-profile-editing.ts",
+      "line": 875,
+      "params": [
+        {
+          "name": "settings",
+          "ts_type": "BackendSettings",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "id",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "patch",
+          "ts_type": "Partial<RelayProfile>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "BackendSettings",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "addRelayProfile",
+      "file": "src/relay-profile-editing.ts",
+      "line": 988,
+      "params": [
+        {
+          "name": "settings",
+          "ts_type": "BackendSettings",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "profile",
+          "ts_type": "RelayProfile",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "BackendSettings",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "reorderRelayProfiles",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1022,
+      "params": [
+        {
+          "name": "settings",
+          "ts_type": "BackendSettings",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "sourceId",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "targetId",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "BackendSettings",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "removeRelayProfile",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1036,
+      "params": [
+        {
+          "name": "settings",
+          "ts_type": "BackendSettings",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "id",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "BackendSettings",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relayProfileDeleteIssue",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1068,
+      "params": [
+        {
+          "name": "settings",
+          "ts_type": "BackendSettings",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "id",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "isAggregateRelayProfile",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1115,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "Pick<RelayProfile, \"relayMode\" | \"aggregate\">",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relayProviderView",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1121,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "RelayProfile",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"direct\" | \"routing\" | \"failover\" | \"modelAggregation\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeAggregateRelayProfile",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1130,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "RelayProfile",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "settings",
+          "ts_type": "BackendSettings | null",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "RelayProfile",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "aggregateProfileForMode",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1157,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "RelayProfile",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "settings",
+          "ts_type": "BackendSettings",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "mode",
+          "ts_type": "AggregateMode",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "RelayProfile",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeAggregateConfig",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1179,
+      "params": [
+        {
+          "name": "aggregate",
+          "ts_type": "RelayAggregateConfig | null | undefined",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "candidates",
+          "ts_type": "RelayProfile[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "existingProfileIds",
+          "ts_type": "ReadonlySet<string> | null",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "RelayAggregateConfig",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "clampAggregateWeight",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1234,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "number",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "aggregateStrategyLabel",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1239,
+      "params": [
+        {
+          "name": "strategy",
+          "ts_type": "RelayAggregateStrategy",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "aggregateStrategyHelp",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1243,
+      "params": [
+        {
+          "name": "strategy",
+          "ts_type": "RelayAggregateStrategy",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "aggregateRelayProfileValidation",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1250,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "RelayProfile",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "ensureTrailingNewline",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1279,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "removeRootTomlKey",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1283,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "key",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "joinTomlSections",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1297,
+      "params": [
+        {
+          "name": "sections",
+          "ts_type": "string[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "splitTomlRootAndTables",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1306,
+      "params": [
+        {
+          "name": "section",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ root: string; tables: string }",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeRelaySessionProvider",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1317,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "RelaySessionProvider",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relaySessionProviderFromConfig",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1321,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "RelaySessionProvider",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relaySessionProvider",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1325,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "Pick<RelayProfile, \"configContents\" | \"sessionProvider\">",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "RelaySessionProvider",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "activeRelayProfile",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1332,
+      "params": [
+        {
+          "name": "settings",
+          "ts_type": "BackendSettings",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "RelayProfile",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "emptyContextSelection",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1340,
+      "params": [],
+      "returns": "RelayContextSelection",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeContextSelection",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1346,
+      "params": [
+        {
+          "name": "selection",
+          "ts_type": "Partial<RelayContextSelection>",
+          "optional": true,
+          "rest": false
+        },
+        {
+          "name": "fallback",
+          "ts_type": "RelayContextSelection",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "RelayContextSelection",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeRelayMode",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1364,
+      "params": [
+        {
+          "name": "mode",
+          "ts_type": "RelayMode | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "RelayMode",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeRelayProtocol",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1371,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "RelayProtocol | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "RelayProtocol",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeAnthropicAuthHeader",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1377,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeAnthropicThinkingMode",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1385,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeAnthropicMaxTokens",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1394,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "number | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "number",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "hydrateAggregateRelayProfile",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1399,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "RelayProfile",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "aggregate",
+          "ts_type": "AggregateRelayProfile | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "RelayProfile",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeRelayProfile",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1421,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "RelayProfile",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "defaultContextSelection",
+          "ts_type": "unknown",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "RelayProfile",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "configureRelayProfileEditing",
+      "file": "src/relay-profile-editing.ts",
+      "line": 53,
+      "reason": "callback-host"
+    },
+    {
+      "name": "createRelayProfile",
+      "file": "src/relay-profile-editing.ts",
+      "line": 893,
+      "reason": "unpinned-date-now-id"
+    },
+    {
+      "name": "createAggregateRelayProfile",
+      "file": "src/relay-profile-editing.ts",
+      "line": 936,
+      "reason": "unpinned-date-now-id"
+    },
+    {
+      "name": "duplicateRelayProfile",
+      "file": "src/relay-profile-editing.ts",
+      "line": 1004,
+      "reason": "unpinned-date-now-id"
+    }
+  ]
+}

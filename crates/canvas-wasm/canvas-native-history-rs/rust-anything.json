@@ -1,0 +1,37 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\tools\\conversation-canvas",
+  "unit": "native-history.mjs",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "canvas-native-history-rs",
+  "exports": [
+    {
+      "name": "isExportSizeError",
+      "file": "native-history.mjs",
+      "line": 3,
+      "params": [
+        {
+          "name": "message",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "readNativeHistory",
+      "file": "native-history.mjs",
+      "line": 9,
+      "reason": "async RPC pagination loop with cache and AbortSignal"
+    }
+  ]
+}

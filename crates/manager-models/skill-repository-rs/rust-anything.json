@@ -1,0 +1,30 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/skill-repository.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "skill-repository-rs",
+  "exports": [
+    {
+      "name": "parseSkillRepository",
+      "file": "src/skill-repository.ts",
+      "line": 5,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ owner: string; name: string; branch: string; subdir: string; enabled: boolean } | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

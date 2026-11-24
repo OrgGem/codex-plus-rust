@@ -1,0 +1,84 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/agent-dashboard-model.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "agent-dashboard-model-rs",
+  "exports": [
+    {
+      "name": "recentAgentRequests",
+      "file": "src/agent-dashboard-model.ts",
+      "line": 27,
+      "params": [
+        {
+          "name": "entries",
+          "ts_type": "({\n  id: string;\n  agent?: string | null;\n  timestampMs: number;\n  durationMs: number;\n  success: boolean;\n  model: string;\n  upstreamModel: string;\n  relayName: string;\n  state?: string | null;\n})[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "agent",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "limit",
+          "ts_type": "number",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  id: string;\n  model: string;\n  provider: string;\n  durationMs: number;\n  success: boolean;\n  running: boolean;\n  timestampMs: number;\n}[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "agentUsageStats",
+      "file": "src/agent-dashboard-model.ts",
+      "line": 47,
+      "params": [
+        {
+          "name": "usage",
+          "ts_type": "{\n  totals: {\n  calls: number;\n  errors: number;\n  inputTokens: number;\n  outputTokens: number;\n  cachedTokens: number;\n  reasoningTokens: number;\n  /** 记了耗时的请求的总耗时；旧版后端和旧数据没有。 */\n  durationMs?: number;\n  timedCalls?: number;\n  /** 其中成功的生图请求；旧版后端没有，没有时也不写（视为 0）。 */\n  images?: number;\n};\n  days: {\n  calls: number;\n  errors: number;\n  inputTokens: number;\n  outputTokens: number;\n  cachedTokens: number;\n  reasoningTokens: number;\n  /** 记了耗时的请求的总耗时；旧版后端和旧数据没有。 */\n  durationMs?: number;\n  timedCalls?: number;\n  /** 其中成功的生图请求；旧版后端没有，没有时也不写（视为 0）。 */\n  images?: number;\n} & { date: string }[];\n  byAgent: {\n  calls: number;\n  errors: number;\n  inputTokens: number;\n  outputTokens: number;\n  cachedTokens: number;\n  reasoningTokens: number;\n  /** 记了耗时的请求的总耗时；旧版后端和旧数据没有。 */\n  durationMs?: number;\n  timedCalls?: number;\n  /** 其中成功的生图请求；旧版后端没有，没有时也不写（视为 0）。 */\n  images?: number;\n} & { key: string; label: string; costs?: { currency: string; amount: number }[] }[];\n  byProvider: {\n  calls: number;\n  errors: number;\n  inputTokens: number;\n  outputTokens: number;\n  cachedTokens: number;\n  reasoningTokens: number;\n  /** 记了耗时的请求的总耗时；旧版后端和旧数据没有。 */\n  durationMs?: number;\n  timedCalls?: number;\n  /** 其中成功的生图请求；旧版后端没有，没有时也不写（视为 0）。 */\n  images?: number;\n} & { key: string; label: string; costs?: { currency: string; amount: number }[] }[];\n  byModel: {\n  calls: number;\n  errors: number;\n  inputTokens: number;\n  outputTokens: number;\n  cachedTokens: number;\n  reasoningTokens: number;\n  /** 记了耗时的请求的总耗时；旧版后端和旧数据没有。 */\n  durationMs?: number;\n  timedCalls?: number;\n  /** 其中成功的生图请求；旧版后端没有，没有时也不写（视为 0）。 */\n  images?: number;\n} & { key: string; label: string; costs?: { currency: string; amount: number }[] }[];\n  costs: { currency: string; amount: number }[];\n} | null",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "agent",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({ calls: number; successRate: number | null; tokens: number }) | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "agentAccessState",
+      "file": "src/agent-dashboard-model.ts",
+      "line": 61,
+      "params": [
+        {
+          "name": "view",
+          "ts_type": "{ enabled: boolean; version?: string | null; drift?: unknown } | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"gateway\" | \"drift\" | \"direct\" | \"missing\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

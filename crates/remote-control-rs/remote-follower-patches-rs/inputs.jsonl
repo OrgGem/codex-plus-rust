@@ -1,0 +1,5 @@
+{"fn":"applyPatches","args":[null,[{"op":"replace","path":[],"value":{"revision":1,"turns":[]}}]]}
+{"fn":"applyPatches","args":[{"a":1,"b":2,"c":3},[{"op":"remove","path":["b"]},{"op":"replace","path":["c"],"value":30}]]}
+{"fn":"applyPatches","args":[{"turns":[]},[{"op":"add","path":["turns",0,"items",0],"value":{"type":"agentMessage","text":"hello"}}]]}
+{"fn":"applyPatches","args":[{"items":["x","y","z"]},[{"op":"remove","path":["items",1]},{"op":"add","path":["items",1],"value":"Y2"},{"op":"replace","path":["items","length"],"value":1}]]}
+{"fn":"applyPatches","args":[{"nested":{"a":1}},[{"op":"replace","path":["missing","deep",0,"k"],"value":42},{"op":"remove","path":[],"value":"ignored"}]]}

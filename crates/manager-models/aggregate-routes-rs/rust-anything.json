@@ -1,0 +1,78 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/aggregate-routes.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "aggregate-routes-rs",
+  "exports": [
+    {
+      "name": "clampAggregateRoutePriority",
+      "file": "src/aggregate-routes.ts",
+      "line": 32,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "number",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeAggregateRoutes",
+      "file": "src/aggregate-routes.ts",
+      "line": 37,
+      "params": [
+        {
+          "name": "routes",
+          "ts_type": "(| { pattern: string; profileId: string; priority: number }\n  | { pattern: string; relayId: string; priority: number })[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "options",
+          "ts_type": "{\n  /** 只保留 pattern trim 后非空的规则（默认 false：保留空 pattern 供校验提示） */\n  dropEmptyPattern?: boolean;\n  /** 提供时，只保留目标 profileId 在成员集合中的规则 */\n  memberIds?: ReadonlySet<string>;\n  /** 是否清洗 priority（默认 true，与保存方向一致） */\n  clampPriority?: boolean;\n}",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  pattern: string;\n  profileId: string;\n  priority: number;\n}[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "validateAggregateRoutes",
+      "file": "src/aggregate-routes.ts",
+      "line": 55,
+      "params": [
+        {
+          "name": "routes",
+          "ts_type": "(| { pattern: string; profileId: string; priority: number }\n  | { pattern: string; relayId: string; priority: number })[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "memberIds",
+          "ts_type": "ReadonlySet<string>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(| { code: \"emptyPattern\"; pattern: string }\n  | { code: \"invalidPriority\"; pattern: string }\n  | { code: \"notMember\"; pattern: string })[] | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

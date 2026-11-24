@@ -1,0 +1,102 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/management-model.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "management-model-rs",
+  "exports": [
+    {
+      "name": "matchesManagementQuery",
+      "file": "src/management-model.ts",
+      "line": 6,
+      "params": [
+        {
+          "name": "values",
+          "ts_type": "string[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "query",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeProjectPath",
+      "file": "src/management-model.ts",
+      "line": 17,
+      "params": [
+        {
+          "name": "cwd",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "sessionGroups",
+      "file": "src/management-model.ts",
+      "line": 24,
+      "params": [
+        {
+          "name": "sessions",
+          "ts_type": "({\n  id: string; title: string; cwd: string; modelProvider: string; archived: boolean;\n  updatedAtMs: number | null; rolloutPath: string; dbPath: string;\n})[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "mode",
+          "ts_type": "\"project\" | \"time\"",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "now",
+          "ts_type": "unknown",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "skillRepoKey",
+      "file": "src/management-model.ts",
+      "line": 39,
+      "params": [
+        {
+          "name": "repo",
+          "ts_type": "{ owner: string; name: string; branch: string; subdir: string }",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

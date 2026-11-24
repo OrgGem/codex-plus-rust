@@ -1,0 +1,205 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/provider-meta-sync-model.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "provider-meta-sync-model-rs",
+  "exports": [
+    {
+      "name": "normalizePreview",
+      "file": "src/provider-meta-sync-model.ts",
+      "line": 65,
+      "params": [
+        {
+          "name": "raw",
+          "ts_type": "Partial<{\n  upstreamModels: number;\n  matched: number;\n  withWindow: number;\n  withReasoning: number;\n  windows: ({\n  model: string;\n  window: number;\n  /** 上游字段，如 `context_length`。 */\n  source: string;\n  /** 上游 `context_windows` 的可选档位。 */\n  options: number[];\n  current: number | null;\n  currentSource: (\"custom\" | \"synced\" | \"providerDefault\" | \"builtin\" | \"none\");\n  manual: boolean;\n})[];\n  reasoning: ({\n  model: string;\n  levels: string[];\n  defaultLevel: string | null;\n  source: string;\n  defaultSource: string;\n  currentLevels: string[];\n  currentDefault: string | null;\n  currentSource: (\"custom\" | \"synced\" | \"providerDefault\" | \"builtin\" | \"none\");\n  manual: boolean;\n})[];\n  ignored: { model: string; field: string; value: string; reason: (\"invalidWindow\" | \"unknownLevel\" | \"defaultNotInLevels\" | \"invalidType\") }[];\n}> | null | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  upstreamModels: number;\n  matched: number;\n  withWindow: number;\n  withReasoning: number;\n  windows: ({\n  model: string;\n  window: number;\n  /** 上游字段，如 `context_length`。 */\n  source: string;\n  /** 上游 `context_windows` 的可选档位。 */\n  options: number[];\n  current: number | null;\n  currentSource: (\"custom\" | \"synced\" | \"providerDefault\" | \"builtin\" | \"none\");\n  manual: boolean;\n})[];\n  reasoning: ({\n  model: string;\n  levels: string[];\n  defaultLevel: string | null;\n  source: string;\n  defaultSource: string;\n  currentLevels: string[];\n  currentDefault: string | null;\n  currentSource: (\"custom\" | \"synced\" | \"providerDefault\" | \"builtin\" | \"none\");\n  manual: boolean;\n})[];\n  ignored: { model: string; field: string; value: string; reason: (\"invalidWindow\" | \"unknownLevel\" | \"defaultNotInLevels\" | \"invalidType\") }[];\n}",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "formatLevels",
+      "file": "src/provider-meta-sync-model.ts",
+      "line": 78,
+      "params": [
+        {
+          "name": "levels",
+          "ts_type": "string[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "defaultLevel",
+          "ts_type": "string | null",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "defaultLabel",
+          "ts_type": "string",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "changeRows",
+      "file": "src/provider-meta-sync-model.ts",
+      "line": 84,
+      "params": [
+        {
+          "name": "preview",
+          "ts_type": "{\n  upstreamModels: number;\n  matched: number;\n  withWindow: number;\n  withReasoning: number;\n  windows: ({\n  model: string;\n  window: number;\n  /** 上游字段，如 `context_length`。 */\n  source: string;\n  /** 上游 `context_windows` 的可选档位。 */\n  options: number[];\n  current: number | null;\n  currentSource: (\"custom\" | \"synced\" | \"providerDefault\" | \"builtin\" | \"none\");\n  manual: boolean;\n})[];\n  reasoning: ({\n  model: string;\n  levels: string[];\n  defaultLevel: string | null;\n  source: string;\n  defaultSource: string;\n  currentLevels: string[];\n  currentDefault: string | null;\n  currentSource: (\"custom\" | \"synced\" | \"providerDefault\" | \"builtin\" | \"none\");\n  manual: boolean;\n})[];\n  ignored: { model: string; field: string; value: string; reason: (\"invalidWindow\" | \"unknownLevel\" | \"defaultNotInLevels\" | \"invalidType\") }[];\n}",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "kind",
+          "ts_type": "(\"windows\" | \"reasoning\")",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "defaultLabel",
+          "ts_type": "string",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  model: string;\n  next: string;\n  current: string;\n  currentSource: (\"custom\" | \"synced\" | \"providerDefault\" | \"builtin\" | \"none\");\n  source: string;\n  manual: boolean;\n  /** 窗口的可选档位（展示用）。 */\n  options: string;\n}[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "windowPicks",
+      "file": "src/provider-meta-sync-model.ts",
+      "line": 114,
+      "params": [
+        {
+          "name": "preview",
+          "ts_type": "{\n  upstreamModels: number;\n  matched: number;\n  withWindow: number;\n  withReasoning: number;\n  windows: ({\n  model: string;\n  window: number;\n  /** 上游字段，如 `context_length`。 */\n  source: string;\n  /** 上游 `context_windows` 的可选档位。 */\n  options: number[];\n  current: number | null;\n  currentSource: (\"custom\" | \"synced\" | \"providerDefault\" | \"builtin\" | \"none\");\n  manual: boolean;\n})[];\n  reasoning: ({\n  model: string;\n  levels: string[];\n  defaultLevel: string | null;\n  source: string;\n  defaultSource: string;\n  currentLevels: string[];\n  currentDefault: string | null;\n  currentSource: (\"custom\" | \"synced\" | \"providerDefault\" | \"builtin\" | \"none\");\n  manual: boolean;\n})[];\n  ignored: { model: string; field: string; value: string; reason: (\"invalidWindow\" | \"unknownLevel\" | \"defaultNotInLevels\" | \"invalidType\") }[];\n}",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "picked",
+          "ts_type": "ReadonlySet<string>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "Array<{ model: string; window: number }>",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "reasoningPicks",
+      "file": "src/provider-meta-sync-model.ts",
+      "line": 119,
+      "params": [
+        {
+          "name": "preview",
+          "ts_type": "{\n  upstreamModels: number;\n  matched: number;\n  withWindow: number;\n  withReasoning: number;\n  windows: ({\n  model: string;\n  window: number;\n  /** 上游字段，如 `context_length`。 */\n  source: string;\n  /** 上游 `context_windows` 的可选档位。 */\n  options: number[];\n  current: number | null;\n  currentSource: (\"custom\" | \"synced\" | \"providerDefault\" | \"builtin\" | \"none\");\n  manual: boolean;\n})[];\n  reasoning: ({\n  model: string;\n  levels: string[];\n  defaultLevel: string | null;\n  source: string;\n  defaultSource: string;\n  currentLevels: string[];\n  currentDefault: string | null;\n  currentSource: (\"custom\" | \"synced\" | \"providerDefault\" | \"builtin\" | \"none\");\n  manual: boolean;\n})[];\n  ignored: { model: string; field: string; value: string; reason: (\"invalidWindow\" | \"unknownLevel\" | \"defaultNotInLevels\" | \"invalidType\") }[];\n}",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "picked",
+          "ts_type": "ReadonlySet<string>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "Array<{ model: string; levels: string[]; defaultLevel: string | null }>",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "ignoredFor",
+      "file": "src/provider-meta-sync-model.ts",
+      "line": 129,
+      "params": [
+        {
+          "name": "preview",
+          "ts_type": "{\n  upstreamModels: number;\n  matched: number;\n  withWindow: number;\n  withReasoning: number;\n  windows: ({\n  model: string;\n  window: number;\n  /** 上游字段，如 `context_length`。 */\n  source: string;\n  /** 上游 `context_windows` 的可选档位。 */\n  options: number[];\n  current: number | null;\n  currentSource: (\"custom\" | \"synced\" | \"providerDefault\" | \"builtin\" | \"none\");\n  manual: boolean;\n})[];\n  reasoning: ({\n  model: string;\n  levels: string[];\n  defaultLevel: string | null;\n  source: string;\n  defaultSource: string;\n  currentLevels: string[];\n  currentDefault: string | null;\n  currentSource: (\"custom\" | \"synced\" | \"providerDefault\" | \"builtin\" | \"none\");\n  manual: boolean;\n})[];\n  ignored: { model: string; field: string; value: string; reason: (\"invalidWindow\" | \"unknownLevel\" | \"defaultNotInLevels\" | \"invalidType\") }[];\n}",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "kind",
+          "ts_type": "(\"windows\" | \"reasoning\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ model: string; field: string; value: string; reason: (\"invalidWindow\" | \"unknownLevel\" | \"defaultNotInLevels\" | \"invalidType\") }[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "currentSourceLabel",
+      "file": "src/provider-meta-sync-model.ts",
+      "line": 138,
+      "params": [
+        {
+          "name": "source",
+          "ts_type": "(\"custom\" | \"synced\" | \"providerDefault\" | \"builtin\" | \"none\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "ignoredReasonLabel",
+      "file": "src/provider-meta-sync-model.ts",
+      "line": 154,
+      "params": [
+        {
+          "name": "reason",
+          "ts_type": "(\"invalidWindow\" | \"unknownLevel\" | \"defaultNotInLevels\" | \"invalidType\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "defaultPicked",
+      "file": "src/provider-meta-sync-model.ts",
+      "line": 108,
+      "reason": "returns-js-set"
+    }
+  ]
+}

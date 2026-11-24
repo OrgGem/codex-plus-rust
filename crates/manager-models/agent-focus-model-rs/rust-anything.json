@@ -1,0 +1,157 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/agent-focus-model.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "agent-focus-model-rs",
+  "exports": [
+    {
+      "name": "parseAgentFocus",
+      "file": "src/agent-focus-model.ts",
+      "line": 38,
+      "params": [
+        {
+          "name": "stored",
+          "ts_type": "string | null",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "((typeof FOCUS_MODES)[number] | null)",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "serializeAgentFocus",
+      "file": "src/agent-focus-model.ts",
+      "line": 43,
+      "params": [
+        {
+          "name": "mode",
+          "ts_type": "(typeof FOCUS_MODES)[number]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "shouldAskAgentFocus",
+      "file": "src/agent-focus-model.ts",
+      "line": 58,
+      "params": [
+        {
+          "name": "stored",
+          "ts_type": "string | null",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "agentVisible",
+      "file": "src/agent-focus-model.ts",
+      "line": 68,
+      "params": [
+        {
+          "name": "focus",
+          "ts_type": "((typeof FOCUS_MODES)[number] | null)",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "agent",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "providersHidden",
+      "file": "src/agent-focus-model.ts",
+      "line": 75,
+      "params": [
+        {
+          "name": "focus",
+          "ts_type": "((typeof FOCUS_MODES)[number] | null)",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "singleAgent",
+      "file": "src/agent-focus-model.ts",
+      "line": 80,
+      "params": [
+        {
+          "name": "focus",
+          "ts_type": "((typeof FOCUS_MODES)[number] | null)",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "visibleAgents",
+      "file": "src/agent-focus-model.ts",
+      "line": 85,
+      "params": [
+        {
+          "name": "focus",
+          "ts_type": "((typeof FOCUS_MODES)[number] | null)",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "items",
+          "ts_type": "({ agent: string })[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({ agent: string })[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "commitAgentFocusSelection",
+      "file": "src/agent-focus-model.ts",
+      "line": 48,
+      "reason": "async-callback"
+    }
+  ]
+}

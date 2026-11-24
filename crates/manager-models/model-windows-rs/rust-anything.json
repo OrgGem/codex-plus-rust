@@ -1,0 +1,270 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/model-windows.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "model-windows-rs",
+  "exports": [
+    {
+      "name": "modelWindowsMapToText",
+      "file": "src/model-windows.ts",
+      "line": 5,
+      "params": [
+        {
+          "name": "modelList",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "modelWindows",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "modelWindowsTextToMap",
+      "file": "src/model-windows.ts",
+      "line": 18,
+      "params": [
+        {
+          "name": "modelList",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "modelWindowsText",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "reorderModelWindowRows",
+      "file": "src/model-windows.ts",
+      "line": 48,
+      "params": [
+        {
+          "name": "rows",
+          "ts_type": "({\n  model: string;\n  window: string;\n  /// 自动压缩百分比；空值在保存时使用 Codex++ 的明确默认值 90%。\n  autoCompact: string;\n  imageHandling: (\"\" | \"send-as-is\" | \"strip\" | \"vlm\");\n})[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "activeIndex",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "overIndex",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  model: string;\n  window: string;\n  /// 自动压缩百分比；空值在保存时使用 Codex++ 的明确默认值 90%。\n  autoCompact: string;\n  imageHandling: (\"\" | \"send-as-is\" | \"strip\" | \"vlm\");\n})[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "modelMapKeyFromRowName",
+      "file": "src/model-windows.ts",
+      "line": 80,
+      "params": [
+        {
+          "name": "rowName",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "lookupModelMapEntry",
+      "file": "src/model-windows.ts",
+      "line": 88,
+      "params": [
+        {
+          "name": "map",
+          "ts_type": "Record<string, unknown>",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "modelName",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown | undefined",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "isValidModelWindow",
+      "file": "src/model-windows.ts",
+      "line": 104,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "modelWindowRowsValidationError",
+      "file": "src/model-windows.ts",
+      "line": 118,
+      "params": [
+        {
+          "name": "rows",
+          "ts_type": "{\n  model: string;\n  window: string;\n  /// 自动压缩百分比；空值在保存时使用 Codex++ 的明确默认值 90%。\n  autoCompact: string;\n  imageHandling: (\"\" | \"send-as-is\" | \"strip\" | \"vlm\");\n}[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  code: \"duplicateModel\" | \"invalidWindow\" | \"invalidAutoCompact\";\n  model: string;\n}) | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "mergeModelWindowRows",
+      "file": "src/model-windows.ts",
+      "line": 136,
+      "params": [
+        {
+          "name": "currentRows",
+          "ts_type": "{\n  model: string;\n  window: string;\n  /// 自动压缩百分比；空值在保存时使用 Codex++ 的明确默认值 90%。\n  autoCompact: string;\n  imageHandling: (\"\" | \"send-as-is\" | \"strip\" | \"vlm\");\n}[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "incomingRows",
+          "ts_type": "{\n  model: string;\n  window: string;\n  /// 自动压缩百分比；空值在保存时使用 Codex++ 的明确默认值 90%。\n  autoCompact: string;\n  imageHandling: (\"\" | \"send-as-is\" | \"strip\" | \"vlm\");\n}[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  model: string;\n  window: string;\n  /// 自动压缩百分比；空值在保存时使用 Codex++ 的明确默认值 90%。\n  autoCompact: string;\n  imageHandling: (\"\" | \"send-as-is\" | \"strip\" | \"vlm\");\n}[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "modelWindowRowsFromProfile",
+      "file": "src/model-windows.ts",
+      "line": 163,
+      "params": [
+        {
+          "name": "modelList",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "modelWindows",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "modelVlm",
+          "ts_type": "string",
+          "optional": true,
+          "rest": false
+        },
+        {
+          "name": "modelAutoCompact",
+          "ts_type": "string",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  model: string;\n  window: string;\n  /// 自动压缩百分比；空值在保存时使用 Codex++ 的明确默认值 90%。\n  autoCompact: string;\n  imageHandling: (\"\" | \"send-as-is\" | \"strip\" | \"vlm\");\n}[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "serializeModelWindowRows",
+      "file": "src/model-windows.ts",
+      "line": 220,
+      "params": [
+        {
+          "name": "rows",
+          "ts_type": "{\n  model: string;\n  window: string;\n  /// 自动压缩百分比；空值在保存时使用 Codex++ 的明确默认值 90%。\n  autoCompact: string;\n  imageHandling: (\"\" | \"send-as-is\" | \"strip\" | \"vlm\");\n}[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  modelList: string;\n  modelWindows: string;\n  modelVlm: string;\n  modelAutoCompact: string;\n}",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "buildModelWindows",
+      "file": "src/model-windows.ts",
+      "line": 264,
+      "params": [
+        {
+          "name": "modelList",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "modelWindowsText",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(| { ok: true; modelWindows: string }\n  | { ok: false; error: string })",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

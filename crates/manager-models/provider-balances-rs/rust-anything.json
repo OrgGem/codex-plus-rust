@@ -1,0 +1,91 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/provider-balances.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "provider-balances-rs",
+  "exports": [
+    {
+      "name": "providerBalancesFresh",
+      "file": "src/provider-balances.ts",
+      "line": 28,
+      "params": [
+        {
+          "name": "entry",
+          "ts_type": "({\n  /** 最近一次查询结果；还没查过为 null。 */\n  balances: ({ providerId: string; provider: string; baseUrl: string; amount?: number | null; currency: string; error?: string | null; note?: string | null })[] | null;\n  /** 查询完成的时间。 */\n  at: number;\n})",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "now",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "ttl",
+          "ts_type": "unknown",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "providerBalanceFor",
+      "file": "src/provider-balances.ts",
+      "line": 33,
+      "params": [
+        {
+          "name": "balances",
+          "ts_type": "({ providerId: string; provider: string; baseUrl: string; amount?: number | null; currency: string; error?: string | null; note?: string | null })[] | null",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "id",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({ providerId: string; provider: string; baseUrl: string; amount?: number | null; currency: string; error?: string | null; note?: string | null }) | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "cachedProviderBalances",
+      "file": "src/provider-balances.ts",
+      "line": 23,
+      "reason": "shared-cache"
+    },
+    {
+      "name": "subscribeProviderBalances",
+      "file": "src/provider-balances.ts",
+      "line": 38,
+      "reason": "js-callback"
+    },
+    {
+      "name": "loadProviderBalances",
+      "file": "src/provider-balances.ts",
+      "line": 47,
+      "reason": "async-loader"
+    },
+    {
+      "name": "resetProviderBalancesForTest",
+      "file": "src/provider-balances.ts",
+      "line": 70,
+      "reason": "shared-cache"
+    }
+  ]
+}

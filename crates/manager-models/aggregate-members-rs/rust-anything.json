@@ -1,0 +1,156 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/aggregate-members.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "aggregate-members-rs",
+  "exports": [
+    {
+      "name": "isAggregateProfile",
+      "file": "src/aggregate-members.ts",
+      "line": 20,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "Pick<{\n  id: string;\n  relayMode: string;\n  officialMixApiKey?: boolean;\n  aggregate?: unknown;\n  baseUrl?: string;\n  apiKey?: string;\n  authContents?: string;\n  protocol?: string;\n}, \"relayMode\" | \"aggregate\">",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "isApiMemberProfile",
+      "file": "src/aggregate-members.ts",
+      "line": 25,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "Pick<{\n  id: string;\n  relayMode: string;\n  officialMixApiKey?: boolean;\n  aggregate?: unknown;\n  baseUrl?: string;\n  apiKey?: string;\n  authContents?: string;\n  protocol?: string;\n}, \"baseUrl\" | \"apiKey\">",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "authContentsHaveChatgptTokens",
+      "file": "src/aggregate-members.ts",
+      "line": 30,
+      "params": [
+        {
+          "name": "contents",
+          "ts_type": "string | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "isOfficialLoginMemberProfile",
+      "file": "src/aggregate-members.ts",
+      "line": 46,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "{\n  id: string;\n  relayMode: string;\n  officialMixApiKey?: boolean;\n  aggregate?: unknown;\n  baseUrl?: string;\n  apiKey?: string;\n  authContents?: string;\n  protocol?: string;\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "aggregateMemberCandidates",
+      "file": "src/aggregate-members.ts",
+      "line": 56,
+      "params": [
+        {
+          "name": "profiles",
+          "ts_type": "unknown[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "aggregateId",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeAggregateDefaultRelayId",
+      "file": "src/aggregate-members.ts",
+      "line": 72,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string | null | undefined",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "memberIds",
+          "ts_type": "ReadonlySet<string>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeAggregateMembers",
+      "file": "src/aggregate-members.ts",
+      "line": 101,
+      "params": [
+        {
+          "name": "members",
+          "ts_type": "readonly ({ profileId: string; weight: number })[] | null | undefined",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "profileIds",
+          "ts_type": "ReadonlySet<string> | null",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({ profileId: string; weight: number })[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

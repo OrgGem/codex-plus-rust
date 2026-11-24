@@ -1,0 +1,36 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\tools\\conversation-canvas",
+  "unit": "view-pages.mjs",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "canvas-view-pages-rs",
+  "exports": [
+    {
+      "name": "transcriptPage",
+      "file": "view-pages.mjs",
+      "line": 1,
+      "params": [
+        {
+          "name": "messages",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "state",
+          "ts_type": "unknown",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

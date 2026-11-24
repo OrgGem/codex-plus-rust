@@ -1,0 +1,871 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/model-metadata.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "model-metadata-rs",
+  "exports": [
+    {
+      "name": "modelMetadataKey",
+      "file": "src/model-metadata.ts",
+      "line": 49,
+      "params": [
+        {
+          "name": "rowName",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "parseModelMetadataMap",
+      "file": "src/model-metadata.ts",
+      "line": 63,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "Record<string, Record<string, unknown>>",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "serializeModelMetadataMap",
+      "file": "src/model-metadata.ts",
+      "line": 80,
+      "params": [
+        {
+          "name": "map",
+          "ts_type": "Record<string, Record<string, unknown>>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "serializeModelMetadataDocument",
+      "file": "src/model-metadata.ts",
+      "line": 151,
+      "params": [
+        {
+          "name": "slug",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "metadata",
+          "ts_type": "Record<string, unknown>",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "contextWindow",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "autoCompactPercent",
+          "ts_type": "string",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "parseModelRowName",
+      "file": "src/model-metadata.ts",
+      "line": 196,
+      "params": [
+        {
+          "name": "rowName",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  rawName: string;\n  canonicalSlug: string;\n  suffixWindow: string | null;\n  key: string;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "modelSlugFromRowName",
+      "file": "src/model-metadata.ts",
+      "line": 211,
+      "params": [
+        {
+          "name": "rowName",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "suffixWindowTokens",
+      "file": "src/model-metadata.ts",
+      "line": 217,
+      "params": [
+        {
+          "name": "suffix",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "number | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "suffixWindowString",
+      "file": "src/model-metadata.ts",
+      "line": 229,
+      "params": [
+        {
+          "name": "rowName",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeTokenCountInput",
+      "file": "src/model-metadata.ts",
+      "line": 244,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "builtinRowBackfillValue",
+      "file": "src/model-metadata.ts",
+      "line": 262,
+      "params": [
+        {
+          "name": "slug",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "rowWindow",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "rowAutoCompact",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "builtin",
+          "ts_type": "{ context_window?: unknown; auto_compact_token_limit?: unknown } | null",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "{ window: string | null; autoCompact: string | null }",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "createActiveImportDraft",
+      "file": "src/model-metadata.ts",
+      "line": 321,
+      "params": [
+        {
+          "name": "input",
+          "ts_type": "{\n  index: number;\n  rowName: string;\n  window: string;\n  autoCompact: string;\n  document?: string;\n  preview?: ({\n  slug: string;\n  /// 事实字段（过 filteredMetadata 白名单，写 metadata map 用）\n  metadata: Record<string, unknown>;\n  /// 文档匹配条目原值（含窗口/压缩托管字段）。「内容是否等于内置」的全字段\n  /// 比较用这份，不能用 metadata——窗口/压缩偏离内置值同样是用户编辑。\n  documentEntry: Record<string, unknown>;\n  contextWindow: string | null;\n  autoCompactPercent: string | null;\n  autoCompactCalculationPercent?: string | null;\n  ignoredFields: string[];\n}) | null;\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  index: number;\n  /// 行已不存在时的兜底身份（activeImportSlug 回退用）。名称不参与取消回滚：\n  /// 改名在 blur 时已经 commitModelSlug 持久化（metadata remap 不可逆），\n  /// 名称是行的身份而非面板内容，回滚会造成配置错乱。\n  originalSlug: string;\n  originalWindow: string;\n  originalAutoCompact: string;\n  document: string;\n  preview: ({\n  slug: string;\n  /// 事实字段（过 filteredMetadata 白名单，写 metadata map 用）\n  metadata: Record<string, unknown>;\n  /// 文档匹配条目原值（含窗口/压缩托管字段）。「内容是否等于内置」的全字段\n  /// 比较用这份，不能用 metadata——窗口/压缩偏离内置值同样是用户编辑。\n  documentEntry: Record<string, unknown>;\n  contextWindow: string | null;\n  autoCompactPercent: string | null;\n  autoCompactCalculationPercent?: string | null;\n  ignoredFields: string[];\n}) | null;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "updateActiveImportDraft",
+      "file": "src/model-metadata.ts",
+      "line": 339,
+      "params": [
+        {
+          "name": "draft",
+          "ts_type": "({\n  index: number;\n  /// 行已不存在时的兜底身份（activeImportSlug 回退用）。名称不参与取消回滚：\n  /// 改名在 blur 时已经 commitModelSlug 持久化（metadata remap 不可逆），\n  /// 名称是行的身份而非面板内容，回滚会造成配置错乱。\n  originalSlug: string;\n  originalWindow: string;\n  originalAutoCompact: string;\n  document: string;\n  preview: ({\n  slug: string;\n  /// 事实字段（过 filteredMetadata 白名单，写 metadata map 用）\n  metadata: Record<string, unknown>;\n  /// 文档匹配条目原值（含窗口/压缩托管字段）。「内容是否等于内置」的全字段\n  /// 比较用这份，不能用 metadata——窗口/压缩偏离内置值同样是用户编辑。\n  documentEntry: Record<string, unknown>;\n  contextWindow: string | null;\n  autoCompactPercent: string | null;\n  autoCompactCalculationPercent?: string | null;\n  ignoredFields: string[];\n}) | null;\n})",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "patch",
+          "ts_type": "Partial<Pick<({\n  index: number;\n  /// 行已不存在时的兜底身份（activeImportSlug 回退用）。名称不参与取消回滚：\n  /// 改名在 blur 时已经 commitModelSlug 持久化（metadata remap 不可逆），\n  /// 名称是行的身份而非面板内容，回滚会造成配置错乱。\n  originalSlug: string;\n  originalWindow: string;\n  originalAutoCompact: string;\n  document: string;\n  preview: ({\n  slug: string;\n  /// 事实字段（过 filteredMetadata 白名单，写 metadata map 用）\n  metadata: Record<string, unknown>;\n  /// 文档匹配条目原值（含窗口/压缩托管字段）。「内容是否等于内置」的全字段\n  /// 比较用这份，不能用 metadata——窗口/压缩偏离内置值同样是用户编辑。\n  documentEntry: Record<string, unknown>;\n  contextWindow: string | null;\n  autoCompactPercent: string | null;\n  autoCompactCalculationPercent?: string | null;\n  ignoredFields: string[];\n}) | null;\n}), \"document\" | \"preview\">>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  index: number;\n  /// 行已不存在时的兜底身份（activeImportSlug 回退用）。名称不参与取消回滚：\n  /// 改名在 blur 时已经 commitModelSlug 持久化（metadata remap 不可逆），\n  /// 名称是行的身份而非面板内容，回滚会造成配置错乱。\n  originalSlug: string;\n  originalWindow: string;\n  originalAutoCompact: string;\n  document: string;\n  preview: ({\n  slug: string;\n  /// 事实字段（过 filteredMetadata 白名单，写 metadata map 用）\n  metadata: Record<string, unknown>;\n  /// 文档匹配条目原值（含窗口/压缩托管字段）。「内容是否等于内置」的全字段\n  /// 比较用这份，不能用 metadata——窗口/压缩偏离内置值同样是用户编辑。\n  documentEntry: Record<string, unknown>;\n  contextWindow: string | null;\n  autoCompactPercent: string | null;\n  autoCompactCalculationPercent?: string | null;\n  ignoredFields: string[];\n}) | null;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "cancelActiveImportDraft",
+      "file": "src/model-metadata.ts",
+      "line": 346,
+      "params": [
+        {
+          "name": "draft",
+          "ts_type": "({\n  index: number;\n  /// 行已不存在时的兜底身份（activeImportSlug 回退用）。名称不参与取消回滚：\n  /// 改名在 blur 时已经 commitModelSlug 持久化（metadata remap 不可逆），\n  /// 名称是行的身份而非面板内容，回滚会造成配置错乱。\n  originalSlug: string;\n  originalWindow: string;\n  originalAutoCompact: string;\n  document: string;\n  preview: ({\n  slug: string;\n  /// 事实字段（过 filteredMetadata 白名单，写 metadata map 用）\n  metadata: Record<string, unknown>;\n  /// 文档匹配条目原值（含窗口/压缩托管字段）。「内容是否等于内置」的全字段\n  /// 比较用这份，不能用 metadata——窗口/压缩偏离内置值同样是用户编辑。\n  documentEntry: Record<string, unknown>;\n  contextWindow: string | null;\n  autoCompactPercent: string | null;\n  autoCompactCalculationPercent?: string | null;\n  ignoredFields: string[];\n}) | null;\n})",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ draft: null; rowPatch: { window: string; autoCompact: string } }",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "rematchActiveImportDraft",
+      "file": "src/model-metadata.ts",
+      "line": 355,
+      "params": [
+        {
+          "name": "draft",
+          "ts_type": "({\n  index: number;\n  /// 行已不存在时的兜底身份（activeImportSlug 回退用）。名称不参与取消回滚：\n  /// 改名在 blur 时已经 commitModelSlug 持久化（metadata remap 不可逆），\n  /// 名称是行的身份而非面板内容，回滚会造成配置错乱。\n  originalSlug: string;\n  originalWindow: string;\n  originalAutoCompact: string;\n  document: string;\n  preview: ({\n  slug: string;\n  /// 事实字段（过 filteredMetadata 白名单，写 metadata map 用）\n  metadata: Record<string, unknown>;\n  /// 文档匹配条目原值（含窗口/压缩托管字段）。「内容是否等于内置」的全字段\n  /// 比较用这份，不能用 metadata——窗口/压缩偏离内置值同样是用户编辑。\n  documentEntry: Record<string, unknown>;\n  contextWindow: string | null;\n  autoCompactPercent: string | null;\n  autoCompactCalculationPercent?: string | null;\n  ignoredFields: string[];\n}) | null;\n})",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "document",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "preview",
+          "ts_type": "({\n  slug: string;\n  /// 事实字段（过 filteredMetadata 白名单，写 metadata map 用）\n  metadata: Record<string, unknown>;\n  /// 文档匹配条目原值（含窗口/压缩托管字段）。「内容是否等于内置」的全字段\n  /// 比较用这份，不能用 metadata——窗口/压缩偏离内置值同样是用户编辑。\n  documentEntry: Record<string, unknown>;\n  contextWindow: string | null;\n  autoCompactPercent: string | null;\n  autoCompactCalculationPercent?: string | null;\n  ignoredFields: string[];\n}) | null",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  index: number;\n  /// 行已不存在时的兜底身份（activeImportSlug 回退用）。名称不参与取消回滚：\n  /// 改名在 blur 时已经 commitModelSlug 持久化（metadata remap 不可逆），\n  /// 名称是行的身份而非面板内容，回滚会造成配置错乱。\n  originalSlug: string;\n  originalWindow: string;\n  originalAutoCompact: string;\n  document: string;\n  preview: ({\n  slug: string;\n  /// 事实字段（过 filteredMetadata 白名单，写 metadata map 用）\n  metadata: Record<string, unknown>;\n  /// 文档匹配条目原值（含窗口/压缩托管字段）。「内容是否等于内置」的全字段\n  /// 比较用这份，不能用 metadata——窗口/压缩偏离内置值同样是用户编辑。\n  documentEntry: Record<string, unknown>;\n  contextWindow: string | null;\n  autoCompactPercent: string | null;\n  autoCompactCalculationPercent?: string | null;\n  ignoredFields: string[];\n}) | null;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "builtinEntryToImportDocument",
+      "file": "src/model-metadata.ts",
+      "line": 370,
+      "params": [
+        {
+          "name": "entry",
+          "ts_type": "({\n  slug: string;\n  display_name?: string;\n  context_window?: number | null;\n  max_context_window?: number | null;\n  auto_compact_token_limit?: number | null;\n  [key: string]: unknown;\n})",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "rowName",
+          "ts_type": "string",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "metadataSourceTags",
+      "file": "src/model-metadata.ts",
+      "line": 397,
+      "params": [
+        {
+          "name": "options",
+          "ts_type": "{\n  slug: string;\n  imported: boolean;\n  builtinMatch: {\n  matched: boolean;\n  source?: string;\n  entry?: ({\n  slug: string;\n  display_name?: string;\n  context_window?: number | null;\n  max_context_window?: number | null;\n  auto_compact_token_limit?: number | null;\n  [key: string]: unknown;\n});\n  fallback?: { slug: string; context_window: number };\n} | null;\n  builtinIndexSlug: { source: string } | undefined;\n  /// 无内置时的回退模板名；由调用方从后端 fallback 字段实时取，不写死。\n  fallbackSlug?: string;\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(| { kind: \"match\"; source: string; tone: \"builtin\" }\n  | { kind: \"fallback\"; source: string; tone: \"fallback\" }\n  | { kind: \"custom\"; source?: string; tone: \"custom\" })[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "importDocumentSyncPatch",
+      "file": "src/model-metadata.ts",
+      "line": 444,
+      "params": [
+        {
+          "name": "row",
+          "ts_type": "{ window: string; autoCompact: string }",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "preview",
+          "ts_type": "{ contextWindow: string | null; autoCompactPercent: string | null }",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ window?: string; autoCompact?: string }",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "metadataMatchesBuiltin",
+      "file": "src/model-metadata.ts",
+      "line": 487,
+      "params": [
+        {
+          "name": "metadata",
+          "ts_type": "Record<string, unknown> | null | undefined",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "builtinMetadata",
+          "ts_type": "Record<string, unknown> | null | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "importSaveDecision",
+      "file": "src/model-metadata.ts",
+      "line": 500,
+      "params": [
+        {
+          "name": "options",
+          "ts_type": "{\n  /// 当前文本是否可解析出有效模型（false = 解析失败）\n  parseOk: boolean;\n  /// 文本是否为空\n  documentBlank: boolean;\n  /// 当前是否已存有该模型的自定义配置\n  imported: boolean;\n  /// 面板元数据与内置条目是否等价（无内置匹配时为 false）\n  matchesBuiltin: boolean;\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  /// 是否需要写 profile.modelMetadata（false = 当前配置已是目标态）\n  needsSave: boolean;\n  /// 保存动作的语义：写自定义覆盖 / 清掉自定义改用内置 / 无需操作\n  effect: \"custom\" | \"builtin\" | \"none\";\n  /// 按钮文案\n  label: string;\n  /// hover 说明：为什么可点或为什么不可点\n  title: string;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "importPanelControls",
+      "file": "src/model-metadata.ts",
+      "line": 548,
+      "params": [
+        {
+          "name": "options",
+          "ts_type": "{\n  slug: string;\n  document: string;\n  imported: boolean;\n  parseOk: boolean;\n  matched: boolean;\n  /// 面板元数据与内置条目是否等价（由调用方用 metadataMatchesBuiltin 算出）\n  matchesBuiltin: boolean;\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  rematch: { disabled: boolean; title: string };\n  clear: { disabled: boolean; title: string };\n  cancel: { disabled: boolean; title: string };\n  save: { disabled: boolean; label: string; title: string };\n}",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "replaceModelMetadataForSlug",
+      "file": "src/model-metadata.ts",
+      "line": 592,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "slug",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "metadata",
+          "ts_type": "Record<string, unknown>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "resolveModelMetadataRowKey",
+      "file": "src/model-metadata.ts",
+      "line": 616,
+      "params": [
+        {
+          "name": "map",
+          "ts_type": "Record<string, Record<string, unknown>>",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "rowNames",
+          "ts_type": "{ current: string; origin?: string }",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "clearModelMetadataForSlug",
+      "file": "src/model-metadata.ts",
+      "line": 627,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "slug",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "remapModelMetadataSlugs",
+      "file": "src/model-metadata.ts",
+      "line": 634,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "mappings",
+          "ts_type": "Iterable<{ previousSlug: string; nextSlug: string }>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "retainModelMetadataForSlugs",
+      "file": "src/model-metadata.ts",
+      "line": 664,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "slugs",
+          "ts_type": "Iterable<string>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "modelFastSupportMode",
+      "file": "src/model-metadata.ts",
+      "line": 706,
+      "params": [
+        {
+          "name": "metadata",
+          "ts_type": "Record<string, unknown> | null | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"inherit\" | \"supported\" | \"unsupported\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "setModelFastSupportMode",
+      "file": "src/model-metadata.ts",
+      "line": 719,
+      "params": [
+        {
+          "name": "metadata",
+          "ts_type": "Record<string, unknown>",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "mode",
+          "ts_type": "(\"inherit\" | \"supported\" | \"unsupported\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "Record<string, unknown>",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "synchronizeModelMetadataFastSupport",
+      "file": "src/model-metadata.ts",
+      "line": 724,
+      "params": [
+        {
+          "name": "source",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "targetSlug",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "mode",
+          "ts_type": "(\"inherit\" | \"supported\" | \"unsupported\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ document: string; preview: ({\n  slug: string;\n  /// 事实字段（过 filteredMetadata 白名单，写 metadata map 用）\n  metadata: Record<string, unknown>;\n  /// 文档匹配条目原值（含窗口/压缩托管字段）。「内容是否等于内置」的全字段\n  /// 比较用这份，不能用 metadata——窗口/压缩偏离内置值同样是用户编辑。\n  documentEntry: Record<string, unknown>;\n  contextWindow: string | null;\n  autoCompactPercent: string | null;\n  autoCompactCalculationPercent?: string | null;\n  ignoredFields: string[];\n}) } | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "synchronizeModelMetadataLiteSupport",
+      "file": "src/model-metadata.ts",
+      "line": 744,
+      "params": [
+        {
+          "name": "source",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "targetSlug",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "mode",
+          "ts_type": "\"inherit\" | \"supported\" | \"unsupported\"",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ document: string; preview: ({\n  slug: string;\n  /// 事实字段（过 filteredMetadata 白名单，写 metadata map 用）\n  metadata: Record<string, unknown>;\n  /// 文档匹配条目原值（含窗口/压缩托管字段）。「内容是否等于内置」的全字段\n  /// 比较用这份，不能用 metadata——窗口/压缩偏离内置值同样是用户编辑。\n  documentEntry: Record<string, unknown>;\n  contextWindow: string | null;\n  autoCompactPercent: string | null;\n  autoCompactCalculationPercent?: string | null;\n  ignoredFields: string[];\n}) } | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "modelMultiAgentMode",
+      "file": "src/model-metadata.ts",
+      "line": 764,
+      "params": [
+        {
+          "name": "metadata",
+          "ts_type": "Record<string, unknown> | null | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"inherit\" | \"v1\" | \"v2\" | \"disabled\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "synchronizeModelMetadataMultiAgentVersion",
+      "file": "src/model-metadata.ts",
+      "line": 775,
+      "params": [
+        {
+          "name": "source",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "targetSlug",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "mode",
+          "ts_type": "(\"inherit\" | \"v1\" | \"v2\" | \"disabled\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ document: string; preview: ({\n  slug: string;\n  /// 事实字段（过 filteredMetadata 白名单，写 metadata map 用）\n  metadata: Record<string, unknown>;\n  /// 文档匹配条目原值（含窗口/压缩托管字段）。「内容是否等于内置」的全字段\n  /// 比较用这份，不能用 metadata——窗口/压缩偏离内置值同样是用户编辑。\n  documentEntry: Record<string, unknown>;\n  contextWindow: string | null;\n  autoCompactPercent: string | null;\n  autoCompactCalculationPercent?: string | null;\n  ignoredFields: string[];\n}) } | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "synchronizeModelMetadataDocumentContextWindow",
+      "file": "src/model-metadata.ts",
+      "line": 805,
+      "params": [
+        {
+          "name": "source",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "targetSlug",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "contextWindow",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "synchronizeModelMetadataDocumentLimits",
+      "file": "src/model-metadata.ts",
+      "line": 841,
+      "params": [
+        {
+          "name": "source",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "targetSlug",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "contextWindow",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "autoCompactPercent",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "synchronizeModelMetadataDocumentLimitsPreview",
+      "file": "src/model-metadata.ts",
+      "line": 869,
+      "params": [
+        {
+          "name": "source",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "targetSlug",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "contextWindow",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "autoCompactPercent",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ document: string; preview: ({\n  slug: string;\n  /// 事实字段（过 filteredMetadata 白名单，写 metadata map 用）\n  metadata: Record<string, unknown>;\n  /// 文档匹配条目原值（含窗口/压缩托管字段）。「内容是否等于内置」的全字段\n  /// 比较用这份，不能用 metadata——窗口/压缩偏离内置值同样是用户编辑。\n  documentEntry: Record<string, unknown>;\n  contextWindow: string | null;\n  autoCompactPercent: string | null;\n  autoCompactCalculationPercent?: string | null;\n  ignoredFields: string[];\n}) } | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "validateModelCapabilities",
+      "file": "src/model-metadata.ts",
+      "line": 902,
+      "params": [
+        {
+          "name": "metadata",
+          "ts_type": "Record<string, unknown>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "parseModelMetadataDocument",
+      "file": "src/model-metadata.ts",
+      "line": 939,
+      "params": [
+        {
+          "name": "source",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "targetSlug",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(| { ok: true; value: ({\n  slug: string;\n  /// 事实字段（过 filteredMetadata 白名单，写 metadata map 用）\n  metadata: Record<string, unknown>;\n  /// 文档匹配条目原值（含窗口/压缩托管字段）。「内容是否等于内置」的全字段\n  /// 比较用这份，不能用 metadata——窗口/压缩偏离内置值同样是用户编辑。\n  documentEntry: Record<string, unknown>;\n  contextWindow: string | null;\n  autoCompactPercent: string | null;\n  autoCompactCalculationPercent?: string | null;\n  ignoredFields: string[];\n}) }\n  | { ok: false; error: string })",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "builtinMetadataQueryState",
+      "file": "src/model-metadata.ts",
+      "line": 296,
+      "reason": "checks `instanceof`: class identity does not survive the bridge"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\tools\\conversation-canvas",
+  "unit": "external-api.mjs",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "canvas-external-api-rs",
+  "exports": [
+    {
+      "name": "apiEndpoint",
+      "file": "external-api.mjs",
+      "line": 2,
+      "params": [
+        {
+          "name": "raw",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "storedApiConfig",
+      "file": "external-api.mjs",
+      "line": 21,
+      "params": [
+        {
+          "name": "config",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "apiRequestBody",
+      "file": "external-api.mjs",
+      "line": 35,
+      "params": [
+        {
+          "name": "config",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "prompt",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "completionText",
+      "file": "external-api.mjs",
+      "line": 76,
+      "params": [
+        {
+          "name": "body",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "apiConfig",
+      "file": "external-api.mjs",
+      "line": 10,
+      "reason": "uses crypto.randomUUID when input.revision is omitted"
+    },
+    {
+      "name": "apiError",
+      "file": "external-api.mjs",
+      "line": 26,
+      "reason": "returns Error object with custom .retryable property"
+    },
+    {
+      "name": "readApiResponse",
+      "file": "external-api.mjs",
+      "line": 44,
+      "reason": "async ReadableStream SSE decoder"
+    },
+    {
+      "name": "waitForApi",
+      "file": "external-api.mjs",
+      "line": 86,
+      "reason": "Promise and AbortSignal wrapper"
+    },
+    {
+      "name": "createApiOrganizer",
+      "file": "external-api.mjs",
+      "line": 96,
+      "reason": "stateful async closure with timers and AbortController"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/extension-manager-bridge.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "extension-manager-bridge-rs",
+  "exports": [
+    {
+      "name": "isManagerRequest",
+      "file": "src/extension-manager-bridge.ts",
+      "line": 36,
+      "params": [
+        {
+          "name": "data",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "data is { __codexPlusManager: 1; id: number; method: string; params?: unknown }",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "managerPanelSrcdoc",
+      "file": "src/extension-manager-bridge.ts",
+      "line": 164,
+      "params": [
+        {
+          "name": "html",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "theme",
+          "ts_type": "(\"dark\" | \"light\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "handleManagerRequest",
+      "file": "src/extension-manager-bridge.ts",
+      "line": 45,
+      "reason": "async-deps-callbacks"
+    }
+  ]
+}

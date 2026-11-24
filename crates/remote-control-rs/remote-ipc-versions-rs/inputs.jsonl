@@ -1,0 +1,5 @@
+{"fn":"extractIpcVersions","args":["const v={\"thread-stream-state-changed\":13,\"thread-follower-start-turn\":2,\"thread-follower-interrupt-turn\":4};"]}
+{"fn":"extractIpcVersions","args":["prefix {outer { \"thread-follower-start-turn\":2 } } suffix"]}
+{"fn":"extractIpcVersions","args":["const other={\"a\":1}; function f(){return {\"thread-follower-start-turn\":99};}"]}
+{"fn":"extractIpcVersions","args":["const bad={\"thread-follower-start-turn\":\"not-digit\"};"]}
+{"fn":"extractIpcVersions","args":["no versions here"]}

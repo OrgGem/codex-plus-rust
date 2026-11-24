@@ -1,0 +1,19 @@
+[package]
+name = "canvas-common-rs"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.97"
+publish = false
+description = "Shared JS value, UTF-16, HTML escape, and model helpers for conversation-canvas WASM ports"
+
+[dependencies]
+serde_json = { version = "1", features = ["preserve_order", "float_roundtrip", "unbounded_depth"] }
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
+
+[lints.rust]
+unused_lifetimes = "warn"
+trivial_numeric_casts = "warn"
+
+[workspace]

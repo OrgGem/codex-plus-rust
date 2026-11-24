@@ -1,0 +1,1402 @@
+{
+  "schema": "rust-anything/analyze@1",
+  "language": "ts",
+  "summary": {
+    "packages": 1,
+    "source_files": 18,
+    "test_files": 11,
+    "ui_files": 0,
+    "loc": 2461,
+    "units": 18,
+    "ready": 16,
+    "caution": 0,
+    "blocked": 2,
+    "keep": 0,
+    "parse_errors": 0
+  },
+  "packages": [
+    {
+      "name": "codex-plus-conversation-canvas",
+      "dir": "",
+      "order": 1,
+      "runtime": "portable",
+      "workspace_deps": [],
+      "test_files": 11,
+      "units": [
+        "bridge-data.mjs",
+        "build-userscript.mjs",
+        "dev/",
+        "external-api.mjs",
+        "long-organizer.mjs",
+        "model.mjs",
+        "native-history.mjs",
+        "native-runtime.mjs",
+        "organize.mjs",
+        "public/",
+        "src/canvas-panel.js",
+        "src/canvas-store.js",
+        "src/native-api.js",
+        "src/native-sidechat.js",
+        "src/tree-canvas-view.js",
+        "tree-canvas.mjs",
+        "tree-markup.mjs",
+        "view-pages.mjs"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "bridge-data.mjs",
+      "package": "codex-plus-conversation-canvas",
+      "files": [
+        "bridge-data.mjs"
+      ],
+      "loc": 18,
+      "wave": 1,
+      "readiness": 99,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "bridge-data.mjs:9",
+            "bridge-data.mjs:9"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "bridge-data.mjs:6"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "bridge-data.mjs:4",
+            "bridge-data.mjs:5",
+            "bridge-data.mjs:12"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "bridge-data.mjs:12"
+          ]
+        }
+      ],
+      "internal_deps": [
+        "model.mjs"
+      ],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 1,
+      "fan_in": 0,
+      "density": 16.7,
+      "priority": 92,
+      "exports": 1,
+      "bridgeable": 1,
+      "notes": [
+        "1 test file imports it directly.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "build-userscript.mjs",
+      "package": "codex-plus-conversation-canvas",
+      "files": [
+        "build-userscript.mjs"
+      ],
+      "loc": 14,
+      "wave": 0,
+      "readiness": 100,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 59,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "dev/",
+      "package": "codex-plus-conversation-canvas",
+      "files": [
+        "dev/embedding-harness.mjs"
+      ],
+      "loc": 132,
+      "wave": 0,
+      "readiness": 100,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 68,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit."
+      ]
+    },
+    {
+      "id": "external-api.mjs",
+      "package": "codex-plus-conversation-canvas",
+      "files": [
+        "external-api.mjs"
+      ],
+      "loc": 133,
+      "wave": 0,
+      "readiness": 76,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 4,
+          "samples": [
+            "external-api.mjs:51",
+            "external-api.mjs:65",
+            "external-api.mjs:65"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "external-api.mjs:48"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 10,
+          "samples": [
+            "external-api.mjs:44",
+            "external-api.mjs:60",
+            "external-api.mjs:89"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "external-api.mjs:97",
+            "external-api.mjs:103"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 26,
+          "samples": [
+            "external-api.mjs:3",
+            "external-api.mjs:3",
+            "external-api.mjs:4"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "external-api.mjs:52",
+            "external-api.mjs:72",
+            "external-api.mjs:118"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "external-api.mjs:12",
+            "external-api.mjs:111",
+            "external-api.mjs:126"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "external-api.mjs:114"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 1,
+      "fan_in": 0,
+      "density": 6.8,
+      "priority": 76,
+      "exports": 9,
+      "bridgeable": 9,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "1 test file imports it directly.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "long-organizer.mjs",
+      "package": "codex-plus-conversation-canvas",
+      "files": [
+        "long-organizer.mjs"
+      ],
+      "loc": 147,
+      "wave": 1,
+      "readiness": 68,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 10,
+          "samples": [
+            "long-organizer.mjs:8",
+            "long-organizer.mjs:22",
+            "long-organizer.mjs:23"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 20,
+          "samples": [
+            "long-organizer.mjs:40",
+            "long-organizer.mjs:41",
+            "long-organizer.mjs:43"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 16,
+          "samples": [
+            "long-organizer.mjs:4",
+            "long-organizer.mjs:8",
+            "long-organizer.mjs:12"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 12,
+          "samples": [
+            "long-organizer.mjs:78",
+            "long-organizer.mjs:79",
+            "long-organizer.mjs:84"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 8,
+          "samples": [
+            "long-organizer.mjs:33",
+            "long-organizer.mjs:60",
+            "long-organizer.mjs:70"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "long-organizer.mjs:129",
+            "long-organizer.mjs:142"
+          ]
+        }
+      ],
+      "internal_deps": [
+        "organize.mjs"
+      ],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 2,
+      "fan_in": 0,
+      "density": 16.3,
+      "priority": 84,
+      "exports": 7,
+      "bridgeable": 7,
+      "notes": [
+        "2 test files import it directly.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "model.mjs",
+      "package": "codex-plus-conversation-canvas",
+      "files": [
+        "model.mjs"
+      ],
+      "loc": 57,
+      "wave": 0,
+      "readiness": 88,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "model.mjs:17",
+            "model.mjs:53"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 8,
+          "samples": [
+            "model.mjs:21",
+            "model.mjs:23",
+            "model.mjs:31"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 2,
+          "samples": [
+            "model.mjs:7",
+            "model.mjs:12"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "model.mjs:7"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 4,
+      "fan_in": 4,
+      "density": 14.0,
+      "priority": 91,
+      "exports": 5,
+      "bridgeable": 5,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "4 test files import it directly.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "native-history.mjs",
+      "package": "codex-plus-conversation-canvas",
+      "files": [
+        "native-history.mjs"
+      ],
+      "loc": 68,
+      "wave": 1,
+      "readiness": 83,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "native-history.mjs:4",
+            "native-history.mjs:41"
+          ]
+        },
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "native-history.mjs:33"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 8,
+          "samples": [
+            "native-history.mjs:9",
+            "native-history.mjs:16",
+            "native-history.mjs:28"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 5,
+          "samples": [
+            "native-history.mjs:9",
+            "native-history.mjs:10",
+            "native-history.mjs:10"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 9,
+          "samples": [
+            "native-history.mjs:14",
+            "native-history.mjs:17",
+            "native-history.mjs:19"
+          ]
+        }
+      ],
+      "internal_deps": [
+        "model.mjs"
+      ],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 1,
+      "fan_in": 0,
+      "density": 13.2,
+      "priority": 90,
+      "exports": 2,
+      "bridgeable": 2,
+      "notes": [
+        "1 test file imports it directly.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "native-runtime.mjs",
+      "package": "codex-plus-conversation-canvas",
+      "files": [
+        "native-runtime.mjs"
+      ],
+      "loc": 42,
+      "wave": 0,
+      "readiness": 94,
+      "status": "blocked",
+      "bridge": "wasm-bindgen",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "dynamic-code",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "native-runtime.mjs:21"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "native-runtime.mjs:11",
+            "native-runtime.mjs:18",
+            "native-runtime.mjs:27"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "native-runtime.mjs:24",
+            "native-runtime.mjs:32"
+          ]
+        },
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "native-runtime.mjs:18"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "native-runtime.mjs:15",
+            "native-runtime.mjs:32",
+            "native-runtime.mjs:35"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 1,
+      "fan_in": 0,
+      "density": 4.8,
+      "priority": 77,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Uses dynamic code (eval, new Function or computed imports).",
+        "Leaf: imports no other unit.",
+        "1 test file imports it directly.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "organize.mjs",
+      "package": "codex-plus-conversation-canvas",
+      "files": [
+        "organize.mjs"
+      ],
+      "loc": 45,
+      "wave": 0,
+      "readiness": 93,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "organize.mjs:41"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 6,
+          "samples": [
+            "organize.mjs:14",
+            "organize.mjs:14",
+            "organize.mjs:20"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 12,
+          "samples": [
+            "organize.mjs:3",
+            "organize.mjs:13",
+            "organize.mjs:16"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "organize.mjs:3",
+            "organize.mjs:9",
+            "organize.mjs:43"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 1,
+      "fan_in": 1,
+      "density": 15.6,
+      "priority": 92,
+      "exports": 3,
+      "bridgeable": 3,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "1 test file imports it directly.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "public/",
+      "package": "codex-plus-conversation-canvas",
+      "files": [
+        "public/canvas.user.js"
+      ],
+      "loc": 1166,
+      "wave": 0,
+      "readiness": 1,
+      "status": "blocked",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 30,
+          "samples": [
+            "public/canvas.user.js:29",
+            "public/canvas.user.js:65",
+            "public/canvas.user.js:80"
+          ]
+        },
+        {
+          "risk": "regex-syntax",
+          "severity": "high",
+          "count": 3,
+          "samples": [
+            "public/canvas.user.js:394",
+            "public/canvas.user.js:431",
+            "public/canvas.user.js:668"
+          ]
+        },
+        {
+          "risk": "dynamic-code",
+          "severity": "high",
+          "count": 1,
+          "samples": [
+            "public/canvas.user.js:369"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 103,
+          "samples": [
+            "public/canvas.user.js:154",
+            "public/canvas.user.js:158",
+            "public/canvas.user.js:162"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 70,
+          "samples": [
+            "public/canvas.user.js:33",
+            "public/canvas.user.js:35",
+            "public/canvas.user.js:43"
+          ]
+        },
+        {
+          "risk": "reflection",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "public/canvas.user.js:366"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 101,
+          "samples": [
+            "public/canvas.user.js:19",
+            "public/canvas.user.js:24",
+            "public/canvas.user.js:87"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 18,
+          "samples": [
+            "public/canvas.user.js:19",
+            "public/canvas.user.js:95",
+            "public/canvas.user.js:106"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 9,
+          "samples": [
+            "public/canvas.user.js:279",
+            "public/canvas.user.js:292",
+            "public/canvas.user.js:598"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "public/canvas.user.js:734",
+            "public/canvas.user.js:981",
+            "public/canvas.user.js:984"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 8.7,
+      "priority": 31,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Uses dynamic code (eval, new Function or computed imports).",
+        "Leaf: imports no other unit.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "src/canvas-panel.js",
+      "package": "codex-plus-conversation-canvas",
+      "files": [
+        "src/canvas-panel.js"
+      ],
+      "loc": 324,
+      "wave": 0,
+      "readiness": 61,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 5,
+          "samples": [
+            "src/canvas-panel.js:182",
+            "src/canvas-panel.js:182",
+            "src/canvas-panel.js:207"
+          ]
+        },
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 31,
+          "samples": [
+            "src/canvas-panel.js:112",
+            "src/canvas-panel.js:112",
+            "src/canvas-panel.js:115"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 10,
+          "samples": [
+            "src/canvas-panel.js:104",
+            "src/canvas-panel.js:123",
+            "src/canvas-panel.js:123"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 14,
+          "samples": [
+            "src/canvas-panel.js:18",
+            "src/canvas-panel.js:115",
+            "src/canvas-panel.js:119"
+          ]
+        },
+        {
+          "risk": "number-semantics",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "src/canvas-panel.js:95",
+            "src/canvas-panel.js:98",
+            "src/canvas-panel.js:130"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 3,
+          "samples": [
+            "src/canvas-panel.js:119",
+            "src/canvas-panel.js:278",
+            "src/canvas-panel.js:279"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "src/canvas-panel.js:140"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 4.6,
+      "priority": 57,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "src/canvas-store.js",
+      "package": "codex-plus-conversation-canvas",
+      "files": [
+        "src/canvas-store.js"
+      ],
+      "loc": 26,
+      "wave": 0,
+      "readiness": 93,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 10,
+          "samples": [
+            "src/canvas-store.js:3",
+            "src/canvas-store.js:12",
+            "src/canvas-store.js:13"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "src/canvas-store.js:22"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "src/canvas-store.js:9"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 7.7,
+      "priority": 73,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "src/native-api.js",
+      "package": "codex-plus-conversation-canvas",
+      "files": [
+        "src/native-api.js"
+      ],
+      "loc": 13,
+      "wave": 0,
+      "readiness": 98,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "src/native-api.js:2",
+            "src/native-api.js:5",
+            "src/native-api.js:11"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 4,
+          "samples": [
+            "src/native-api.js:5",
+            "src/native-api.js:5",
+            "src/native-api.js:6"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 58,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "src/native-sidechat.js",
+      "package": "codex-plus-conversation-canvas",
+      "files": [
+        "src/native-sidechat.js"
+      ],
+      "loc": 158,
+      "wave": 0,
+      "readiness": 81,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 23,
+          "samples": [
+            "src/native-sidechat.js:3",
+            "src/native-sidechat.js:4",
+            "src/native-sidechat.js:90"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 6,
+          "samples": [
+            "src/native-sidechat.js:8",
+            "src/native-sidechat.js:8",
+            "src/native-sidechat.js:15"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 13,
+          "samples": [
+            "src/native-sidechat.js:5",
+            "src/native-sidechat.js:69",
+            "src/native-sidechat.js:91"
+          ]
+        },
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "src/native-sidechat.js:137"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 7.6,
+      "priority": 73,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "src/tree-canvas-view.js",
+      "package": "codex-plus-conversation-canvas",
+      "files": [
+        "src/tree-canvas-view.js"
+      ],
+      "loc": 58,
+      "wave": 0,
+      "readiness": 98,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 3,
+          "samples": [
+            "src/tree-canvas-view.js:4",
+            "src/tree-canvas-view.js:5",
+            "src/tree-canvas-view.js:53"
+          ]
+        },
+        {
+          "risk": "json",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "src/tree-canvas-view.js:12"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 64,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "tree-canvas.mjs",
+      "package": "codex-plus-conversation-canvas",
+      "files": [
+        "tree-canvas.mjs"
+      ],
+      "loc": 36,
+      "wave": 1,
+      "readiness": 100,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 4,
+          "samples": [
+            "tree-canvas.mjs:6",
+            "tree-canvas.mjs:7",
+            "tree-canvas.mjs:7"
+          ]
+        }
+      ],
+      "internal_deps": [
+        "model.mjs"
+      ],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 1,
+      "fan_in": 0,
+      "density": 13.9,
+      "priority": 95,
+      "exports": 5,
+      "bridgeable": 5,
+      "notes": [
+        "1 test file imports it directly.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "tree-markup.mjs",
+      "package": "codex-plus-conversation-canvas",
+      "files": [
+        "tree-markup.mjs"
+      ],
+      "loc": 9,
+      "wave": 1,
+      "readiness": 100,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 2,
+          "samples": [
+            "tree-markup.mjs:7",
+            "tree-markup.mjs:8"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "tree-markup.mjs:3"
+          ]
+        }
+      ],
+      "internal_deps": [
+        "model.mjs"
+      ],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 2,
+      "fan_in": 0,
+      "density": 22.2,
+      "priority": 91,
+      "exports": 1,
+      "bridgeable": 1,
+      "notes": [
+        "2 test files import it directly.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    },
+    {
+      "id": "view-pages.mjs",
+      "package": "codex-plus-conversation-canvas",
+      "files": [
+        "view-pages.mjs"
+      ],
+      "loc": 15,
+      "wave": 0,
+      "readiness": 100,
+      "status": "ready",
+      "bridge": "wasm-bindgen",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "string-offsets",
+          "severity": "high",
+          "count": 3,
+          "samples": [
+            "view-pages.mjs:8",
+            "view-pages.mjs:11",
+            "view-pages.mjs:13"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 1,
+      "fan_in": 0,
+      "density": 20.0,
+      "priority": 92,
+      "exports": 1,
+      "bridgeable": 1,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "1 test file imports it directly.",
+        "Portable code: wasm-bindgen keeps it running in browsers and Node. It needs the wasm32-unknown-unknown target and wasm-bindgen; `bridge --kind napi` runs with what Node already has."
+      ]
+    }
+  ],
+  "start_here": [
+    "tree-canvas.mjs",
+    "organize.mjs",
+    "model.mjs",
+    "native-history.mjs",
+    "long-organizer.mjs",
+    "external-api.mjs"
+  ],
+  "dependencies": [],
+  "whole_app": {
+    "shape": "server",
+    "entry_points": [
+      {
+        "kind": "server",
+        "path": "dev/embedding-harness.mjs",
+        "evidence": "`createServer(` at dev/embedding-harness.mjs:6"
+      }
+    ],
+    "dependencies": [],
+    "pieces": [
+      {
+        "wave": 0,
+        "units": [
+          "build-userscript.mjs"
+        ],
+        "loc": 14,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "dev/"
+        ],
+        "loc": 132,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "external-api.mjs"
+        ],
+        "loc": 133,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "model.mjs"
+        ],
+        "loc": 57,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "native-runtime.mjs"
+        ],
+        "loc": 42,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "organize.mjs"
+        ],
+        "loc": 45,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "public/"
+        ],
+        "loc": 1166,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "src/canvas-panel.js"
+        ],
+        "loc": 324,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "src/canvas-store.js"
+        ],
+        "loc": 26,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "src/native-api.js"
+        ],
+        "loc": 13,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "src/native-sidechat.js"
+        ],
+        "loc": 158,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "src/tree-canvas-view.js"
+        ],
+        "loc": 58,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "view-pages.mjs"
+        ],
+        "loc": 15,
+        "tangled": false
+      },
+      {
+        "wave": 1,
+        "units": [
+          "bridge-data.mjs"
+        ],
+        "loc": 18,
+        "tangled": false
+      },
+      {
+        "wave": 1,
+        "units": [
+          "long-organizer.mjs"
+        ],
+        "loc": 147,
+        "tangled": false
+      },
+      {
+        "wave": 1,
+        "units": [
+          "native-history.mjs"
+        ],
+        "loc": 68,
+        "tangled": false
+      },
+      {
+        "wave": 1,
+        "units": [
+          "tree-canvas.mjs"
+        ],
+        "loc": 36,
+        "tangled": false
+      },
+      {
+        "wave": 1,
+        "units": [
+          "tree-markup.mjs"
+        ],
+        "loc": 9,
+        "tangled": false
+      }
+    ],
+    "decisions": [
+      {
+        "id": "D1",
+        "topic": "shape",
+        "question": "The app is a server, entered through dev/embedding-harness.mjs. Port every entry point, in that shape?",
+        "recommendation": "Yes: an axum front door (`app front-door`) takes the server over first"
+      },
+      {
+        "id": "D2",
+        "topic": "blocked native-runtime.mjs",
+        "question": "native-runtime.mjs is blocked: Uses dynamic code (eval, new Function or computed imports). Rework that part in Rust, or keep the unit outside?",
+        "recommendation": "Research the blocker first; then port it with the piece that uses it"
+      },
+      {
+        "id": "D3",
+        "topic": "blocked public/",
+        "question": "public/ is blocked: Uses dynamic code (eval, new Function or computed imports). Rework that part in Rust, or keep the unit outside?",
+        "recommendation": "Research the blocker first; then port it with the piece that uses it"
+      }
+    ]
+  }
+}

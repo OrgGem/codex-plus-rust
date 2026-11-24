@@ -1,0 +1,108 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/extension-host-model.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "extension-host-model-rs",
+  "exports": [
+    {
+      "name": "extensionHostForTool",
+      "file": "src/extension-host-model.ts",
+      "line": 12,
+      "params": [
+        {
+          "name": "tool",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"codex\" | \"claude\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "extensionsForHost",
+      "file": "src/extension-host-model.ts",
+      "line": 16,
+      "params": [
+        {
+          "name": "scripts",
+          "ts_type": "readonly unknown[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "host",
+          "ts_type": "(\"codex\" | \"claude\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "extensionEnabledForHost",
+      "file": "src/extension-host-model.ts",
+      "line": 20,
+      "params": [
+        {
+          "name": "script",
+          "ts_type": "({\n  enabled: boolean;\n  claude_enabled?: boolean | null;\n  status: string;\n  package?: { claudeDesktop?: Record<string, unknown> | null } | null;\n})",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "host",
+          "ts_type": "(\"codex\" | \"claude\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "extensionStateForHost",
+      "file": "src/extension-host-model.ts",
+      "line": 24,
+      "params": [
+        {
+          "name": "script",
+          "ts_type": "({\n  enabled: boolean;\n  claude_enabled?: boolean | null;\n  status: string;\n  package?: { claudeDesktop?: Record<string, unknown> | null } | null;\n})",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "host",
+          "ts_type": "(\"codex\" | \"claude\")",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "globalEnabled",
+          "ts_type": "boolean",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"off\" | \"globalOff\" | \"loaded\" | \"loading\" | \"failed\" | \"notLoaded\" | \"unknown\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

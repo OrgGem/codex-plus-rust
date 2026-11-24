@@ -1,0 +1,65 @@
+[package]
+name = "codex-plus-app"
+version = "2.8.0"
+edition = "2024"
+rust-version = "1.97"
+publish = false
+description = "Standalone Pure-Rust CodexPlusPlus Desktop Manager powered by Dioxus Desktop, codex-plus-core, codex-plus-data, manager-core-rs, and renderer-inject-rs"
+
+[[bin]]
+name = "codex-plus-app"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+codex-plus-core = { path = "../../../crates/codex-plus-core" }
+codex-plus-data = { path = "../../../crates/codex-plus-data" }
+codex-plus-launcher = { path = "../../../apps/codex-plus-launcher" }
+dioxus = { version = "0.7", default-features = false, features = ["desktop", "macro", "html", "signals", "hooks", "launch", "document"] }
+dunce = "1"
+manager-core-rs = { path = "../manager-models/manager-core-rs" }
+renderer-inject-rs = { path = "../renderer-inject-rs" }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+rusqlite = { version = "0.32", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order", "float_roundtrip", "unbounded_depth"] }
+sha2 = "0.10"
+subtle = "2.6"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "sync", "time", "process"] }
+url = "2"
+uuid = { version = "1", features = ["v4"] }
+
+[target.'cfg(all(windows, target_env = "gnu"))'.dependencies]
+dioxus-desktop = { version = "0.7", features = ["gnu", "tokio_runtime"] }
+
+[target.'cfg(not(all(windows, target_env = "gnu")))'.dependencies]
+dioxus-desktop = { version = "0.7", features = ["tokio_runtime"] }
+
+[dev-dependencies]
+tempfile = "3"
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
+
+[lints.rust]
+unused_lifetimes = "warn"
+trivial_numeric_casts = "warn"
+
+[workspace]
+members = [
+  ".",
+  "sherpa-onnx-gnu-shim",
+]
+
+[patch.crates-io]
+sherpa-onnx = { path = "sherpa-onnx-gnu-shim" }
+
+[profile.dev]
+debug = "line-tables-only"
+
+[profile.dev.package."*"]
+debug = false
+
+[profile.release]
+strip = "symbols"
+lto = "thin"

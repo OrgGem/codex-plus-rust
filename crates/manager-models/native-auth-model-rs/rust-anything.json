@@ -1,0 +1,48 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/native-auth-model.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "native-auth-model-rs",
+  "exports": [
+    {
+      "name": "nativeAuthSelection",
+      "file": "src/native-auth-model.ts",
+      "line": 21,
+      "params": [
+        {
+          "name": "state",
+          "ts_type": "({\n  managed: boolean;\n  selection: { mode: \"none\" } | { mode: \"account\"; accountRef: string } | null;\n  actualAccountRef: string | null;\n  actualLabel: string;\n  accounts: {\n  id: string;\n  name: string;\n  email: string;\n  workspaceId: string;\n  source: string;\n}[];\n  drift: string | null;\n  restartBlockedReason?: string | null;\n})",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "savedAuthLabel",
+      "file": "src/native-auth-model.ts",
+      "line": 27,
+      "params": [
+        {
+          "name": "account",
+          "ts_type": "{\n  id: string;\n  name: string;\n  email: string;\n  workspaceId: string;\n  source: string;\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

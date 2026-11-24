@@ -1,0 +1,30 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/enhancement-navigation.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "enhancement-navigation-rs",
+  "exports": [
+    {
+      "name": "managerNavigationDestination",
+      "file": "src/enhancement-navigation.ts",
+      "line": 7,
+      "params": [
+        {
+          "name": "intent",
+          "ts_type": "({\n  page: \"settings\" | \"enhance\" | \"pluginMarket\" | \"weixin\";\n  /** 旧版悬浮球 / Codex 设置页发出的分节（stepwise / dictation）。服务配置已搬进 Codex，管理器忽略它。 */\n  section?: string;\n})",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  route: \"settings\" | \"enhance\" | \"pluginMarket\" | \"weixin\";\n}",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

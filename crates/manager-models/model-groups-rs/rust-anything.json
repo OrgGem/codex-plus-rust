@@ -1,0 +1,54 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/model-groups.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "model-groups-rs",
+  "exports": [
+    {
+      "name": "groupModelIds",
+      "file": "src/model-groups.ts",
+      "line": 51,
+      "params": [
+        {
+          "name": "models",
+          "ts_type": "readonly string[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "ModelGroup[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "filterModelGroups",
+      "file": "src/model-groups.ts",
+      "line": 75,
+      "params": [
+        {
+          "name": "models",
+          "ts_type": "readonly string[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "query",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "ModelGroup[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

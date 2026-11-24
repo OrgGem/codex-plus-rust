@@ -1,0 +1,60 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/relay-live-files.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "relay-live-files-rs",
+  "exports": [
+    {
+      "name": "shouldBackfillRelayProfileBeforeSwitch",
+      "file": "src/relay-live-files.ts",
+      "line": 1,
+      "params": [
+        {
+          "name": "previousActiveRelayId",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "nextActiveRelayId",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relayAuthForLiveDraft",
+      "file": "src/relay-live-files.ts",
+      "line": 19,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "({\n  relayMode: \"official\" | \"pureApi\" | \"mixedApi\" | \"aggregate\";\n  authContents: string;\n})",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "liveAuthContents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

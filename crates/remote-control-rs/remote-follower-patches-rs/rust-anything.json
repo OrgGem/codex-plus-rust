@@ -1,0 +1,43 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\tools\\remote-control-p0",
+  "unit": "follower.mjs",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "remote-follower-patches-rs",
+  "exports": [
+    {
+      "name": "applyPatches",
+      "file": "follower.mjs",
+      "line": 9,
+      "params": [
+        {
+          "name": "state",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "patches",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "ThreadFollower",
+      "file": "follower.mjs",
+      "line": 33,
+      "reason": "class: stateful EventEmitter over live IPC socket"
+    }
+  ]
+}

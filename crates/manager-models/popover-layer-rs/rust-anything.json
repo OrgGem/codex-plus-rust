@@ -1,0 +1,121 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/popover-layer.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "popover-layer-rs",
+  "exports": [
+    {
+      "name": "resolvePopoverLayout",
+      "file": "src/popover-layer.ts",
+      "line": 67,
+      "params": [
+        {
+          "name": "arg0",
+          "ts_type": "{\n  trigger: {\n  top: number;\n  left: number;\n  right: number;\n  bottom: number;\n  width: number;\n  height: number;\n};\n  viewport: { width: number; height: number };\n  /** 菜单内容自然高度（滚动高度），0 表示还没量到。 */\n  menuHeight: number;\n  align?: (\"start\" | \"end\");\n  /** 菜单期望宽度；不传时跟触发器同宽（原生 select 的观感）。 */\n  menuWidth?: number;\n  /** 期望最小宽度，宽度不足时撑到此值（最终仍会被视口夹紧）。 */\n  minWidth?: number;\n  /** 期望最大高度。 */\n  maxHeight?: number;\n  /** 触发器与菜单的间距。 */\n  gap?: number;\n  /** 与视口边缘的安全距离。 */\n  edge?: number;\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  left: number;\n  top: number;\n  width: number;\n  maxHeight: number;\n  placement: (\"top\" | \"bottom\");\n}",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "resolveAnchoredMenuLayout",
+      "file": "src/popover-layer.ts",
+      "line": 129,
+      "params": [
+        {
+          "name": "trigger",
+          "ts_type": "{\n  top: number;\n  left: number;\n  right: number;\n  bottom: number;\n  width: number;\n  height: number;\n}",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "viewport",
+          "ts_type": "{ width: number; height: number }",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "gap",
+          "ts_type": "unknown",
+          "optional": true,
+          "rest": false
+        },
+        {
+          "name": "edge",
+          "ts_type": "unknown",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  /** `bottom`：贴在触发按钮下方；`top`：下方不够、已向上展开。 */\n  placement: (\"top\" | \"bottom\");\n  top: number;\n  right: number;\n  maxHeight: number;\n}",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "isTriggerVisible",
+      "file": "src/popover-layer.ts",
+      "line": 160,
+      "params": [
+        {
+          "name": "trigger",
+          "ts_type": "{\n  top: number;\n  left: number;\n  right: number;\n  bottom: number;\n  width: number;\n  height: number;\n}",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "viewport",
+          "ts_type": "{ width: number; height: number }",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "edge",
+          "ts_type": "number",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "registerOpenPopover",
+      "file": "src/popover-layer.ts",
+      "line": 181,
+      "reason": "js-callback"
+    },
+    {
+      "name": "releaseOpenPopover",
+      "file": "src/popover-layer.ts",
+      "line": 189,
+      "reason": "shared-js-map"
+    },
+    {
+      "name": "openPopoverCount",
+      "file": "src/popover-layer.ts",
+      "line": 194,
+      "reason": "shared-js-map"
+    },
+    {
+      "name": "resetOpenPopovers",
+      "file": "src/popover-layer.ts",
+      "line": 199,
+      "reason": "shared-js-map"
+    }
+  ]
+}

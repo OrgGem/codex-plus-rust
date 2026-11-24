@@ -1,0 +1,42 @@
+# Cargo / Rust build caches & target directories
+/target/
+**/target/
+**/.shared-target*/
+
+# Packaged portable release binaries & archives
+/release-bundle/
+
+# Generated wasm-bindgen & rust-anything ephemeral recordings/caches
+**/pkg/
+**/.rust-anything/
+**/node_modules/
+**/cases.jsonl
+**/test-inputs.jsonl
+
+# Compiled binaries, libraries, archives & logs
+*.exe
+*.dll
+*.pdb
+*.so
+*.dylib
+*.pyd
+*.node
+*.wasm
+*.zip
+*.log
+
+# Local runtime state, databases & credentials (never commit)
+state/
+**/state/
+webview2-dioxus/
+**/webview2-dioxus/
+.env
+.env.*
+auth.json
+settings.json
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+__pycache__/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,90 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/onboarding-model.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "onboarding-model-rs",
+  "exports": [
+    {
+      "name": "tourSteps",
+      "file": "src/onboarding-model.ts",
+      "line": 74,
+      "params": [
+        {
+          "name": "soloName",
+          "ts_type": "string | null",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "enhanceOnly",
+          "ts_type": "boolean",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  id: string;\n  /** 要高亮的元素：`[data-tour=\"...\"]`；没有目标的步骤（欢迎、结束）显示在屏幕中央。 */\n  target?: string;\n  title: string;\n  body: string;\n  /** 有值时标题和正文是 tf 模板，按它填 {0}。 */\n  args?: string[];\n  /** 只有正文是模板、标题仍是普通文案。 */\n  plainTitle?: boolean;\n}[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "shouldShowTour",
+      "file": "src/onboarding-model.ts",
+      "line": 107,
+      "params": [
+        {
+          "name": "stored",
+          "ts_type": "string | null",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "placeCard",
+      "file": "src/onboarding-model.ts",
+      "line": 114,
+      "params": [
+        {
+          "name": "target",
+          "ts_type": "{ left: number; top: number; right: number; bottom: number }",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "card",
+          "ts_type": "{ width: number; height: number }",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "viewport",
+          "ts_type": "{ width: number; height: number }",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "gap",
+          "ts_type": "number",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "{ left: number; top: number; side: \"right\" | \"left\" | \"bottom\" }",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

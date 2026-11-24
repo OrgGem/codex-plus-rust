@@ -1,0 +1,42 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/overview-model.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "overview-model-rs",
+  "exports": [
+    {
+      "name": "summarizeRecentRequests",
+      "file": "src/overview-model.ts",
+      "line": 24,
+      "params": [
+        {
+          "name": "entries",
+          "ts_type": "{\n  timestampMs: number;\n  durationMs: number;\n  success: boolean;\n  model: string;\n  upstreamModel?: string;\n}[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "nowMs",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "windowMs",
+          "ts_type": "number",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  total: number;\n  failed: number;\n  /** 0–1；没有请求时为 null。 */\n  successRate: number | null;\n  /** 毫秒；没有请求时为 null。 */\n  avgDurationMs: number | null;\n  /** 次数最多的模型（优先用 Codex 请求的模型名）；并列取最近出现的那个。 */\n  topModel: string | null;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

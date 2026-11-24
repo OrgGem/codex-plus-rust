@@ -1,0 +1,65 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/whale-settings.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "whale-settings-rs",
+  "exports": [
+    {
+      "name": "defaultWhaleBalanceSettings",
+      "file": "src/whale-settings.ts",
+      "line": 17,
+      "params": [],
+      "returns": "{\n  codexAppWhaleBalanceProtocol: (\"auto\" | \"custom\" | \"off\");\n  codexAppWhaleBalancePath: string;\n  codexAppWhaleBalanceField: string;\n  codexAppWhaleBalanceCurrency: string;\n  codexAppWhaleBalanceScale: number;\n}",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeWhaleBalanceSettings",
+      "file": "src/whale-settings.ts",
+      "line": 27,
+      "params": [
+        {
+          "name": "raw",
+          "ts_type": "Partial<{\n  codexAppWhaleBalanceProtocol: (\"auto\" | \"custom\" | \"off\");\n  codexAppWhaleBalancePath: string;\n  codexAppWhaleBalanceField: string;\n  codexAppWhaleBalanceCurrency: string;\n  codexAppWhaleBalanceScale: number;\n}>",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  codexAppWhaleBalanceProtocol: (\"auto\" | \"custom\" | \"off\");\n  codexAppWhaleBalancePath: string;\n  codexAppWhaleBalanceField: string;\n  codexAppWhaleBalanceCurrency: string;\n  codexAppWhaleBalanceScale: number;\n}",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "whaleBalanceSettingsIssue",
+      "file": "src/whale-settings.ts",
+      "line": 41,
+      "params": [
+        {
+          "name": "settings",
+          "ts_type": "{\n  codexAppWhaleBalanceProtocol: (\"auto\" | \"custom\" | \"off\");\n  codexAppWhaleBalancePath: string;\n  codexAppWhaleBalanceField: string;\n  codexAppWhaleBalanceCurrency: string;\n  codexAppWhaleBalanceScale: number;\n}",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "whaleActive",
+          "ts_type": "boolean",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"path\" | \"field\" | \"currency\" | \"scale\") | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

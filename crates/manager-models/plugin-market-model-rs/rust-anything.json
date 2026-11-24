@@ -1,0 +1,298 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/plugin-market-model.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "plugin-market-model-rs",
+  "exports": [
+    {
+      "name": "isPluginMarketSuccess",
+      "file": "src/plugin-market-model.ts",
+      "line": 35,
+      "params": [
+        {
+          "name": "status",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "mergePluginMarketCatalog",
+      "file": "src/plugin-market-model.ts",
+      "line": 39,
+      "params": [
+        {
+          "name": "catalogs",
+          "ts_type": "Partial<Record<(\"public\" | \"full\"), {\n  status: string;\n  message: string;\n  source: (\"public\" | \"full\");\n  repository: string;\n  total: number;\n  plugins: {\n  id: string;\n  name: string;\n  displayName: string;\n  description: string;\n  version: string;\n  author: string;\n  tags: string[];\n  license: string;\n  path: string;\n  tree: string;\n  bytes: number;\n  skills: number;\n  requiresAuth: boolean;\n  installed: boolean;\n  installedVersion: string;\n  updateAvailable: boolean;\n}[];\n  cached?: boolean;\n}>>",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "source",
+          "ts_type": "(\"public\" | \"full\")",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "result",
+          "ts_type": "{\n  status: string;\n  message: string;\n  source: (\"public\" | \"full\");\n  repository: string;\n  total: number;\n  plugins: {\n  id: string;\n  name: string;\n  displayName: string;\n  description: string;\n  version: string;\n  author: string;\n  tags: string[];\n  license: string;\n  path: string;\n  tree: string;\n  bytes: number;\n  skills: number;\n  requiresAuth: boolean;\n  installed: boolean;\n  installedVersion: string;\n  updateAvailable: boolean;\n}[];\n  cached?: boolean;\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "Partial<Record<(\"public\" | \"full\"), {\n  status: string;\n  message: string;\n  source: (\"public\" | \"full\");\n  repository: string;\n  total: number;\n  plugins: {\n  id: string;\n  name: string;\n  displayName: string;\n  description: string;\n  version: string;\n  author: string;\n  tags: string[];\n  license: string;\n  path: string;\n  tree: string;\n  bytes: number;\n  skills: number;\n  requiresAuth: boolean;\n  installed: boolean;\n  installedVersion: string;\n  updateAvailable: boolean;\n}[];\n  cached?: boolean;\n}>>",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "filterMarketPlugins",
+      "file": "src/plugin-market-model.ts",
+      "line": 44,
+      "params": [
+        {
+          "name": "plugins",
+          "ts_type": "{\n  id: string;\n  name: string;\n  displayName: string;\n  description: string;\n  version: string;\n  author: string;\n  tags: string[];\n  license: string;\n  path: string;\n  tree: string;\n  bytes: number;\n  skills: number;\n  requiresAuth: boolean;\n  installed: boolean;\n  installedVersion: string;\n  updateAvailable: boolean;\n}[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "query",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "filter",
+          "ts_type": "(\"all\" | \"available\" | \"installed\" | \"updates\" | \"auth\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  id: string;\n  name: string;\n  displayName: string;\n  description: string;\n  version: string;\n  author: string;\n  tags: string[];\n  license: string;\n  path: string;\n  tree: string;\n  bytes: number;\n  skills: number;\n  requiresAuth: boolean;\n  installed: boolean;\n  installedVersion: string;\n  updateAvailable: boolean;\n}[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "pluginMarketPage",
+      "file": "src/plugin-market-model.ts",
+      "line": 56,
+      "params": [
+        {
+          "name": "plugins",
+          "ts_type": "{\n  id: string;\n  name: string;\n  displayName: string;\n  description: string;\n  version: string;\n  author: string;\n  tags: string[];\n  license: string;\n  path: string;\n  tree: string;\n  bytes: number;\n  skills: number;\n  requiresAuth: boolean;\n  installed: boolean;\n  installedVersion: string;\n  updateAvailable: boolean;\n}[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "page",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "pageSize",
+          "ts_type": "number",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "unknown",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "applyPluginInstallation",
+      "file": "src/plugin-market-model.ts",
+      "line": 66,
+      "params": [
+        {
+          "name": "catalogs",
+          "ts_type": "Partial<Record<(\"public\" | \"full\"), {\n  status: string;\n  message: string;\n  source: (\"public\" | \"full\");\n  repository: string;\n  total: number;\n  plugins: {\n  id: string;\n  name: string;\n  displayName: string;\n  description: string;\n  version: string;\n  author: string;\n  tags: string[];\n  license: string;\n  path: string;\n  tree: string;\n  bytes: number;\n  skills: number;\n  requiresAuth: boolean;\n  installed: boolean;\n  installedVersion: string;\n  updateAvailable: boolean;\n}[];\n  cached?: boolean;\n}>>",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "source",
+          "ts_type": "(\"public\" | \"full\")",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "installed",
+          "ts_type": "{\n  id: string;\n  name: string;\n  displayName: string;\n  description: string;\n  version: string;\n  author: string;\n  tags: string[];\n  license: string;\n  path: string;\n  tree: string;\n  bytes: number;\n  skills: number;\n  requiresAuth: boolean;\n  installed: boolean;\n  installedVersion: string;\n  updateAvailable: boolean;\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "Partial<Record<(\"public\" | \"full\"), {\n  status: string;\n  message: string;\n  source: (\"public\" | \"full\");\n  repository: string;\n  total: number;\n  plugins: {\n  id: string;\n  name: string;\n  displayName: string;\n  description: string;\n  version: string;\n  author: string;\n  tags: string[];\n  license: string;\n  path: string;\n  tree: string;\n  bytes: number;\n  skills: number;\n  requiresAuth: boolean;\n  installed: boolean;\n  installedVersion: string;\n  updateAvailable: boolean;\n}[];\n  cached?: boolean;\n}>>",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [
+    {
+      "name": "PluginMarketRequests",
+      "file": "src/plugin-market-model.ts",
+      "line": 85,
+      "constructor": [],
+      "methods": [
+        {
+          "name": "activate",
+          "file": "src/plugin-market-model.ts",
+          "line": 92,
+          "params": [],
+          "returns": "unknown",
+          "is_async": false,
+          "is_generator": false,
+          "type_params": [],
+          "uses_instanceof": false
+        },
+        {
+          "name": "dispose",
+          "file": "src/plugin-market-model.ts",
+          "line": 94,
+          "params": [],
+          "returns": "unknown",
+          "is_async": false,
+          "is_generator": false,
+          "type_params": [],
+          "uses_instanceof": false
+        },
+        {
+          "name": "beginCatalog",
+          "file": "src/plugin-market-model.ts",
+          "line": 102,
+          "params": [],
+          "returns": "number | null",
+          "is_async": false,
+          "is_generator": false,
+          "type_params": [],
+          "uses_instanceof": false
+        },
+        {
+          "name": "isCurrentCatalog",
+          "file": "src/plugin-market-model.ts",
+          "line": 108,
+          "params": [
+            {
+              "name": "sequence",
+              "ts_type": "number",
+              "optional": false,
+              "rest": false
+            }
+          ],
+          "returns": "boolean",
+          "is_async": false,
+          "is_generator": false,
+          "type_params": [],
+          "uses_instanceof": false
+        },
+        {
+          "name": "invalidateCatalog",
+          "file": "src/plugin-market-model.ts",
+          "line": 112,
+          "params": [],
+          "returns": "unknown",
+          "is_async": false,
+          "is_generator": false,
+          "type_params": [],
+          "uses_instanceof": false
+        },
+        {
+          "name": "finishCatalog",
+          "file": "src/plugin-market-model.ts",
+          "line": 117,
+          "params": [
+            {
+              "name": "sequence",
+              "ts_type": "number",
+              "optional": false,
+              "rest": false
+            }
+          ],
+          "returns": "boolean",
+          "is_async": false,
+          "is_generator": false,
+          "type_params": [],
+          "uses_instanceof": false
+        },
+        {
+          "name": "beginInstall",
+          "file": "src/plugin-market-model.ts",
+          "line": 123,
+          "params": [],
+          "returns": "number | null",
+          "is_async": false,
+          "is_generator": false,
+          "type_params": [],
+          "uses_instanceof": false
+        },
+        {
+          "name": "isCurrentInstall",
+          "file": "src/plugin-market-model.ts",
+          "line": 129,
+          "params": [
+            {
+              "name": "sequence",
+              "ts_type": "number",
+              "optional": false,
+              "rest": false
+            }
+          ],
+          "returns": "boolean",
+          "is_async": false,
+          "is_generator": false,
+          "type_params": [],
+          "uses_instanceof": false
+        },
+        {
+          "name": "finishInstall",
+          "file": "src/plugin-market-model.ts",
+          "line": 133,
+          "params": [
+            {
+              "name": "sequence",
+              "ts_type": "number",
+              "optional": false,
+              "rest": false
+            }
+          ],
+          "returns": "boolean",
+          "is_async": false,
+          "is_generator": false,
+          "type_params": [],
+          "uses_instanceof": false
+        },
+        {
+          "name": "canSelectSource",
+          "file": "src/plugin-market-model.ts",
+          "line": 139,
+          "params": [],
+          "returns": "boolean",
+          "is_async": false,
+          "is_generator": false,
+          "type_params": [],
+          "uses_instanceof": false
+        }
+      ],
+      "blocker": null
+    }
+  ],
+  "js_only": []
+}

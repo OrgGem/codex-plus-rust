@@ -1,0 +1,10 @@
+{"fn":"matchesManagementQuery","args":[["Codex Plus", "Hello World"], "codex world"]}
+{"fn":"matchesManagementQuery","args":[["foo", "bar"], "baz"]}
+{"fn":"normalizeProjectPath","args":["\\\\?\\C:\\Users\\Demo\\repo\\"]}
+{"fn":"normalizeProjectPath","args":["\\\\?\\UNC\\server\\share\\folder\\\\"]}
+{"fn":"normalizeProjectPath","args":["c:\\work\\proj"]}
+{"fn":"sessionGroups","args":[[{"id":"s1","title":"T1","cwd":"\\\\?\\c:\\proj\\alpha\\","modelProvider":"openai","archived":false,"updatedAtMs":1732400000000,"rolloutPath":"","dbPath":""},{"id":"s2","title":"T2","cwd":"C:\\proj\\alpha","modelProvider":"openai","archived":false,"updatedAtMs":1732300000000,"rolloutPath":"","dbPath":""},{"id":"s3","title":"T3","cwd":"/home/user/beta/","modelProvider":"anthropic","archived":true,"updatedAtMs":1732000000000,"rolloutPath":"","dbPath":""},{"id":"s4","title":"T4","cwd":"","modelProvider":"openai","archived":false,"updatedAtMs":1700000000000,"rolloutPath":"","dbPath":""}],"project",1732410000000]}
+{"fn":"sessionGroups","args":[[{"id":"s1","title":"Today","cwd":"C:\\a","modelProvider":"openai","archived":false,"updatedAtMs":1732400000000,"rolloutPath":"","dbPath":""},{"id":"s2","title":"Yesterday","cwd":"C:\\a","modelProvider":"openai","archived":false,"updatedAtMs":1732320000000,"rolloutPath":"","dbPath":""},{"id":"s3","title":"ThisWeek","cwd":"C:\\a","modelProvider":"openai","archived":false,"updatedAtMs":1732150000000,"rolloutPath":"","dbPath":""},{"id":"s4","title":"Earlier","cwd":"C:\\a","modelProvider":"openai","archived":false,"updatedAtMs":1700000000000,"rolloutPath":"","dbPath":""}],"time",1732410000000]}
+{"fn":"sessionGroups","args":[[{"id":"sun","title":"Sunday","cwd":"C:\\a","modelProvider":"openai","archived":false,"updatedAtMs":1732320000000,"rolloutPath":"","dbPath":""},{"id":"mon","title":"Monday","cwd":"C:\\a","modelProvider":"openai","archived":false,"updatedAtMs":1731900000000,"rolloutPath":"","dbPath":""}],"time",1732435200000]}
+{"fn":"skillRepoKey","args":[{"owner":"BigPizzaV3","name":"skills","branch":"main","subdir":"codex"}]}
+{"fn":"skillRepoKey","args":[{"owner":"BigPizzaV3","name":"skills","branch":"main","subdir":""}]}

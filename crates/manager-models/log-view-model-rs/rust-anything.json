@@ -1,0 +1,192 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/log-view-model.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "log-view-model-rs",
+  "exports": [
+    {
+      "name": "summarizeDetail",
+      "file": "src/log-view-model.ts",
+      "line": 41,
+      "params": [
+        {
+          "name": "detail",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "logTone",
+      "file": "src/log-view-model.ts",
+      "line": 58,
+      "params": [
+        {
+          "name": "event",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "detail",
+          "ts_type": "unknown",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"error\" | \"warn\" | \"info\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "parseLogLine",
+      "file": "src/log-view-model.ts",
+      "line": 66,
+      "params": [
+        {
+          "name": "raw",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "index",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  /** 原始行在文件里的序号（从 1 开始），用作 key。 */\n  index: number;\n  timestampMs: number | null;\n  pid: number | null;\n  /** 事件名，如 manager.save_settings；解析不了的行为空。 */\n  event: string;\n  tone: (\"error\" | \"warn\" | \"info\");\n  /** 一行摘要：detail 里的简单字段 key=value，长的截断。 */\n  summary: string;\n  /** 展开后显示的内容：detail 的格式化 JSON；解析不了的行就是原文。 */\n  body: string;\n  raw: string;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "parseLogText",
+      "file": "src/log-view-model.ts",
+      "line": 95,
+      "params": [
+        {
+          "name": "text",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "truncated",
+          "ts_type": "boolean",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  /** 原始行在文件里的序号（从 1 开始），用作 key。 */\n  index: number;\n  timestampMs: number | null;\n  pid: number | null;\n  /** 事件名，如 manager.save_settings；解析不了的行为空。 */\n  event: string;\n  tone: (\"error\" | \"warn\" | \"info\");\n  /** 一行摘要：detail 里的简单字段 key=value，长的截断。 */\n  summary: string;\n  /** 展开后显示的内容：detail 的格式化 JSON；解析不了的行就是原文。 */\n  body: string;\n  raw: string;\n})[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "filterLogEntries",
+      "file": "src/log-view-model.ts",
+      "line": 104,
+      "params": [
+        {
+          "name": "entries",
+          "ts_type": "({\n  /** 原始行在文件里的序号（从 1 开始），用作 key。 */\n  index: number;\n  timestampMs: number | null;\n  pid: number | null;\n  /** 事件名，如 manager.save_settings；解析不了的行为空。 */\n  event: string;\n  tone: (\"error\" | \"warn\" | \"info\");\n  /** 一行摘要：detail 里的简单字段 key=value，长的截断。 */\n  summary: string;\n  /** 展开后显示的内容：detail 的格式化 JSON；解析不了的行就是原文。 */\n  body: string;\n  raw: string;\n})[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "query",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "errorsOnly",
+          "ts_type": "boolean",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  /** 原始行在文件里的序号（从 1 开始），用作 key。 */\n  index: number;\n  timestampMs: number | null;\n  pid: number | null;\n  /** 事件名，如 manager.save_settings；解析不了的行为空。 */\n  event: string;\n  tone: (\"error\" | \"warn\" | \"info\");\n  /** 一行摘要：detail 里的简单字段 key=value，长的截断。 */\n  summary: string;\n  /** 展开后显示的内容：detail 的格式化 JSON；解析不了的行就是原文。 */\n  body: string;\n  raw: string;\n})[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "formatLogTime",
+      "file": "src/log-view-model.ts",
+      "line": 113,
+      "params": [
+        {
+          "name": "timestampMs",
+          "ts_type": "number | null",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "now",
+          "ts_type": "unknown",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "diagnosticStatusText",
+      "file": "src/log-view-model.ts",
+      "line": 148,
+      "params": [
+        {
+          "name": "status",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "diagnosticFacts",
+      "file": "src/log-view-model.ts",
+      "line": 173,
+      "params": [
+        {
+          "name": "report",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({ label: string; status?: string; value?: string; tone?: \"ok\" | \"warn\" | \"danger\" })[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

@@ -1,0 +1,162 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/gateway-agent-safety.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "gateway-agent-safety-rs",
+  "exports": [
+    {
+      "name": "canReconnectAgent",
+      "file": "src/gateway-agent-safety.ts",
+      "line": 10,
+      "params": [
+        {
+          "name": "agent",
+          "ts_type": "Pick<({\n  agent: (\"codex\" | \"claude\" | \"grok\" | (string & {}));\n  name: string;\n  /** 本机 CLI 版本，后台探测完成前为空。 */\n  version?: string | null;\n  /** 网关改写的配置文件。 */\n  configPath?: string;\n  /** 通用 Agent：在 Agent 里怎么切模型、接入后要不要重启等提示。 */\n  hint?: string;\n  enabled: boolean;\n  /** 原生配置可能仍由网关管理，即使绑定记录已经关闭。 */\n  requiresDisconnectPreview?: boolean;\n  baseUrl: string;\n  defaultModel: string;\n  defaultSelectionStatus?: \"available\" | \"fallback\" | \"invalid\" | null;\n  defaultModelDiffers?: boolean;\n  models: string[];\n  /** 开着网关、但配置已被别的工具改掉：认得出的工具名与现在连的地址。 */\n  drift?: { by?: string | null; endpoint: string } | null;\n  /** 配置与最近实际请求的联合诊断；旧版后端没有。 */\n  diagnostics?: ({\n  state: \"disabled\" | \"configChanged\" | \"configMissing\" | \"configUnreadable\" | \"configUnverified\" | \"gatewayStopped\" | \"awaitingTraffic\" | \"active\" | \"upstreamError\";\n  endpoint: string | null;\n  expectedEndpoint: string;\n  configEvidence: Array<{ path: string; field: string; code: string; endpoint: string | null; expectedEndpoint: string | null }>;\n  requests: number;\n  errors: number;\n  inFlight: number;\n  lastSeenMs: number | null;\n  recentError: { kind: string; status: number | null; atMs: number } | null;\n}) | null;\n  /** Agent 自带的模型：用它自己的登录或 Key 直连厂商，不经 Codex++；选中即断开网关。 */\n  ownModels?: { vendor: string; models: { id: string; label: string }[]; current: string } | null;\n}), \"agent\">",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "relayProfilesEnabled",
+          "ts_type": "boolean",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "agentDiagnosticPresentation",
+      "file": "src/gateway-agent-safety.ts",
+      "line": 15,
+      "params": [
+        {
+          "name": "agent",
+          "ts_type": "({\n  agent: (\"codex\" | \"claude\" | \"grok\" | (string & {}));\n  name: string;\n  /** 本机 CLI 版本，后台探测完成前为空。 */\n  version?: string | null;\n  /** 网关改写的配置文件。 */\n  configPath?: string;\n  /** 通用 Agent：在 Agent 里怎么切模型、接入后要不要重启等提示。 */\n  hint?: string;\n  enabled: boolean;\n  /** 原生配置可能仍由网关管理，即使绑定记录已经关闭。 */\n  requiresDisconnectPreview?: boolean;\n  baseUrl: string;\n  defaultModel: string;\n  defaultSelectionStatus?: \"available\" | \"fallback\" | \"invalid\" | null;\n  defaultModelDiffers?: boolean;\n  models: string[];\n  /** 开着网关、但配置已被别的工具改掉：认得出的工具名与现在连的地址。 */\n  drift?: { by?: string | null; endpoint: string } | null;\n  /** 配置与最近实际请求的联合诊断；旧版后端没有。 */\n  diagnostics?: ({\n  state: \"disabled\" | \"configChanged\" | \"configMissing\" | \"configUnreadable\" | \"configUnverified\" | \"gatewayStopped\" | \"awaitingTraffic\" | \"active\" | \"upstreamError\";\n  endpoint: string | null;\n  expectedEndpoint: string;\n  configEvidence: Array<{ path: string; field: string; code: string; endpoint: string | null; expectedEndpoint: string | null }>;\n  requests: number;\n  errors: number;\n  inFlight: number;\n  lastSeenMs: number | null;\n  recentError: { kind: string; status: number | null; atMs: number } | null;\n}) | null;\n  /** Agent 自带的模型：用它自己的登录或 Key 直连厂商，不经 Codex++；选中即断开网关。 */\n  ownModels?: { vendor: string; models: { id: string; label: string }[]; current: string } | null;\n})",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "helperRunning",
+          "ts_type": "boolean",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  badge: string;\n  tone: \"on\" | \"error\" | \"off\" | \"pending\";\n  reconnect: boolean;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "disconnectPreviewReady",
+      "file": "src/gateway-agent-safety.ts",
+      "line": 30,
+      "params": [
+        {
+          "name": "preview",
+          "ts_type": "({\n  agent: string;\n  previewToken: string;\n  files: ({\n  path: string;\n  kind: \"modify\" | \"remove\" | \"create\";\n  diff: string;\n})[];\n  warnings: string[];\n  canDisconnect: boolean;\n  /** 没法逐项预览时（Codex 接入前没留下实时存档等）：断开会完整切换到这个直连供应商，确认后走「完整切换并断开」。 */\n  fullSwitch?: { relayId: string; name: string } | null;\n}) | null",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "agent",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "preview is ({\n  agent: string;\n  previewToken: string;\n  files: ({\n  path: string;\n  kind: \"modify\" | \"remove\" | \"create\";\n  diff: string;\n})[];\n  warnings: string[];\n  canDisconnect: boolean;\n  /** 没法逐项预览时（Codex 接入前没留下实时存档等）：断开会完整切换到这个直连供应商，确认后走「完整切换并断开」。 */\n  fullSwitch?: { relayId: string; name: string } | null;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "fullSwitchReady",
+      "file": "src/gateway-agent-safety.ts",
+      "line": 35,
+      "params": [
+        {
+          "name": "preview",
+          "ts_type": "({\n  agent: string;\n  previewToken: string;\n  files: ({\n  path: string;\n  kind: \"modify\" | \"remove\" | \"create\";\n  diff: string;\n})[];\n  warnings: string[];\n  canDisconnect: boolean;\n  /** 没法逐项预览时（Codex 接入前没留下实时存档等）：断开会完整切换到这个直连供应商，确认后走「完整切换并断开」。 */\n  fullSwitch?: { relayId: string; name: string } | null;\n}) | null",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "agent",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "preview is ({\n  agent: string;\n  previewToken: string;\n  files: ({\n  path: string;\n  kind: \"modify\" | \"remove\" | \"create\";\n  diff: string;\n})[];\n  warnings: string[];\n  canDisconnect: boolean;\n  /** 没法逐项预览时（Codex 接入前没留下实时存档等）：断开会完整切换到这个直连供应商，确认后走「完整切换并断开」。 */\n  fullSwitch?: { relayId: string; name: string } | null;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "disconnectFileLabel",
+      "file": "src/gateway-agent-safety.ts",
+      "line": 39,
+      "params": [
+        {
+          "name": "kind",
+          "ts_type": "({\n  agent: string;\n  previewToken: string;\n  files: ({\n  path: string;\n  kind: \"modify\" | \"remove\" | \"create\";\n  diff: string;\n})[];\n  warnings: string[];\n  canDisconnect: boolean;\n  /** 没法逐项预览时（Codex 接入前没留下实时存档等）：断开会完整切换到这个直连供应商，确认后走「完整切换并断开」。 */\n  fullSwitch?: { relayId: string; name: string } | null;\n})[\"files\"][number][\"kind\"]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "diagnosticEvidenceLabel",
+      "file": "src/gateway-agent-safety.ts",
+      "line": 47,
+      "params": [
+        {
+          "name": "code",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "diagnosticErrorLabel",
+      "file": "src/gateway-agent-safety.ts",
+      "line": 96,
+      "params": [
+        {
+          "name": "kind",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

@@ -1,0 +1,84 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/goals-config.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "goals-config-rs",
+  "exports": [
+    {
+      "name": "codexGoalsFeatureValue",
+      "file": "src/goals-config.ts",
+      "line": 6,
+      "params": [
+        {
+          "name": "configContents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean | undefined",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "codexGoalsFeatureState",
+      "file": "src/goals-config.ts",
+      "line": 25,
+      "params": [
+        {
+          "name": "profileConfigContents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "commonConfigContents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "useCommonConfig",
+          "ts_type": "boolean",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{\n  enabled: boolean;\n  inherited: boolean;\n}",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "setCodexGoalsFeatureInConfig",
+      "file": "src/goals-config.ts",
+      "line": 41,
+      "params": [
+        {
+          "name": "configContents",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "enabled",
+          "ts_type": "boolean",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

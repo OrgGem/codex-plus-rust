@@ -1,0 +1,218 @@
+{
+  "schema": "rust-anything/analyze@1",
+  "language": "ts",
+  "summary": {
+    "packages": 1,
+    "source_files": 3,
+    "test_files": 1,
+    "ui_files": 0,
+    "loc": 383,
+    "units": 3,
+    "ready": 3,
+    "caution": 0,
+    "blocked": 0,
+    "keep": 0,
+    "parse_errors": 0
+  },
+  "packages": [
+    {
+      "name": "rice-maid-pet",
+      "dir": "",
+      "order": 1,
+      "runtime": "node",
+      "workspace_deps": [],
+      "test_files": 1,
+      "units": [
+        "backend/",
+        "hooks/",
+        "renderer.js"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "backend/",
+      "package": "rice-maid-pet",
+      "files": [
+        "backend/main.mjs"
+      ],
+      "loc": 18,
+      "wave": 0,
+      "readiness": 100,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "node"
+      ],
+      "risks": [
+        {
+          "risk": "clock-and-random",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "backend/main.mjs:13"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 1,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 67,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "1 test file imports it directly."
+      ]
+    },
+    {
+      "id": "hooks/",
+      "package": "rice-maid-pet",
+      "files": [
+        "hooks/request.mjs"
+      ],
+      "loc": 8,
+      "wave": 0,
+      "readiness": 100,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [],
+      "risks": [
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "hooks/request.mjs:1",
+            "hooks/request.mjs:3"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "hooks/request.mjs:2"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 1,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 66,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit.",
+        "1 test file imports it directly."
+      ]
+    },
+    {
+      "id": "renderer.js",
+      "package": "rice-maid-pet",
+      "files": [
+        "renderer.js"
+      ],
+      "loc": 357,
+      "wave": 0,
+      "readiness": 89,
+      "status": "ready",
+      "bridge": "napi-rs",
+      "platforms": [
+        "browser"
+      ],
+      "risks": [
+        {
+          "risk": "async",
+          "severity": "medium",
+          "count": 2,
+          "samples": [
+            "renderer.js:233",
+            "renderer.js:238"
+          ]
+        },
+        {
+          "risk": "ordered-collections",
+          "severity": "medium",
+          "count": 1,
+          "samples": [
+            "renderer.js:14"
+          ]
+        },
+        {
+          "risk": "exceptions",
+          "severity": "low",
+          "count": 1,
+          "samples": [
+            "renderer.js:237"
+          ]
+        }
+      ],
+      "internal_deps": [],
+      "workspace_deps": [],
+      "external_deps": [],
+      "direct_tests": 0,
+      "fan_in": 0,
+      "density": 0.0,
+      "priority": 62,
+      "exports": 0,
+      "bridgeable": 0,
+      "notes": [
+        "Leaf: imports no other unit."
+      ]
+    }
+  ],
+  "start_here": [],
+  "dependencies": [],
+  "whole_app": {
+    "shape": "server",
+    "entry_points": [
+      {
+        "kind": "server",
+        "path": "renderer.js",
+        "evidence": "`.listen(` at renderer.js:261"
+      }
+    ],
+    "dependencies": [],
+    "pieces": [
+      {
+        "wave": 0,
+        "units": [
+          "backend/"
+        ],
+        "loc": 18,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "hooks/"
+        ],
+        "loc": 8,
+        "tangled": false
+      },
+      {
+        "wave": 0,
+        "units": [
+          "renderer.js"
+        ],
+        "loc": 357,
+        "tangled": false
+      }
+    ],
+    "decisions": [
+      {
+        "id": "D1",
+        "topic": "shape",
+        "question": "The app is a server, entered through renderer.js. Port every entry point, in that shape?",
+        "recommendation": "Yes: an axum front door (`app front-door`) takes the server over first"
+      }
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/page-groups.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "page-groups-rs",
+  "exports": [
+    {
+      "name": "pageVisibleForTool",
+      "file": "src/page-groups.ts",
+      "line": 9,
+      "params": [
+        {
+          "name": "page",
+          "ts_type": "{ tool?: string; tools?: readonly string[] } | undefined",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "tool",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "agentTarget",
+      "file": "src/page-groups.ts",
+      "line": 29,
+      "params": [
+        {
+          "name": "visible",
+          "ts_type": "(string)[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "remembered",
+          "ts_type": "(string) | undefined",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "home",
+          "ts_type": "(string)",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(string)",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "visibleGroupRoutes",
+      "file": "src/page-groups.ts",
+      "line": 14,
+      "reason": "takes or returns a function"
+    },
+    {
+      "name": "agentTabGroups",
+      "file": "src/page-groups.ts",
+      "line": 22,
+      "reason": "takes or returns a function"
+    }
+  ]
+}

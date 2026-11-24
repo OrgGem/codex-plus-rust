@@ -1,0 +1,41 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/dictation-settings.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "dictation-settings-rs",
+  "exports": [
+    {
+      "name": "defaultDictationSettings",
+      "file": "src/dictation-settings.ts",
+      "line": 15,
+      "params": [],
+      "returns": "({\n  enabled: boolean;\n  provider: \"api\" | \"sensevoice\";\n  baseUrl: string;\n  apiKey: string;\n  apiKeyEnv: string;\n  model: string;\n  language: string;\n  timeoutSeconds: number;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeDictationSettings",
+      "file": "src/dictation-settings.ts",
+      "line": 27,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "Partial<({\n  enabled: boolean;\n  provider: \"api\" | \"sensevoice\";\n  baseUrl: string;\n  apiKey: string;\n  apiKeyEnv: string;\n  model: string;\n  language: string;\n  timeoutSeconds: number;\n})> | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  enabled: boolean;\n  provider: \"api\" | \"sensevoice\";\n  baseUrl: string;\n  apiKey: string;\n  apiKeyEnv: string;\n  model: string;\n  language: string;\n  timeoutSeconds: number;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

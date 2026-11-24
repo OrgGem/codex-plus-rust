@@ -1,0 +1,420 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/config-doctor-model.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "config-doctor-model-rs",
+  "exports": [
+    {
+      "name": "findingLevelLabel",
+      "file": "src/config-doctor-model.ts",
+      "line": 73,
+      "params": [
+        {
+          "name": "level",
+          "ts_type": "(\"error\" | \"warn\" | \"info\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "sortFindings",
+      "file": "src/config-doctor-model.ts",
+      "line": 85,
+      "params": [
+        {
+          "name": "findings",
+          "ts_type": "{ id: string; level: (\"error\" | \"warn\" | \"info\"); title: string; detail: string; fix?: string; scope?: string }[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ id: string; level: (\"error\" | \"warn\" | \"info\"); title: string; detail: string; fix?: string; scope?: string }[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "groupFindings",
+      "file": "src/config-doctor-model.ts",
+      "line": 93,
+      "params": [
+        {
+          "name": "findings",
+          "ts_type": "{ id: string; level: (\"error\" | \"warn\" | \"info\"); title: string; detail: string; fix?: string; scope?: string }[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "Array<{ level: (\"error\" | \"warn\" | \"info\"); label: string; items: { id: string; level: (\"error\" | \"warn\" | \"info\"); title: string; detail: string; fix?: string; scope?: string }[] }>",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "summarize",
+      "file": "src/config-doctor-model.ts",
+      "line": 102,
+      "params": [
+        {
+          "name": "findings",
+          "ts_type": "{ id: string; level: (\"error\" | \"warn\" | \"info\"); title: string; detail: string; fix?: string; scope?: string }[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ error: number; warn: number; info: number }",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "summaryTotal",
+      "file": "src/config-doctor-model.ts",
+      "line": 112,
+      "params": [
+        {
+          "name": "summary",
+          "ts_type": "{ error: number; warn: number; info: number }",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "number",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "summaryLine",
+      "file": "src/config-doctor-model.ts",
+      "line": 117,
+      "params": [
+        {
+          "name": "summary",
+          "ts_type": "{ error: number; warn: number; info: number }",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ text: string; args: string[] } | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "presetFields",
+      "file": "src/config-doctor-model.ts",
+      "line": 123,
+      "params": [
+        {
+          "name": "preset",
+          "ts_type": "{ id: string; label: string; baseUrl: string; model: string; needsKey: boolean; note: string; docsUrl: string } | null | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ baseUrl: string; model: string } | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "matchedPresetId",
+      "file": "src/config-doctor-model.ts",
+      "line": 131,
+      "params": [
+        {
+          "name": "presets",
+          "ts_type": "{ id: string; label: string; baseUrl: string; model: string; needsKey: boolean; note: string; docsUrl: string }[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "settings",
+          "ts_type": "Pick<{ enabled: boolean; source: (\"current\" | \"local\" | \"custom\"); baseUrl: string; model: string; hasKey: boolean; apiKeyMasked: string }, \"baseUrl\">",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeSource",
+      "file": "src/config-doctor-model.ts",
+      "line": 136,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string | null | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"current\" | \"local\" | \"custom\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "sourceLabel",
+      "file": "src/config-doctor-model.ts",
+      "line": 148,
+      "params": [
+        {
+          "name": "source",
+          "ts_type": "(\"current\" | \"local\" | \"custom\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "sourceHint",
+      "file": "src/config-doctor-model.ts",
+      "line": 160,
+      "params": [
+        {
+          "name": "source",
+          "ts_type": "(\"current\" | \"local\" | \"custom\")",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "sources",
+          "ts_type": "{ current: { available: boolean; model: string; profile: string; label: string }; local: { found: boolean; baseUrl: string; model: string; label: string } } | null",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "sourceOptions",
+      "file": "src/config-doctor-model.ts",
+      "line": 172,
+      "params": [
+        {
+          "name": "sources",
+          "ts_type": "{ current: { available: boolean; model: string; profile: string; label: string }; local: { found: boolean; baseUrl: string; model: string; label: string } } | null",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "Array<{ value: (\"current\" | \"local\" | \"custom\"); label: string; hint: string }>",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "currentSourceNote",
+      "file": "src/config-doctor-model.ts",
+      "line": 177,
+      "params": [
+        {
+          "name": "current",
+          "ts_type": "{ available: boolean; model: string; profile: string; label: string } | null",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "{ label: string; available: boolean; hint: string | null }",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "localSourceNote",
+      "file": "src/config-doctor-model.ts",
+      "line": 187,
+      "params": [
+        {
+          "name": "local",
+          "ts_type": "{ found: boolean; baseUrl: string; model: string; label: string } | null",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "{ label: string; found: boolean }",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "ollamaDocsUrl",
+      "file": "src/config-doctor-model.ts",
+      "line": 193,
+      "params": [
+        {
+          "name": "presets",
+          "ts_type": "{ id: string; label: string; baseUrl: string; model: string; needsKey: boolean; note: string; docsUrl: string }[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "draftFromSettings",
+      "file": "src/config-doctor-model.ts",
+      "line": 199,
+      "params": [
+        {
+          "name": "settings",
+          "ts_type": "{ enabled: boolean; source: (\"current\" | \"local\" | \"custom\"); baseUrl: string; model: string; hasKey: boolean; apiKeyMasked: string }",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ enabled: boolean; source: (\"current\" | \"local\" | \"custom\"); baseUrl: string; model: string; apiKey: string }",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "savedPayload",
+      "file": "src/config-doctor-model.ts",
+      "line": 210,
+      "params": [
+        {
+          "name": "draft",
+          "ts_type": "{ enabled: boolean; source: (\"current\" | \"local\" | \"custom\"); baseUrl: string; model: string; apiKey: string }",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ enabled: boolean; source: (\"current\" | \"local\" | \"custom\"); baseUrl: string; model: string; apiKey?: string }",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "aiReady",
+      "file": "src/config-doctor-model.ts",
+      "line": 223,
+      "params": [
+        {
+          "name": "settings",
+          "ts_type": "Pick<{ enabled: boolean; source: (\"current\" | \"local\" | \"custom\"); baseUrl: string; model: string; hasKey: boolean; apiKeyMasked: string }, \"enabled\" | \"source\" | \"baseUrl\" | \"model\">",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "aiBlockedHint",
+      "file": "src/config-doctor-model.ts",
+      "line": 230,
+      "params": [
+        {
+          "name": "settings",
+          "ts_type": "Pick<{ enabled: boolean; source: (\"current\" | \"local\" | \"custom\"); baseUrl: string; model: string; hasKey: boolean; apiKeyMasked: string }, \"enabled\" | \"source\" | \"baseUrl\" | \"model\">",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ text: string; args: string[] } | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "aiStatusView",
+      "file": "src/config-doctor-model.ts",
+      "line": 239,
+      "params": [
+        {
+          "name": "ai",
+          "ts_type": "({\n  status: \"skipped\" | \"ok\" | \"failed\";\n  message: string;\n  model: string;\n  endpoint: string;\n  elapsedMs: number;\n  summary: string;\n  items: { id: string; level: (\"error\" | \"warn\" | \"info\"); title: string; detail: string; fix?: string; scope?: string }[];\n})",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ tone: \"ok\" | \"off\" | \"danger\"; label: string; detail: string; facts: string[] }",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "formatElapsed",
+      "file": "src/config-doctor-model.ts",
+      "line": 266,
+      "params": [
+        {
+          "name": "ms",
+          "ts_type": "number | null | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "formatCheckedAt",
+      "file": "src/config-doctor-model.ts",
+      "line": 273,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "string | null | undefined",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": []
+}

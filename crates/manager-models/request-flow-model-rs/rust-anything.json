@@ -1,0 +1,223 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/request-flow-model.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "request-flow-model-rs",
+  "exports": [
+    {
+      "name": "flowStatus",
+      "file": "src/request-flow-model.ts",
+      "line": 33,
+      "params": [
+        {
+          "name": "entry",
+          "ts_type": "({\n  id: string;\n  agent?: string | null;\n  startedAtMs: number;\n  timestampMs: number;\n  durationMs: number;\n  model: string;\n  upstreamModel?: string;\n  relayId?: string;\n  relayName?: string;\n  statusCode?: number;\n  success?: boolean;\n  state?: string | null;\n  phase?: string | null;\n  attempts?: number;\n  firstTokenMs?: number | null;\n  estimatedOutputTokens?: number | null;\n  usage?: { inputTokens: number; outputTokens: number } | null;\n  error?: string | null;\n})",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "(\"running\" | \"ok\" | \"error\")",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "flowAgent",
+      "file": "src/request-flow-model.ts",
+      "line": 39,
+      "params": [
+        {
+          "name": "entry",
+          "ts_type": "({\n  id: string;\n  agent?: string | null;\n  startedAtMs: number;\n  timestampMs: number;\n  durationMs: number;\n  model: string;\n  upstreamModel?: string;\n  relayId?: string;\n  relayName?: string;\n  statusCode?: number;\n  success?: boolean;\n  state?: string | null;\n  phase?: string | null;\n  attempts?: number;\n  firstTokenMs?: number | null;\n  estimatedOutputTokens?: number | null;\n  usage?: { inputTokens: number; outputTokens: number } | null;\n  error?: string | null;\n})",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "agentLinkKey",
+      "file": "src/request-flow-model.ts",
+      "line": 44,
+      "params": [
+        {
+          "name": "agent",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "providerLinkKey",
+      "file": "src/request-flow-model.ts",
+      "line": 48,
+      "params": [
+        {
+          "name": "relayId",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "pulseHops",
+      "file": "src/request-flow-model.ts",
+      "line": 55,
+      "params": [
+        {
+          "name": "pulse",
+          "ts_type": "{ agent: string; relayId: string; kind: \"out\" | \"back\" }",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ key: string; reverse: boolean }[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "liveFlowRoutes",
+      "file": "src/request-flow-model.ts",
+      "line": 77,
+      "params": [
+        {
+          "name": "entries",
+          "ts_type": "({\n  id: string;\n  agent?: string | null;\n  startedAtMs: number;\n  timestampMs: number;\n  durationMs: number;\n  model: string;\n  upstreamModel?: string;\n  relayId?: string;\n  relayName?: string;\n  statusCode?: number;\n  success?: boolean;\n  state?: string | null;\n  phase?: string | null;\n  attempts?: number;\n  firstTokenMs?: number | null;\n  estimatedOutputTokens?: number | null;\n  usage?: { inputTokens: number; outputTokens: number } | null;\n  error?: string | null;\n})[]",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ key: string; agent: string; relayId: string; reverse: boolean; count: number }[]",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "flowRoutePosition",
+      "file": "src/request-flow-model.ts",
+      "line": 93,
+      "params": [
+        {
+          "name": "lengths",
+          "ts_type": "number[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "distance",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ segment: number; progress: number } | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "flowColumns",
+      "file": "src/request-flow-model.ts",
+      "line": 120,
+      "params": [
+        {
+          "name": "entries",
+          "ts_type": "({\n  id: string;\n  agent?: string | null;\n  startedAtMs: number;\n  timestampMs: number;\n  durationMs: number;\n  model: string;\n  upstreamModel?: string;\n  relayId?: string;\n  relayName?: string;\n  statusCode?: number;\n  success?: boolean;\n  state?: string | null;\n  phase?: string | null;\n  attempts?: number;\n  firstTokenMs?: number | null;\n  estimatedOutputTokens?: number | null;\n  usage?: { inputTokens: number; outputTokens: number } | null;\n  error?: string | null;\n})[]",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "maxPerSide",
+          "ts_type": "number",
+          "optional": true,
+          "rest": false
+        }
+      ],
+      "returns": "{ agents: { id: string; name: string; live: boolean; count: number }[]; providers: { id: string; name: string; live: boolean; count: number }[] }",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "flowElapsed",
+      "file": "src/request-flow-model.ts",
+      "line": 142,
+      "params": [
+        {
+          "name": "entry",
+          "ts_type": "({\n  id: string;\n  agent?: string | null;\n  startedAtMs: number;\n  timestampMs: number;\n  durationMs: number;\n  model: string;\n  upstreamModel?: string;\n  relayId?: string;\n  relayName?: string;\n  statusCode?: number;\n  success?: boolean;\n  state?: string | null;\n  phase?: string | null;\n  attempts?: number;\n  firstTokenMs?: number | null;\n  estimatedOutputTokens?: number | null;\n  usage?: { inputTokens: number; outputTokens: number } | null;\n  error?: string | null;\n})",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "now",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "number",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "clockTime",
+      "file": "src/request-flow-model.ts",
+      "line": 148,
+      "params": [
+        {
+          "name": "ms",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "busyLinks",
+      "file": "src/request-flow-model.ts",
+      "line": 64,
+      "reason": "returns-js-set"
+    },
+    {
+      "name": "returningLinks",
+      "file": "src/request-flow-model.ts",
+      "line": 105,
+      "reason": "returns-js-set"
+    }
+  ]
+}

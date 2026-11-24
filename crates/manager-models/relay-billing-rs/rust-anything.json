@@ -1,0 +1,265 @@
+{
+  "schema": "rust-anything/bridge@1",
+  "root": "D:\\Git\\codex-plus\\apps\\codex-plus-manager",
+  "unit": "src/relay-billing.ts",
+  "language": "ts",
+  "kind": "wasm",
+  "crate_name": "relay-billing-rs",
+  "exports": [
+    {
+      "name": "relayPlatformLabel",
+      "file": "src/relay-billing.ts",
+      "line": 53,
+      "params": [
+        {
+          "name": "platform",
+          "ts_type": "(\"sub2api\" | \"newapi\")",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "normalizeRelayBillingProbe",
+      "file": "src/relay-billing.ts",
+      "line": 77,
+      "params": [
+        {
+          "name": "result",
+          "ts_type": "{\n  platform?: string | null;\n  rate?: ({\n  endpoint: string;\n  multiplier: number;\n  /** sub2api：高峰时段叠加的倍率。 */\n  appliedPeakMultiplier: number | null;\n  /** new-api：倍率取自哪个分组的消费记录。 */\n  group: string | null;\n}) | null;\n  usage?: ({\n  endpoint: string;\n  /** keyQuota：Key 自带额度/限速；subscription：订阅分组；wallet：账户余额；unlimited：Key 不限额度且查不到账户余额。 */\n  kind: \"keyQuota\" | \"subscription\" | \"wallet\" | \"unlimited\" | string;\n  isValid: boolean;\n  planName: string | null;\n  remaining: number | null;\n  quotaLimit: number | null;\n  quotaUsed: number | null;\n  unit: string;\n  rateLimits: { window: string; limit: number; used: number; remaining: number }[];\n}) | null;\n  detail?: string | null;\n  outcome?: string | null;\n  newapiAccess?: ({ configured: boolean; error: string | null }) | null;\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "({\n  /** 识别出的中转站；null 表示没识别出，原因看 outcome。 */\n  platform: (\"sub2api\" | \"newapi\") | null;\n  rate: ({\n  endpoint: string;\n  multiplier: number;\n  /** sub2api：高峰时段叠加的倍率。 */\n  appliedPeakMultiplier: number | null;\n  /** new-api：倍率取自哪个分组的消费记录。 */\n  group: string | null;\n}) | null;\n  usage: ({\n  endpoint: string;\n  /** keyQuota：Key 自带额度/限速；subscription：订阅分组；wallet：账户余额；unlimited：Key 不限额度且查不到账户余额。 */\n  kind: \"keyQuota\" | \"subscription\" | \"wallet\" | \"unlimited\" | string;\n  isValid: boolean;\n  planName: string | null;\n  remaining: number | null;\n  quotaLimit: number | null;\n  quotaUsed: number | null;\n  unit: string;\n  rateLimits: { window: string; limit: number; used: number; remaining: number }[];\n}) | null;\n  detail: string;\n  outcome: (\"recognized\" | \"notRelay\" | \"unavailable\");\n  /** new-api 才有；旧后端没有这个字段。 */\n  newapiAccess?: ({ configured: boolean; error: string | null }) | null;\n})",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "newApiAccessHint",
+      "file": "src/relay-billing.ts",
+      "line": 100,
+      "params": [
+        {
+          "name": "probe",
+          "ts_type": "({\n  /** 识别出的中转站；null 表示没识别出，原因看 outcome。 */\n  platform: (\"sub2api\" | \"newapi\") | null;\n  rate: ({\n  endpoint: string;\n  multiplier: number;\n  /** sub2api：高峰时段叠加的倍率。 */\n  appliedPeakMultiplier: number | null;\n  /** new-api：倍率取自哪个分组的消费记录。 */\n  group: string | null;\n}) | null;\n  usage: ({\n  endpoint: string;\n  /** keyQuota：Key 自带额度/限速；subscription：订阅分组；wallet：账户余额；unlimited：Key 不限额度且查不到账户余额。 */\n  kind: \"keyQuota\" | \"subscription\" | \"wallet\" | \"unlimited\" | string;\n  isValid: boolean;\n  planName: string | null;\n  remaining: number | null;\n  quotaLimit: number | null;\n  quotaUsed: number | null;\n  unit: string;\n  rateLimits: { window: string; limit: number; used: number; remaining: number }[];\n}) | null;\n  detail: string;\n  outcome: (\"recognized\" | \"notRelay\" | \"unavailable\");\n  /** new-api 才有；旧后端没有这个字段。 */\n  newapiAccess?: ({ configured: boolean; error: string | null }) | null;\n})",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ text: string; failed: boolean } | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "mergeRelayBillingResult",
+      "file": "src/relay-billing.ts",
+      "line": 123,
+      "params": [
+        {
+          "name": "previous",
+          "ts_type": "({\n  /** 最近一次识别成功的结果；没有则为 null。 */\n  probe: ({\n  /** 识别出的中转站；null 表示没识别出，原因看 outcome。 */\n  platform: (\"sub2api\" | \"newapi\") | null;\n  rate: ({\n  endpoint: string;\n  multiplier: number;\n  /** sub2api：高峰时段叠加的倍率。 */\n  appliedPeakMultiplier: number | null;\n  /** new-api：倍率取自哪个分组的消费记录。 */\n  group: string | null;\n}) | null;\n  usage: ({\n  endpoint: string;\n  /** keyQuota：Key 自带额度/限速；subscription：订阅分组；wallet：账户余额；unlimited：Key 不限额度且查不到账户余额。 */\n  kind: \"keyQuota\" | \"subscription\" | \"wallet\" | \"unlimited\" | string;\n  isValid: boolean;\n  planName: string | null;\n  remaining: number | null;\n  quotaLimit: number | null;\n  quotaUsed: number | null;\n  unit: string;\n  rateLimits: { window: string; limit: number; used: number; remaining: number }[];\n}) | null;\n  detail: string;\n  outcome: (\"recognized\" | \"notRelay\" | \"unavailable\");\n  /** new-api 才有；旧后端没有这个字段。 */\n  newapiAccess?: ({ configured: boolean; error: string | null }) | null;\n}) | null;\n  /** probe 的取得时间。 */\n  at: number;\n  /** 最近一次请求失败的时间与原因；之后识别成功或明确不是时清掉。 */\n  failure: { at: number; detail: string } | null;\n}) | undefined",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "probe",
+          "ts_type": "({\n  /** 识别出的中转站；null 表示没识别出，原因看 outcome。 */\n  platform: (\"sub2api\" | \"newapi\") | null;\n  rate: ({\n  endpoint: string;\n  multiplier: number;\n  /** sub2api：高峰时段叠加的倍率。 */\n  appliedPeakMultiplier: number | null;\n  /** new-api：倍率取自哪个分组的消费记录。 */\n  group: string | null;\n}) | null;\n  usage: ({\n  endpoint: string;\n  /** keyQuota：Key 自带额度/限速；subscription：订阅分组；wallet：账户余额；unlimited：Key 不限额度且查不到账户余额。 */\n  kind: \"keyQuota\" | \"subscription\" | \"wallet\" | \"unlimited\" | string;\n  isValid: boolean;\n  planName: string | null;\n  remaining: number | null;\n  quotaLimit: number | null;\n  quotaUsed: number | null;\n  unit: string;\n  rateLimits: { window: string; limit: number; used: number; remaining: number }[];\n}) | null;\n  detail: string;\n  outcome: (\"recognized\" | \"notRelay\" | \"unavailable\");\n  /** new-api 才有；旧后端没有这个字段。 */\n  newapiAccess?: ({ configured: boolean; error: string | null }) | null;\n})",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "now",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ entry: ({\n  /** 最近一次识别成功的结果；没有则为 null。 */\n  probe: ({\n  /** 识别出的中转站；null 表示没识别出，原因看 outcome。 */\n  platform: (\"sub2api\" | \"newapi\") | null;\n  rate: ({\n  endpoint: string;\n  multiplier: number;\n  /** sub2api：高峰时段叠加的倍率。 */\n  appliedPeakMultiplier: number | null;\n  /** new-api：倍率取自哪个分组的消费记录。 */\n  group: string | null;\n}) | null;\n  usage: ({\n  endpoint: string;\n  /** keyQuota：Key 自带额度/限速；subscription：订阅分组；wallet：账户余额；unlimited：Key 不限额度且查不到账户余额。 */\n  kind: \"keyQuota\" | \"subscription\" | \"wallet\" | \"unlimited\" | string;\n  isValid: boolean;\n  planName: string | null;\n  remaining: number | null;\n  quotaLimit: number | null;\n  quotaUsed: number | null;\n  unit: string;\n  rateLimits: { window: string; limit: number; used: number; remaining: number }[];\n}) | null;\n  detail: string;\n  outcome: (\"recognized\" | \"notRelay\" | \"unavailable\");\n  /** new-api 才有；旧后端没有这个字段。 */\n  newapiAccess?: ({ configured: boolean; error: string | null }) | null;\n}) | null;\n  /** probe 的取得时间。 */\n  at: number;\n  /** 最近一次请求失败的时间与原因；之后识别成功或明确不是时清掉。 */\n  failure: { at: number; detail: string } | null;\n}) | null; negative: \"remember\" | \"clear\" | \"keep\" }",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relayBillingCacheUsable",
+      "file": "src/relay-billing.ts",
+      "line": 137,
+      "params": [
+        {
+          "name": "entry",
+          "ts_type": "({\n  /** 最近一次识别成功的结果；没有则为 null。 */\n  probe: ({\n  /** 识别出的中转站；null 表示没识别出，原因看 outcome。 */\n  platform: (\"sub2api\" | \"newapi\") | null;\n  rate: ({\n  endpoint: string;\n  multiplier: number;\n  /** sub2api：高峰时段叠加的倍率。 */\n  appliedPeakMultiplier: number | null;\n  /** new-api：倍率取自哪个分组的消费记录。 */\n  group: string | null;\n}) | null;\n  usage: ({\n  endpoint: string;\n  /** keyQuota：Key 自带额度/限速；subscription：订阅分组；wallet：账户余额；unlimited：Key 不限额度且查不到账户余额。 */\n  kind: \"keyQuota\" | \"subscription\" | \"wallet\" | \"unlimited\" | string;\n  isValid: boolean;\n  planName: string | null;\n  remaining: number | null;\n  quotaLimit: number | null;\n  quotaUsed: number | null;\n  unit: string;\n  rateLimits: { window: string; limit: number; used: number; remaining: number }[];\n}) | null;\n  detail: string;\n  outcome: (\"recognized\" | \"notRelay\" | \"unavailable\");\n  /** new-api 才有；旧后端没有这个字段。 */\n  newapiAccess?: ({ configured: boolean; error: string | null }) | null;\n}) | null;\n  /** probe 的取得时间。 */\n  at: number;\n  /** 最近一次请求失败的时间与原因；之后识别成功或明确不是时清掉。 */\n  failure: { at: number; detail: string } | null;\n}) | undefined",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "now",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relayBillingProbeEligible",
+      "file": "src/relay-billing.ts",
+      "line": 154,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "{\n  id: string;\n  baseUrl: string;\n  upstreamBaseUrl: string;\n  apiKey: string;\n  apiKeys?: { id: string; apiKey: string }[];\n  activeApiKeyId?: string;\n  relayMode: string;\n  officialMixApiKey: boolean;\n  noAuth: boolean;\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "boolean",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relayBillingCacheKey",
+      "file": "src/relay-billing.ts",
+      "line": 171,
+      "params": [
+        {
+          "name": "profile",
+          "ts_type": "{\n  id: string;\n  baseUrl: string;\n  upstreamBaseUrl: string;\n  apiKey: string;\n  apiKeys?: { id: string; apiKey: string }[];\n  activeApiKeyId?: string;\n  relayMode: string;\n  officialMixApiKey: boolean;\n  noAuth: boolean;\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relayBillingGatewayCacheKey",
+      "file": "src/relay-billing.ts",
+      "line": 177,
+      "params": [
+        {
+          "name": "entry",
+          "ts_type": "{\n  id: string;\n  baseUrl: string;\n  keyCount: number;\n  official?: boolean;\n  proxy?: string;\n  account?: string | null;\n  balanceApi?: boolean;\n  newapiAccess?: { masked: string; userId: string } | null;\n}",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "formatRelayMultiplier",
+      "file": "src/relay-billing.ts",
+      "line": 225,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "formatRelayAmount",
+      "file": "src/relay-billing.ts",
+      "line": 229,
+      "params": [
+        {
+          "name": "value",
+          "ts_type": "number",
+          "optional": false,
+          "rest": false
+        },
+        {
+          "name": "unit",
+          "ts_type": "string",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "string",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relayAppliedPeak",
+      "file": "src/relay-billing.ts",
+      "line": 238,
+      "params": [
+        {
+          "name": "rate",
+          "ts_type": "({\n  endpoint: string;\n  multiplier: number;\n  /** sub2api：高峰时段叠加的倍率。 */\n  appliedPeakMultiplier: number | null;\n  /** new-api：倍率取自哪个分组的消费记录。 */\n  group: string | null;\n}) | null",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "number | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    },
+    {
+      "name": "relayBalanceBadge",
+      "file": "src/relay-billing.ts",
+      "line": 244,
+      "params": [
+        {
+          "name": "usage",
+          "ts_type": "({\n  endpoint: string;\n  /** keyQuota：Key 自带额度/限速；subscription：订阅分组；wallet：账户余额；unlimited：Key 不限额度且查不到账户余额。 */\n  kind: \"keyQuota\" | \"subscription\" | \"wallet\" | \"unlimited\" | string;\n  isValid: boolean;\n  planName: string | null;\n  remaining: number | null;\n  quotaLimit: number | null;\n  quotaUsed: number | null;\n  unit: string;\n  rateLimits: { window: string; limit: number; used: number; remaining: number }[];\n})",
+          "optional": false,
+          "rest": false
+        }
+      ],
+      "returns": "{ amount: string; ratio: number | null; tone: \"ok\" | \"mid\" | \"low\" } | null",
+      "is_async": false,
+      "is_generator": false,
+      "type_params": [],
+      "uses_instanceof": false
+    }
+  ],
+  "classes": [],
+  "js_only": [
+    {
+      "name": "relayBillingNegativeCached",
+      "file": "src/relay-billing.ts",
+      "line": 204,
+      "reason": "storage-method"
+    },
+    {
+      "name": "rememberRelayBillingNegative",
+      "file": "src/relay-billing.ts",
+      "line": 210,
+      "reason": "storage-method"
+    }
+  ]
+}
