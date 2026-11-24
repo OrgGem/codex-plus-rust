@@ -15,11 +15,11 @@ param(
 
 $ErrorActionPreference = "Stop"
 $PortRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
-$RepoRoot = Split-Path -Parent $PortRoot
+$WorkspaceRoot = if (Test-Path (Join-Path $PortRoot "Cargo.toml")) { $PortRoot } else { Split-Path -Parent $PortRoot }
 $ReleaseDir = Join-Path $PortRoot "target\release"
 
 function Get-RepoVersion {
-    $cargoToml = Join-Path $RepoRoot "Cargo.toml"
+    $cargoToml = Join-Path $WorkspaceRoot "Cargo.toml"
     foreach ($line in (Get-Content $cargoToml)) {
         if ($line -match '^\s*version\s*=\s*"([^"]+)"') {
             return $Matches[1]
@@ -64,11 +64,11 @@ function Invoke-PreflightCheck {
 
     Write-Host "`n=== [2/3] Verifying codex-plus-devkit Pure-Rust Checks ===" -ForegroundColor Cyan
     $devkit = Join-Path $ReleaseDir "codex-plus-devkit.exe"
-    & $devkit release-meta check $expectedVer --root $RepoRoot
+    & $devkit release-meta check $expectedVer --root $WorkspaceRoot
     if ($LASTEXITCODE -ne 0) { throw "release-meta check $expectedVer failed" }
-    & $devkit assemble-renderer-inject --check --root $RepoRoot
+    & $devkit assemble-renderer-inject --check --root $WorkspaceRoot
     if ($LASTEXITCODE -ne 0) { throw "assemble-renderer-inject --check failed" }
-    & $devkit relaunch-local --pure-rust --dry-run --root $RepoRoot
+    & $devkit relaunch-local --pure-rust --dry-run --root $WorkspaceRoot
     if ($LASTEXITCODE -ne 0) { throw "relaunch-local --pure-rust --dry-run failed" }
 
     Write-Host "`n=== [3/3] Running codex-plus-app --smoke-check (Live Gateway + Codex Probe) ===" -ForegroundColor Cyan
@@ -118,8 +118,8 @@ Invoke-PreflightCheck
 $ans = Read-Host "`nStep 2: Stage & launch Pure-Rust Desktop app via codex-plus-devkit? [Enter = Yes, q = Quit]"
 if ($null -eq $ans -or $ans -eq "q") { exit 0 }
 $devkitExe = Join-Path $ReleaseDir "codex-plus-devkit.exe"
-& $devkitExe relaunch-local --pure-rust --skip-build --root $RepoRoot
+& $devkitExe relaunch-local --pure-rust --skip-build --root $WorkspaceRoot
 if ($LASTEXITCODE -ne 0) { throw "Failed to stage/launch Pure-Rust bundle" }
 
-Write-Host "`n[Cutover Active] Pure-Rust Codex++ Desktop is running from rust-port\target\local-bundle\" -ForegroundColor Green
-Write-Host "To roll back at any time, run: powershell -ExecutionPolicy Bypass -File rust-port\cutover.ps1 -Rollback" -ForegroundColor Yellow
+Write-Host "`n[Cutover Active] Pure-Rust Codex++ Desktop is running from target\local-bundle\" -ForegroundColor Green
+Write-Host "To roll back at any time, run: powershell -ExecutionPolicy Bypass -File cutover.ps1 -Rollback" -ForegroundColor Yellow

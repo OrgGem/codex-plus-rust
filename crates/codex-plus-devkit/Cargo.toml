@@ -1,7 +1,9 @@
 [package]
 name = "codex-plus-devkit"
-version = "0.1.0"
-edition = "2024"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
 rust-version = "1.97"
 publish = false
 description = "Pure-Rust devkit CLI porting CodexPlusPlus scripts/ and AST inspector"
@@ -33,5 +35,3 @@ tempfile = "3"
 
 [lints.clippy]
 all = { level = "warn", priority = -1 }
-
-[workspace]

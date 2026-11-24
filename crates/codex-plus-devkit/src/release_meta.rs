@@ -18,6 +18,18 @@ pub const VERSION_FILES: &[&str] = &[
     "apps/codex-plus-manager/web-preview/tauri-web-shim.ts",
 ];
 
+pub const STANDALONE_VERSION_FILES: &[&str] = &["Cargo.toml", "Cargo.lock"];
+
+/// Selects legacy 6-file version tracking when `apps/codex-plus-manager/package.json` exists,
+/// or standalone Pure-Rust workspace tracking (`Cargo.toml` + `Cargo.lock`) otherwise.
+pub fn active_version_files(root: &Path) -> &'static [&'static str] {
+    if root.join("apps/codex-plus-manager/package.json").is_file() {
+        VERSION_FILES
+    } else {
+        STANDALONE_VERSION_FILES
+    }
+}
+
 pub fn is_valid_version(v: &str) -> bool {
     let re = Regex::new(r"^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$").expect("valid semver regex");
     re.is_match(v)
@@ -146,8 +158,9 @@ pub fn bump_version_in_text(rel: &str, text: &str, from: &str, to: &str) -> Resu
 }
 
 pub fn read_versions(root: &Path) -> Result<Vec<(&'static str, Option<String>)>> {
-    let mut out = Vec::with_capacity(VERSION_FILES.len());
-    for &rel in VERSION_FILES {
+    let files = active_version_files(root);
+    let mut out = Vec::with_capacity(files.len());
+    for &rel in files {
         let text =
             fs::read_to_string(root.join(rel)).with_context(|| format!("failed to read {rel}"))?;
         let ver = read_version_from_text(rel, &text);

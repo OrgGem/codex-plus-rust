@@ -1,8 +1,8 @@
 //! One-command release automation (`scripts/release.mjs`).
 
 use crate::release_meta::{
-    VERSION_FILES, bump_version_in_text, changelog_section, compare_versions, is_valid_version,
-    normalize_version, read_version_from_text, read_versions,
+    active_version_files, bump_version_in_text, changelog_section, compare_versions,
+    is_valid_version, normalize_version, read_version_from_text, read_versions,
 };
 use anyhow::{Context, Result, bail, ensure};
 use serde_json::Value;
@@ -200,7 +200,7 @@ pub fn run_release(root: &Path, raw_version: &str, dry_run: bool) -> Result<()> 
     if from == version {
         println!("• 版本号已经是 {version}，跳过改号");
     } else {
-        for &file in VERSION_FILES {
+        for &file in active_version_files(root) {
             let path = root.join(file);
             let before = fs::read_to_string(&path)?;
             let after = bump_version_in_text(file, &before, &from, &version)?;

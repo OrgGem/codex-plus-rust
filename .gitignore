@@ -23,6 +23,8 @@
 *.node
 *.wasm
 *.zip
+# Keep bundled OpenAI curated marketplace zip embedded by codex-plus-core/src/plugin_marketplace.rs
+!assets/plugin-marketplaces/*.zip
 *.log
 
 # Local runtime state, databases & credentials (never commit)

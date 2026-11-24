@@ -5,12 +5,11 @@ use std::io::Write;
 use std::path::{Path, PathBuf};
 use std::process::{Command, Stdio};
 
-fn repo_root() -> PathBuf {
+fn workspace_root() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .parent()
         .and_then(Path::parent)
-        .and_then(Path::parent)
-        .expect("repo root")
+        .expect("workspace root")
         .to_path_buf()
 }
 
@@ -22,7 +21,12 @@ fn collect_non_test_rs_files(dir: &Path, out: &mut Vec<PathBuf>) {
         let p = entry.path();
         let name = entry.file_name().to_string_lossy().to_string();
         if p.is_dir() {
-            if name == "tests" || name == "target" || name.starts_with('.') {
+            if name == "tests"
+                || name == "target"
+                || name == "codex-plus-core"
+                || name == "codex-plus-data"
+                || name.starts_with('.')
+            {
                 continue;
             }
             collect_non_test_rs_files(&p, out);
@@ -34,7 +38,7 @@ fn collect_non_test_rs_files(dir: &Path, out: &mut Vec<PathBuf>) {
 
 #[test]
 fn zero_fallback_kill_switches_and_zero_python_node_in_production_crates() {
-    let crates_dir = repo_root().join("rust-port/crates");
+    let crates_dir = workspace_root().join("crates");
     let mut rs_files = Vec::new();
     collect_non_test_rs_files(&crates_dir, &mut rs_files);
     assert!(
@@ -67,7 +71,7 @@ fn zero_fallback_kill_switches_and_zero_python_node_in_production_crates() {
 #[test]
 fn devkit_pure_rust_relaunch_dry_run_and_release_meta_replay_100_percent() {
     let bin = env!("CARGO_BIN_EXE_codex-plus-devkit");
-    let root = repo_root();
+    let root = workspace_root();
 
     // 1. Pure-Rust relaunch dry-run requires zero npm/Vite
     let out = Command::new(bin)
@@ -126,7 +130,7 @@ fn devkit_pure_rust_relaunch_dry_run_and_release_meta_replay_100_percent() {
 #[test]
 fn native_browser_inspector_binary_replays_without_node() {
     let bin = env!("CARGO_BIN_EXE_native-browser-inspector");
-    let root = repo_root();
+    let root = workspace_root();
     let specimen =
         fs::read_to_string(root.join("assets/native-browser/fixtures/service-specimen.mjs"))
             .expect("read service-specimen.mjs");

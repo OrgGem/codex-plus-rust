@@ -3,10 +3,16 @@ use std::fs;
 use std::path::{Path, PathBuf};
 
 fn bundle_manager_css(manifest_dir: &Path, out_dir: &Path) {
-    let css_dir = manifest_dir.join("../../../apps/codex-plus-manager/src");
+    let standalone_css_dir = manifest_dir.join("../../assets/manager-css");
+    let legacy_css_dir = manifest_dir.join("../../../apps/codex-plus-manager/src");
+    let css_dir = if standalone_css_dir.is_dir() {
+        standalone_css_dir
+    } else {
+        legacy_css_dir
+    };
     println!("cargo:rerun-if-changed={}", css_dir.display());
     let mut files: Vec<PathBuf> = fs::read_dir(&css_dir)
-        .expect("apps/codex-plus-manager/src must exist")
+        .unwrap_or_else(|e| panic!("manager CSS directory {} must exist: {e}", css_dir.display()))
         .filter_map(Result::ok)
         .map(|entry| entry.path())
         .filter(|path| path.extension().and_then(|e| e.to_str()) == Some("css"))

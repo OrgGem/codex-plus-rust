@@ -72,8 +72,18 @@ fn clean_abs_path(path: &Path) -> Result<PathBuf> {
 fn relaunch_pure_rust(root: &Path, opts: &RelaunchOptions) -> Result<()> {
     let root = clean_abs_path(root)?;
     let root = root.as_path();
-    let port_dir = root.join("rust-port");
-    let manifest = port_dir.join("crates/codex-plus-app/Cargo.toml");
+    let port_dir = if root.join("crates/codex-plus-app/Cargo.toml").is_file() {
+        root.to_path_buf()
+    } else {
+        root.join("rust-port")
+    };
+    let workspace_manifest = port_dir.join("Cargo.toml");
+    let app_manifest = port_dir.join("crates/codex-plus-app/Cargo.toml");
+    let manifest = if workspace_manifest.is_file() {
+        workspace_manifest.clone()
+    } else {
+        app_manifest.clone()
+    };
     let target_dir = port_dir.join("target");
     let bin_name = if cfg!(windows) {
         "codex-plus-app.exe"
@@ -96,19 +106,25 @@ fn relaunch_pure_rust(root: &Path, opts: &RelaunchOptions) -> Result<()> {
     }
 
     ensure!(
-        manifest.is_file(),
+        app_manifest.is_file(),
         "Pure-Rust manifest not found: {}",
-        manifest.display()
+        app_manifest.display()
     );
     if !opts.skip_build {
-        let status = Command::new("cargo")
-            .args([
+        let mut cmd = Command::new("cargo");
+        if workspace_manifest.is_file() {
+            cmd.args(["build", "--release", "-p", "codex-plus-app"])
+                .current_dir(&port_dir);
+        } else {
+            cmd.args([
                 "build",
                 "--manifest-path",
-                &manifest.to_string_lossy(),
+                &app_manifest.to_string_lossy(),
                 "--release",
             ])
-            .current_dir(root)
+            .current_dir(root);
+        }
+        let status = cmd
             .env("CARGO_TARGET_DIR", &target_dir)
             .status()
             .context("failed to invoke cargo build for codex-plus-app")?;

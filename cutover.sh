@@ -9,7 +9,11 @@
 set -euo pipefail
 
 PORT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_ROOT="$(cd "${PORT_ROOT}/.." && pwd)"
+if [[ -f "${PORT_ROOT}/Cargo.toml" ]]; then
+  WORKSPACE_ROOT="${PORT_ROOT}"
+else
+  WORKSPACE_ROOT="$(cd "${PORT_ROOT}/.." && pwd)"
+fi
 RELEASE_DIR="${PORT_ROOT}/target/release"
 
 IS_WINDOWS=0
@@ -58,9 +62,9 @@ case "${1:-}" in
     ;;
 esac
 
-REPO_VERSION="$(sed -n 's/^[[:space:]]*version[[:space:]]*=[[:space:]]*"\([^"]*\)".*/\1/p' "${REPO_ROOT}/Cargo.toml" | head -n 1)"
+REPO_VERSION="$(sed -n 's/^[[:space:]]*version[[:space:]]*=[[:space:]]*"\([^"]*\)".*/\1/p' "${WORKSPACE_ROOT}/Cargo.toml" | head -n 1)"
 if [[ -z "${REPO_VERSION}" ]]; then
-  echo "ERROR: Could not read version from ${REPO_ROOT}/Cargo.toml" >&2
+  echo "ERROR: Could not read version from ${WORKSPACE_ROOT}/Cargo.toml" >&2
   exit 1
 fi
 
@@ -79,9 +83,9 @@ run_preflight() {
   done
 
   echo "=== [2/3] Running codex-plus-devkit Verification ==="
-  "${DEVKIT_BIN}" release-meta check "${REPO_VERSION}" --root "${REPO_ROOT}"
-  "${DEVKIT_BIN}" assemble-renderer-inject --check --root "${REPO_ROOT}"
-  "${DEVKIT_BIN}" relaunch-local --pure-rust --dry-run --root "${REPO_ROOT}"
+  "${DEVKIT_BIN}" release-meta check "${REPO_VERSION}" --root "${WORKSPACE_ROOT}"
+  "${DEVKIT_BIN}" assemble-renderer-inject --check --root "${WORKSPACE_ROOT}"
+  "${DEVKIT_BIN}" relaunch-local --pure-rust --dry-run --root "${WORKSPACE_ROOT}"
 
   echo "=== [3/3] Running codex-plus-app --smoke-check ==="
   SMOKE_DIR="${PORT_ROOT}/target/cutover-smoke-state"
@@ -107,6 +111,6 @@ run_preflight
 
 read -r -p "Step 2: Stage & launch Pure-Rust codex-plus-app? [Enter to continue, q to abort] " ans || exit 0
 [[ "${ans}" == "q" ]] && exit 0
-"${DEVKIT_BIN}" relaunch-local --pure-rust --skip-build --root "${REPO_ROOT}"
+"${DEVKIT_BIN}" relaunch-local --pure-rust --skip-build --root "${WORKSPACE_ROOT}"
 
-echo "[Cutover Active] Roll back anytime via: ./rust-port/cutover.sh --rollback"
+echo "[Cutover Active] Roll back anytime via: ./cutover.sh --rollback"
